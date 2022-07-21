@@ -21,6 +21,8 @@ namespace Project_Zero
         DataSet ds1;
         int MaxRows = 0; int inc = 0;
         System.Data.SqlClient.SqlDataAdapter da;
+
+
         private void MUI_Load(object sender, EventArgs e)
         {      
             con = new System.Data.SqlClient.SqlConnection();
@@ -29,12 +31,13 @@ namespace Project_Zero
             string sql = "SELECT * FROM Series";
             da = new System.Data.SqlClient.SqlDataAdapter(sql, con);
             da.Fill(ds1, "Series");          
+
             MaxRows = ds1.Tables["Series"].Rows.Count;
             NavigateRecords();
-            if (MaxRows < 2) { btnBack.Enabled = false; btnNext.Enabled = false; }
-            else { btnBack.Enabled = true; btnNext.Enabled = true; }
+            if (MaxRows < 2) btnNext.Enabled = false;               
             con.Open(); con.Close();
         }
+
 
         private void NavigateRecords()
         {
@@ -62,22 +65,21 @@ namespace Project_Zero
             }
             catch (Exception)
             {
-                labelST.Text = "Error |  No entry found";
-                btnUpdate.Enabled = false;
-                btnDelete.Enabled = false;
-                btnNext.Enabled = false;
-                btnBack.Enabled = false;
-                btnAdd.Text = "CANCEL";
-                btnUpdate.Text = "SAVE";
-                txtName.Clear();
-                txtSeries.Clear();
-                txtStatus.Text = "Watching";
-                txtStatus.Checked = false;
-                txtLast.Text = "0";
-                txtEpisodes.Text = "1";
-                txtRating.Clear();
-                btnAdd.Enabled = false;
-                ShowProgress();
+                    labelST.Text = "Error |  No entry found";
+                    btnUpdate.Enabled = true;
+                    btnDelete.Enabled = false;
+                    btnNext.Enabled = false;
+                    btnBack.Enabled = false;
+                    btnAdd.Text = "CANCEL";
+                    btnUpdate.Text = "SAVE";
+                    txtName.Clear();
+                    txtSeries.Clear();
+                    txtStatus.Checked = false;
+                    txtLast.Text = "0";
+                    txtEpisodes.Text = "1";
+                    txtRating.Clear();
+                    btnAdd.Enabled = false;
+                    ShowProgress();
             }
         }
 
@@ -149,13 +151,13 @@ namespace Project_Zero
                 if (txtRating.Text != "") { dRow[5] = txtRating.Text; }
                 ds1.Tables["Series"].Rows.Add(dRow);
                 MaxRows++;
-                inc--;
+                if(inc>0) inc--;
                 da.Update(ds1, "Series");
                 btnUpdate.Enabled = true;
                 btnDelete.Enabled = true;
                 btnAdd.Enabled = true;
-                btnNext.Enabled = true;
-                btnBack.Enabled = true;
+                if (MaxRows < 2) { btnNext.Enabled = false; btnBack.Enabled = false; }
+                else { btnNext.Enabled = true; btnBack.Enabled = true; }
                 btnPlus.Enabled = true;
                 ShowProgress();
                 btnAdd.Text = "NEW";
@@ -222,14 +224,14 @@ namespace Project_Zero
                 labelST.Text = "Info |  New entry";
             }
             else
-            {
-                NavigateRecords();
+            {               
                 btnPlus.Enabled = true;
                 btnDelete.Enabled = true;
-                btnNext.Enabled = true;
-                btnBack.Enabled = true;
+                if(inc < MaxRows-1) btnNext.Enabled = true;
+                if(inc > 0) btnBack.Enabled = true;
                 btnAdd.Text = "NEW";
                 btnUpdate.Text = "UPDATE";
+                NavigateRecords();
                 labelST.Text = "Info |  " + MaxRows.ToString() + " rows";
             }
         }

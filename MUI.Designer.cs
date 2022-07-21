@@ -55,6 +55,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.labelST = new System.Windows.Forms.Label();
             this.btnPlus = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +68,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(18, 16);
+            this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 0;
@@ -74,10 +77,9 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.SystemColors.Window;
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(81, 14);
+            this.txtName.Location = new System.Drawing.Point(81, 12);
             this.txtName.MaxLength = 20;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(124, 23);
@@ -87,10 +89,9 @@
             // txtSeries
             // 
             this.txtSeries.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSeries.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSeries.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeries.ForeColor = System.Drawing.Color.Black;
-            this.txtSeries.Location = new System.Drawing.Point(81, 53);
+            this.txtSeries.Location = new System.Drawing.Point(81, 52);
             this.txtSeries.MaxLength = 50;
             this.txtSeries.Name = "txtSeries";
             this.txtSeries.Size = new System.Drawing.Size(235, 23);
@@ -102,7 +103,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(18, 55);
+            this.label2.Location = new System.Drawing.Point(13, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 2;
@@ -114,7 +115,7 @@
             this.Status.BackColor = System.Drawing.Color.Transparent;
             this.Status.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status.ForeColor = System.Drawing.Color.Black;
-            this.Status.Location = new System.Drawing.Point(18, 95);
+            this.Status.Location = new System.Drawing.Point(13, 95);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(57, 16);
             this.Status.TabIndex = 4;
@@ -123,7 +124,6 @@
             // txtLast
             // 
             this.txtLast.BackColor = System.Drawing.SystemColors.Window;
-            this.txtLast.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLast.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLast.ForeColor = System.Drawing.Color.Black;
             this.txtLast.Location = new System.Drawing.Point(96, 132);
@@ -140,7 +140,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(18, 136);
+            this.label4.Location = new System.Drawing.Point(13, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(72, 16);
             this.label4.TabIndex = 6;
@@ -149,7 +149,6 @@
             // txtEpisodes
             // 
             this.txtEpisodes.BackColor = System.Drawing.SystemColors.Window;
-            this.txtEpisodes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEpisodes.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpisodes.ForeColor = System.Drawing.Color.Black;
             this.txtEpisodes.Location = new System.Drawing.Point(272, 132);
@@ -165,7 +164,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(188, 136);
+            this.label5.Location = new System.Drawing.Point(188, 135);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 16);
             this.label5.TabIndex = 8;
@@ -174,10 +173,9 @@
             // txtRating
             // 
             this.txtRating.BackColor = System.Drawing.SystemColors.Window;
-            this.txtRating.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRating.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRating.ForeColor = System.Drawing.Color.Black;
-            this.txtRating.Location = new System.Drawing.Point(274, 94);
+            this.txtRating.Location = new System.Drawing.Point(287, 92);
             this.txtRating.MaxLength = 3;
             this.txtRating.Name = "txtRating";
             this.txtRating.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -190,7 +188,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(209, 96);
+            this.label6.Location = new System.Drawing.Point(222, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(54, 16);
             this.label6.TabIndex = 10;
@@ -198,7 +196,7 @@
             // 
             // epiPB
             // 
-            this.epiPB.Location = new System.Drawing.Point(103, 173);
+            this.epiPB.Location = new System.Drawing.Point(95, 174);
             this.epiPB.Name = "epiPB";
             this.epiPB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.epiPB.RightToLeftLayout = true;
@@ -214,7 +212,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSearch.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(242)))));
-            this.btnSearch.Location = new System.Drawing.Point(219, 14);
+            this.btnSearch.Location = new System.Drawing.Point(241, 13);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 13;
@@ -231,7 +229,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAdd.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(141, 10);
+            this.btnAdd.Location = new System.Drawing.Point(138, 10);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(72, 23);
             this.btnAdd.TabIndex = 14;
@@ -249,7 +247,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnUpdate.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdate.Location = new System.Drawing.Point(219, 10);
+            this.btnUpdate.Location = new System.Drawing.Point(216, 10);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 16;
@@ -266,7 +264,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDelete.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(245, 166);
+            this.btnDelete.Location = new System.Drawing.Point(244, 167);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(72, 23);
             this.btnDelete.TabIndex = 17;
@@ -277,13 +275,14 @@
             // btnBack
             // 
             this.btnBack.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBack.Enabled = false;
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(38)))));
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(68)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.ForeColor = System.Drawing.Color.Black;
-            this.btnBack.Location = new System.Drawing.Point(19, 10);
+            this.btnBack.Location = new System.Drawing.Point(16, 10);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 23);
             this.btnBack.TabIndex = 18;
@@ -300,7 +299,7 @@
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnNext.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNext.ForeColor = System.Drawing.Color.Black;
-            this.btnNext.Location = new System.Drawing.Point(81, 10);
+            this.btnNext.Location = new System.Drawing.Point(78, 10);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(54, 23);
             this.btnNext.TabIndex = 19;
@@ -317,7 +316,7 @@
             this.txtStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtStatus.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus.ForeColor = System.Drawing.Color.Black;
-            this.txtStatus.Location = new System.Drawing.Point(82, 96);
+            this.txtStatus.Location = new System.Drawing.Point(81, 94);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(12, 11);
             this.txtStatus.TabIndex = 20;
@@ -330,7 +329,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(18, 169);
+            this.label3.Location = new System.Drawing.Point(13, 170);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 16);
             this.label3.TabIndex = 21;
@@ -341,7 +340,7 @@
             this.txtProgress.AutoSize = true;
             this.txtProgress.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProgress.ForeColor = System.Drawing.Color.Black;
-            this.txtProgress.Location = new System.Drawing.Point(184, 169);
+            this.txtProgress.Location = new System.Drawing.Point(173, 171);
             this.txtProgress.Name = "txtProgress";
             this.txtProgress.Size = new System.Drawing.Size(31, 16);
             this.txtProgress.TabIndex = 22;
@@ -355,14 +354,14 @@
             this.panel1.Controls.Add(this.btnUpdate);
             this.panel1.Controls.Add(this.btnBack);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
-            this.panel1.Location = new System.Drawing.Point(13, 201);
+            this.panel1.Location = new System.Drawing.Point(10, 205);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 45);
             this.panel1.TabIndex = 23;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(244)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.labelST);
             this.panel2.Location = new System.Drawing.Point(-2, 257);
@@ -376,11 +375,11 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Russo One", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.label7.Location = new System.Drawing.Point(163, 7);
+            this.label7.Location = new System.Drawing.Point(197, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(160, 13);
+            this.label7.Size = new System.Drawing.Size(121, 13);
             this.label7.TabIndex = 1;
-            this.label7.Text = "|            DvNET Technologies";
+            this.label7.Text = "DvNET Technologies";
             // 
             // labelST
             // 
@@ -412,12 +411,51 @@
             this.btnPlus.UseVisualStyleBackColor = false;
             this.btnPlus.Click += new System.EventHandler(this.btnPlus_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
+            this.label8.Location = new System.Drawing.Point(57, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(13, 16);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "*";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
+            this.label9.Location = new System.Drawing.Point(80, 132);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 16);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
+            this.label10.Location = new System.Drawing.Point(257, 133);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 16);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "*";
+            // 
             // MUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(332, 284);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnPlus);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.panel2);
@@ -482,6 +520,9 @@
         private System.Windows.Forms.Label labelST;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnPlus;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
 
