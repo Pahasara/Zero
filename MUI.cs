@@ -47,13 +47,16 @@ namespace Project_Zero
                 txtLast.Text = dRow.ItemArray.GetValue(3).ToString();
                 txtEpisodes.Text = dRow.ItemArray.GetValue(4).ToString();
                 txtRating.Text = dRow.ItemArray.GetValue(5).ToString();
+
                 if (txtStatus.Text == "Completed")
                 {
                     txtStatus.Checked = true;
+                    btnPlus.Enabled = false;
                 }
                 else
                 {
                     txtStatus.Checked = false;
+                    btnPlus.Enabled = true;
                 }
                 ShowProgress();
             }
@@ -103,15 +106,27 @@ namespace Project_Zero
                 System.Data.SqlClient.SqlCommandBuilder cb;
                 cb = new System.Data.SqlClient.SqlCommandBuilder(da);
                 System.Data.DataRow dRow2 = ds1.Tables["Series"].Rows[inc];
+
+                if (txtLast.Text == txtEpisodes.Text)
+                {
+                    txtStatus.Checked = true;
+                    btnPlus.Enabled = false;
+                    labelST.Text = "Info |  Series Completed";
+                }
+                else
+                {
+                    txtStatus.Checked = false;
+                    btnPlus.Enabled = true;
+                    labelST.Text = "Info |  Entry updated";
+                }
                 dRow2[0] = txtName.Text;
                 dRow2[1] = txtSeries.Text;
                 dRow2[2] = txtStatus.Text;
                 dRow2[3] = txtLast.Text;
                 dRow2[4] = txtEpisodes.Text;
-                if (txtRating.Text != "") { dRow2[5] = txtRating.Text; }
+                if (txtRating.Text != "") { dRow2[5] = txtRating.Text; }                
                 da.Update(ds1, "Series");
-                ShowProgress();
-                labelST.Text = "Info |  Entry updated";
+                ShowProgress();               
             }
             else
             {
