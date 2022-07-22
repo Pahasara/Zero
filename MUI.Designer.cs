@@ -196,11 +196,11 @@
             // 
             // epiPB
             // 
-            this.epiPB.Location = new System.Drawing.Point(95, 174);
+            this.epiPB.Location = new System.Drawing.Point(95, 175);
             this.epiPB.Name = "epiPB";
             this.epiPB.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.epiPB.RightToLeftLayout = true;
-            this.epiPB.Size = new System.Drawing.Size(69, 10);
+            this.epiPB.Size = new System.Drawing.Size(68, 8);
             this.epiPB.TabIndex = 12;
             // 
             // btnSearch

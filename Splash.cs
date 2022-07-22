@@ -25,12 +25,26 @@ namespace Project_Zero
 
         private void TIMER_Tick(object sender, EventArgs e)
         {
-            i += 500;
-            if (i == 2000)
+            if (PGbar.Width > 200)
             {
+                PGbar.Width += 16;
+            }
+            else if (PGbar.Width >= 50)
+            {
+                PGbar.Width += 8;
+            }
+            else
+            {
+                PGbar.Width += 2;
+            }
+
+            if (PGbar.Width >= 300)
+            {
+                
                 MUI mui = new MUI(); mui.Show();
                 this.Hide();
-            }
+                TIMER.Stop();
+            } 
         }
     }
 }

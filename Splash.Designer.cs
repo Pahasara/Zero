@@ -37,6 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TIMER = new System.Windows.Forms.Timer(this.components);
+            this.PGbar = new System.Windows.Forms.Label();
             this.elipseControl1 = new ElipseToolDemo.ElipseControl();
             this.SuspendLayout();
             // 
@@ -100,7 +101,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Russo One", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(168)))));
-            this.label6.Location = new System.Drawing.Point(5, 134);
+            this.label6.Location = new System.Drawing.Point(5, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(322, 13);
             this.label6.TabIndex = 6;
@@ -108,8 +109,17 @@
             // 
             // TIMER
             // 
-            this.TIMER.Interval = 300;
+            this.TIMER.Interval = 15;
             this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
+            // 
+            // PGbar
+            // 
+            this.PGbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
+            this.PGbar.Location = new System.Drawing.Point(15, 131);
+            this.PGbar.Name = "PGbar";
+            this.PGbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.PGbar.Size = new System.Drawing.Size(0, 2);
+            this.PGbar.TabIndex = 7;
             // 
             // elipseControl1
             // 
@@ -121,7 +131,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(27)))));
-            this.ClientSize = new System.Drawing.Size(338, 151);
+            this.ClientSize = new System.Drawing.Size(338, 162);
+            this.Controls.Add(this.PGbar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -134,6 +145,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Zero";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.Splash_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -150,5 +162,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer TIMER;
         private ElipseToolDemo.ElipseControl elipseControl1;
+        private System.Windows.Forms.Label PGbar;
     }
 }

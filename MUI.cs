@@ -105,30 +105,55 @@ namespace Project_Zero
         {
             if (txtName.Text != "")
             {
-                System.Data.SqlClient.SqlCommandBuilder cb;
-                cb = new System.Data.SqlClient.SqlCommandBuilder(da);
-                System.Data.DataRow dRow2 = ds1.Tables["Series"].Rows[inc];
+                if (txtLast.Text != "") { 
+                    
+                    if (txtEpisodes.Text != "")
+                    {
+                        try
+                        {
+                            System.Data.SqlClient.SqlCommandBuilder cb;
+                            cb = new System.Data.SqlClient.SqlCommandBuilder(da);
+                            System.Data.DataRow dRow2 = ds1.Tables["Series"].Rows[inc];
 
-                if (txtLast.Text == txtEpisodes.Text)
-                {
-                    txtStatus.Checked = true;
-                    btnPlus.Enabled = false;
-                    labelST.Text = "Info |  Series Completed";
+                            if (txtLast.Text == txtEpisodes.Text)
+                            {
+                                txtStatus.Checked = true;
+                                btnPlus.Enabled = false;
+                                labelST.Text = "Info |  Series Completed";
+                            }
+                            else
+                            {
+                                txtStatus.Checked = false;
+                                btnPlus.Enabled = true;
+                                labelST.Text = "Info |  Entry updated";
+                            }
+                            dRow2[0] = txtName.Text;
+                            dRow2[1] = txtSeries.Text;
+                            dRow2[2] = txtStatus.Text;
+                            dRow2[3] = txtLast.Text;
+                            dRow2[4] = txtEpisodes.Text;
+                            if (txtRating.Text != "")
+                            {
+                                dRow2[5] = txtRating.Text;
+                            }
+                            da.Update(ds1, "Series");
+                            ShowProgress();
+                        }
+                        catch (Exception)
+                        {
+                            labelST.Text = "Error |  Cannot update";
+                        }
+                    }
+                    else 
+                    {
+                        labelST.Text = "Error |  Empty field";
+                    }
+
                 }
-                else
-                {
-                    txtStatus.Checked = false;
-                    btnPlus.Enabled = true;
-                    labelST.Text = "Info |  Entry updated";
-                }
-                dRow2[0] = txtName.Text;
-                dRow2[1] = txtSeries.Text;
-                dRow2[2] = txtStatus.Text;
-                dRow2[3] = txtLast.Text;
-                dRow2[4] = txtEpisodes.Text;
-                if (txtRating.Text != "") { dRow2[5] = txtRating.Text; }                
-                da.Update(ds1, "Series");
-                ShowProgress();               
+                else 
+                { 
+                    labelST.Text = "Error |  Empty field";
+                }                                 
             }
             else
             {
@@ -140,29 +165,51 @@ namespace Project_Zero
         {
             if (txtName.Text != "")
             {
-                System.Data.SqlClient.SqlCommandBuilder cb;
-                cb = new System.Data.SqlClient.SqlCommandBuilder(da);
-                DataRow dRow = ds1.Tables["Series"].NewRow();
-                dRow[0] = txtName.Text;
-                dRow[1] = txtSeries.Text;
-                dRow[2] = txtStatus.Text;
-                dRow[3] = txtLast.Text;
-                dRow[4] = txtEpisodes.Text;
-                if (txtRating.Text != "") { dRow[5] = txtRating.Text; }
-                ds1.Tables["Series"].Rows.Add(dRow);
-                MaxRows++;
-                if(inc>0) inc--;
-                da.Update(ds1, "Series");
-                btnUpdate.Enabled = true;
-                btnDelete.Enabled = true;
-                btnAdd.Enabled = true;
-                if (MaxRows < 2) { btnNext.Enabled = false; btnBack.Enabled = false; }
-                else { btnNext.Enabled = true; btnBack.Enabled = true; }
-                btnPlus.Enabled = true;
-                ShowProgress();
-                btnAdd.Text = "NEW";
-                btnUpdate.Text = "UPDATE";
-                labelST.Text = "Info |  New entry added";
+                if (txtLast.Text != "")
+                {
+
+                    if (txtEpisodes.Text != "")
+                    {
+                        try
+                        {
+                            System.Data.SqlClient.SqlCommandBuilder cb;
+                            cb = new System.Data.SqlClient.SqlCommandBuilder(da);
+                            DataRow dRow = ds1.Tables["Series"].NewRow();
+                            dRow[0] = txtName.Text;
+                            dRow[1] = txtSeries.Text;
+                            dRow[2] = txtStatus.Text;
+                            dRow[3] = txtLast.Text;
+                            dRow[4] = txtEpisodes.Text;
+                            if (txtRating.Text != "") { dRow[5] = txtRating.Text; }
+                            ds1.Tables["Series"].Rows.Add(dRow);
+                            MaxRows++;
+                            if (inc > 0) inc--;
+                            da.Update(ds1, "Series");
+                            btnUpdate.Enabled = true;
+                            btnDelete.Enabled = true;
+                            btnAdd.Enabled = true;
+                            if (MaxRows < 2) { btnNext.Enabled = false; btnBack.Enabled = false; }
+                            else { btnNext.Enabled = true; btnBack.Enabled = true; }
+                            btnPlus.Enabled = true;
+                            ShowProgress();
+                            btnAdd.Text = "NEW";
+                            btnUpdate.Text = "UPDATE";
+                            labelST.Text = "Info |  New entry added";
+                        }
+                        catch (Exception)
+                        {
+                            labelST.Text = "Error |  Cannot save";
+                        }
+                     }
+                    else
+                    {
+                        labelST.Text = "Error |  Empty field";
+                    }
+                }
+                else
+                {
+                    labelST.Text = "Error |  Empty field";
+                }
             }
             else
             {
