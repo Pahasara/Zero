@@ -1,4 +1,4 @@
-# Zero-TV-Show-Manager
+# Zero
 Zero effort for memorizing.
 
 ## Requirements
