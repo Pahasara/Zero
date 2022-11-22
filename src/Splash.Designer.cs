@@ -79,11 +79,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(13)))), ((int)(((byte)(4)))));
-            this.label4.Location = new System.Drawing.Point(201, 94);
+            this.label4.Location = new System.Drawing.Point(206, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 16);
+            this.label4.Size = new System.Drawing.Size(98, 16);
             this.label4.TabIndex = 5;
-            this.label4.Text = "DvNET OZYRIS";
+            this.label4.Text = "DvNET OSIRIZ";
             // 
             // label5
             // 
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(338, 162);
             this.Controls.Add(this.PGbar);
             this.Controls.Add(this.label6);

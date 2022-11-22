@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("DvNET Zero")]
 [assembly: AssemblyDescription("Zero effort for memorizing")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("DvNET OZYRIS")]
+[assembly: AssemblyCompany("DvNET OSIRIZ")]
 [assembly: AssemblyProduct("DvNET Zero")]
 [assembly: AssemblyCopyright("Copyright© 2022 Dewnith Fernando.")]
 [assembly: AssemblyTrademark("")]

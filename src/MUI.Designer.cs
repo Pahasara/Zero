@@ -339,7 +339,7 @@
             // txtStatus
             // 
             this.txtStatus.AutoSize = true;
-            this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(27)))));
             this.txtStatus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.txtStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtStatus.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -375,7 +375,7 @@
             // 
             // panelControls
             // 
-            this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(32)))));
             this.panelControls.Controls.Add(this.btnNext);
             this.panelControls.Controls.Add(this.btnAdd);
             this.panelControls.Controls.Add(this.btnUpdate);
@@ -387,7 +387,7 @@
             // 
             // panelFooter
             // 
-            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(46)))));
             this.panelFooter.Controls.Add(this.labelCP);
             this.panelFooter.Controls.Add(this.labelST);
             this.panelFooter.Location = new System.Drawing.Point(-2, 257);
@@ -403,9 +403,9 @@
             this.labelCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(13)))), ((int)(((byte)(4)))));
             this.labelCP.Location = new System.Drawing.Point(237, 7);
             this.labelCP.Name = "labelCP";
-            this.labelCP.Size = new System.Drawing.Size(88, 13);
+            this.labelCP.Size = new System.Drawing.Size(86, 13);
             this.labelCP.TabIndex = 1;
-            this.labelCP.Text = "DvNET OZYRIS";
+            this.labelCP.Text = "DvNET OSIRIZ";
             // 
             // labelST
             // 
@@ -421,10 +421,10 @@
             // 
             // btnPlus
             // 
-            this.btnPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.btnPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(32)))));
             this.btnPlus.FlatAppearance.BorderSize = 0;
             this.btnPlus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(10)))), ((int)(((byte)(3)))));
-            this.btnPlus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(24)))));
+            this.btnPlus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(27)))));
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlus.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -475,7 +475,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(32)))), ((int)(((byte)(33)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(36)))), ((int)(((byte)(32)))));
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Location = new System.Drawing.Point(232, 161);
             this.panel1.Name = "panel1";
@@ -665,7 +665,7 @@
             // 
             // label4
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(47)))), ((int)(((byte)(48)))));
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(53)))), ((int)(((byte)(49)))));
             this.label4.Location = new System.Drawing.Point(95, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 7);
@@ -693,7 +693,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(31)))), ((int)(((byte)(27)))));
             this.ClientSize = new System.Drawing.Size(337, 284);
             this.Controls.Add(this.txtEpisodesBack);
             this.Controls.Add(this.txtRatingBack);
