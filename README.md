@@ -1,5 +1,5 @@
 # Zero
-Zero effort for memorizing.
+A simple user interface to manage TV Shows, u are watching.
 
 ## Requirements
 * **[.NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer)**
