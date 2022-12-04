@@ -9,5 +9,5 @@ A simple user interface to manage TV Shows that u watching.
 * **[Russo One](https://fonts.google.com/specimen/Russo+One)**, **[Orbitron](https://fonts.google.com/specimen/Orbitron)**
 
 ## Downloads
-* **[Zero 1.0.2](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.2/bin.zip)**
 * **[Zero 1.0.1](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.1/bin.zip)**
+* **[Zero 1.0.2](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.2/bin.zip)**
