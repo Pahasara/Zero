@@ -1,5 +1,5 @@
 # Zero
-A simple user interface to manage TV Shows that u watching.
+A simple user interface to manage TV Shows that u watch.
 
 ![205362885-2e13dfbe-a0de-4d24-a3e2-bb515bf15157](https://user-images.githubusercontent.com/46932317/205364693-4e6cd64e-a2d3-4350-a4a9-864a048a334d.png)
 
