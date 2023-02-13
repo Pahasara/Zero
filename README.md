@@ -5,7 +5,7 @@ A simple user interface to manage TV Shows that u watch.
 
 ## Requirements
 * Framework **[.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer)**
-* DB Connectivity **[SQL LocalDB](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SqlLocalDB.msi)**
+* DB Connectivity **[SQL LocalDB 2019](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SqlLocalDB.msi)**
 * Fonts **[Russo One](https://fonts.google.com/specimen/Russo+One)**, **[Orbitron](https://fonts.google.com/specimen/Orbitron)**
 
 
