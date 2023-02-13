@@ -118,10 +118,25 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Zero-SD" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zero-SD.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Zero-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zero-Icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zero-SL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zero-SL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Zero_Icon_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zero-Icon_clicked.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zero_Icon_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zero-Icon_move.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Reset_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Reset_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_Reset_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_Reset_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zero_Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zero-Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

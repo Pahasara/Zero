@@ -63,9 +63,9 @@ namespace Project_Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Zero_SD {
+        internal static System.Drawing.Bitmap btn_Reset {
             get {
-                object obj = ResourceManager.GetObject("Zero-SD", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_Reset", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,59 @@ namespace Project_Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Zero_SL {
+        internal static System.Drawing.Bitmap btn_Reset_down {
             get {
-                object obj = ResourceManager.GetObject("Zero-SL", resourceCulture);
+                object obj = ResourceManager.GetObject("btn_Reset_down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btn_Reset_move {
+            get {
+                object obj = ResourceManager.GetObject("btn_Reset_move", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zero_Icon {
+            get {
+                object obj = ResourceManager.GetObject("Zero-Icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zero_Icon_clicked {
+            get {
+                object obj = ResourceManager.GetObject("Zero_Icon_clicked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zero_Icon_move {
+            get {
+                object obj = ResourceManager.GetObject("Zero_Icon_move", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Zero_Splash {
+            get {
+                object obj = ResourceManager.GetObject("Zero_Splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

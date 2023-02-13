@@ -23,7 +23,7 @@ namespace ElipseToolDemo
                int nHeightEllipse
             );
         private Control _cntrl;
-        private int _CornerRadius = 30;
+        private int _CornerRadius = 10;
 
         public Control TargetControl
         {

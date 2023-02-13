@@ -7,7 +7,7 @@
     <ProjectGuid>{22CB554F-4135-4558-90A5-BB12521FF590}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Project_Zero</RootNamespace>
-    <AssemblyName>Zero</AssemblyName>
+    <AssemblyName>bin</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,14 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icon.x.ico</ApplicationIcon>
+    <ApplicationIcon>icon.z.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -66,20 +66,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Del.cs">
+    <Compile Include="MSG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Del.Designer.cs">
-      <DependentUpon>Del.cs</DependentUpon>
+    <Compile Include="MSG.Designer.cs">
+      <DependentUpon>MSG.cs</DependentUpon>
     </Compile>
     <Compile Include="ElipseControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MUIL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MUIL.designer.cs">
-      <DependentUpon>MUIL.cs</DependentUpon>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
@@ -95,11 +94,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Del.resx">
-      <DependentUpon>Del.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MUIL.resx">
-      <DependentUpon>MUIL.cs</DependentUpon>
+    <EmbeddedResource Include="MSG.resx">
+      <DependentUpon>MSG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -109,14 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,9 +129,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>data0.mdf</DependentUpon>
     </Content>
-    <Content Include="icon.x.ico" />
-    <None Include="Resources\Zero-SL.jpg" />
-    <None Include="Resources\Zero-SD.jpg" />
+    <Content Include="icon.z.ico" />
+    <None Include="Resources\Zero-Splash.jpg" />
+    <None Include="Resources\btn_Reset_move.png" />
+    <None Include="Resources\btn_Reset_down.png" />
+    <None Include="Resources\btn_Reset.png" />
+    <None Include="Resources\Zero-Icon_move.jpg" />
+    <None Include="Resources\Zero-Icon_clicked.jpg" />
+    <None Include="Resources\Zero-Icon.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

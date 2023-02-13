@@ -47,12 +47,12 @@
             this.PGbar.Location = new System.Drawing.Point(15, 131);
             this.PGbar.Name = "PGbar";
             this.PGbar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.PGbar.Size = new System.Drawing.Size(0, 2);
+            this.PGbar.Size = new System.Drawing.Size(308, 2);
             this.PGbar.TabIndex = 7;
             // 
             // elipseControl1
             // 
-            this.elipseControl1.CornerRadius = 4;
+            this.elipseControl1.CornerRadius = 5;
             this.elipseControl1.TargetControl = this;
             // 
             // lblYear
@@ -60,7 +60,7 @@
             this.lblYear.AutoSize = true;
             this.lblYear.BackColor = System.Drawing.Color.Transparent;
             this.lblYear.Font = new System.Drawing.Font("Russo One", 8.2F);
-            this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(14)))), ((int)(((byte)(4)))));
+            this.lblYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(40)))), ((int)(((byte)(44)))));
             this.lblYear.Location = new System.Drawing.Point(75, 144);
             this.lblYear.Name = "lblYear";
             this.lblYear.Size = new System.Drawing.Size(33, 13);
@@ -72,7 +72,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.BackgroundImage = global::Project_Zero.Properties.Resources.Zero_SD;
+            this.BackgroundImage = global::Project_Zero.Properties.Resources.Zero_Splash;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(338, 162);
             this.Controls.Add(this.lblYear);
