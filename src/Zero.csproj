@@ -66,11 +66,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MSG.cs">
+    <Compile Include="Message_UI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MSG.Designer.cs">
-      <DependentUpon>MSG.cs</DependentUpon>
+    <Compile Include="Message_UI.Designer.cs">
+      <DependentUpon>Message_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="ElipseControl.cs">
       <SubType>Component</SubType>
@@ -86,22 +86,22 @@
     <Compile Include="Splash.Designer.cs">
       <DependentUpon>Splash.cs</DependentUpon>
     </Compile>
-    <Compile Include="MUID.cs">
+    <Compile Include="Main_UI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MUID.Designer.cs">
-      <DependentUpon>MUID.cs</DependentUpon>
+    <Compile Include="Main_UI.Designer.cs">
+      <DependentUpon>Main_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MSG.resx">
-      <DependentUpon>MSG.cs</DependentUpon>
+    <EmbeddedResource Include="Message_UI.resx">
+      <DependentUpon>Message_UI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MUID.resx">
-      <DependentUpon>MUID.cs</DependentUpon>
+    <EmbeddedResource Include="Main_UI.resx">
+      <DependentUpon>Main_UI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,8 +126,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="data0_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>data0.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.z.ico" />
     <None Include="Resources\Zero-Splash.jpg" />

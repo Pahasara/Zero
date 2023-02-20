@@ -35,7 +35,7 @@ namespace Project_Zero
             else if (PGbar.Width >= 300)
             {
                 PGbar.Width += 8;
-                MUID mui = new MUID();
+                Main_UI mui = new Main_UI();
                 mui.Show();
             }
             else if (PGbar.Width >= 200)
