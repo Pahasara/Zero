@@ -47,7 +47,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
-            this.txtStatus = new System.Windows.Forms.CheckBox();
+            this.cBoxStatus = new System.Windows.Forms.CheckBox();
             this.lbProgress = new System.Windows.Forms.Label();
             this.txtProgress = new System.Windows.Forms.Label();
             this.panelControls = new System.Windows.Forms.Panel();
@@ -262,7 +262,7 @@
             this.btnSearch.Location = new System.Drawing.Point(214, 13);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 13;
+            this.btnSearch.TabIndex = 6;
             this.btnSearch.Text = "SEARCH";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -280,7 +280,7 @@
             this.btnAdd.Location = new System.Drawing.Point(147, 10);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(72, 23);
-            this.btnAdd.TabIndex = 14;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "NEW";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -298,7 +298,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(231, 10);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 16;
+            this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -316,7 +316,7 @@
             this.btnDelete.Location = new System.Drawing.Point(319, 10);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(72, 23);
-            this.btnDelete.TabIndex = 17;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -335,7 +335,7 @@
             this.btnBack.Location = new System.Drawing.Point(14, 10);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 23);
-            this.btnBack.TabIndex = 18;
+            this.btnBack.TabIndex = 1;
             this.btnBack.Text = "<<";
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -353,27 +353,27 @@
             this.btnNext.Location = new System.Drawing.Point(81, 10);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(54, 23);
-            this.btnNext.TabIndex = 19;
+            this.btnNext.TabIndex = 2;
             this.btnNext.Text = ">>";
             this.btnNext.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnNext.UseVisualStyleBackColor = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
-            // txtStatus
+            // cBoxStatus
             // 
-            this.txtStatus.AutoSize = true;
-            this.txtStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
-            this.txtStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.txtStatus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.txtStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.txtStatus.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.txtStatus.Location = new System.Drawing.Point(306, 123);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(12, 11);
-            this.txtStatus.TabIndex = 20;
-            this.txtStatus.UseVisualStyleBackColor = false;
-            this.txtStatus.CheckedChanged += new System.EventHandler(this.txtStatus_CheckedChanged);
+            this.cBoxStatus.AutoSize = true;
+            this.cBoxStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.cBoxStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cBoxStatus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.cBoxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cBoxStatus.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cBoxStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.cBoxStatus.Location = new System.Drawing.Point(306, 123);
+            this.cBoxStatus.Name = "cBoxStatus";
+            this.cBoxStatus.Size = new System.Drawing.Size(12, 11);
+            this.cBoxStatus.TabIndex = 20;
+            this.cBoxStatus.UseVisualStyleBackColor = false;
+            this.cBoxStatus.CheckedChanged += new System.EventHandler(this.txtStatus_CheckedChanged);
             // 
             // lbProgress
             // 
@@ -555,7 +555,7 @@
             this.btnPlus.Location = new System.Drawing.Point(156, 82);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(21, 31);
-            this.btnPlus.TabIndex = 25;
+            this.btnPlus.TabIndex = 6;
             this.btnPlus.Text = "+";
             this.btnPlus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnPlus.UseVisualStyleBackColor = false;
@@ -780,7 +780,7 @@
             // 
             // progressOut
             // 
-            this.progressOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.progressOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.progressOut.Location = new System.Drawing.Point(91, 130);
             this.progressOut.Name = "progressOut";
             this.progressOut.Size = new System.Drawing.Size(78, 7);
@@ -810,7 +810,7 @@
             this.panel1.Controls.Add(this.txtWatchedBack);
             this.panel1.Controls.Add(this.lbProgress);
             this.panel1.Controls.Add(this.txtWatched);
-            this.panel1.Controls.Add(this.txtStatus);
+            this.panel1.Controls.Add(this.cBoxStatus);
             this.panel1.Controls.Add(this.txtNameBack);
             this.panel1.Controls.Add(this.txtProgress);
             this.panel1.Controls.Add(this.txtEpisodes);
@@ -849,8 +849,8 @@
             // 
             // progressCorner
             // 
-            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.progressCorner.Location = new System.Drawing.Point(114, 130);
+            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.progressCorner.Location = new System.Drawing.Point(111, 130);
             this.progressCorner.Name = "progressCorner";
             this.progressCorner.Size = new System.Drawing.Size(10, 7);
             this.progressCorner.TabIndex = 58;
@@ -1034,7 +1034,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnNext;
-        private System.Windows.Forms.CheckBox txtStatus;
+        private System.Windows.Forms.CheckBox cBoxStatus;
         private System.Windows.Forms.Label lbProgress;
         private System.Windows.Forms.Label txtProgress;
         private System.Windows.Forms.Panel panelControls;

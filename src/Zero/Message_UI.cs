@@ -52,7 +52,7 @@ namespace Project_Zero
             if (mode == "finish")
             {
                 text = "Are you sure want to finish the progress of this series?";
-                title = "Confirm Complete";
+                title = "Confirm Finish";
                 msgText.Text = text;
                 msgTitle.Text = title;
             }

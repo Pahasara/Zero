@@ -67,10 +67,10 @@ namespace Project_Zero
                 getRecord(dataRow);
                 setTempName();
                 setJumpingButtons();
-                setButtonShadows();
                 showProgress();
                 showInfo(maxRows + " series");
                 setWatchingStatus();
+                progressBar.Focus();
             }
             catch (Exception)
             {
@@ -162,7 +162,6 @@ namespace Project_Zero
 
                     currentRow = dataSet.Tables["Series"].Rows.IndexOf(dataRow);
                     setJumpingButtons();
-                    setButtonShadows();
                     showInfo("Search success");
                 }
                 else
@@ -171,7 +170,8 @@ namespace Project_Zero
                     txtWatched.Clear();
                     txtEpisodes.Clear();
                     txtRating.Clear();
-                    cBoxStatus.Checked = false;
+                    btnAdd.Text = "BACK";
+                    changeSituation();
                     showProgress();
                     showInfo("No matching");
                 }
@@ -356,7 +356,18 @@ namespace Project_Zero
                 disableControl(btnNext);
                 disableControl(btnBack);
                 disableControl(btnPlus);
-                hideControl(cBoxStatus);
+                disableControl(cBoxStatus);
+                hideControl(btnReset);
+                cBoxStatus.Checked = false;
+            }
+            else if (btnAdd.Text == "BACK")
+            {
+                disableControl(btnDelete);
+                disableControl(btnNext);
+                disableControl(btnBack);
+                disableControl(btnPlus);
+                disableControl(btnUpdate);
+                disableControl(cBoxStatus);
                 hideControl(btnReset);
                 cBoxStatus.Checked = false;
             }
@@ -364,10 +375,12 @@ namespace Project_Zero
             {
                 enableControl(btnSearch);
                 enableControl(btnPlus);
+                enableControl(btnUpdate);
                 enableControl(btnDelete);
-                showControl(cBoxStatus);
+                enableControl(cBoxStatus);
                 showControl(btnReset);
             }
+            setButtonShadows();
         }
 
         private void setJumpingButtons()
@@ -404,6 +417,7 @@ namespace Project_Zero
                     enableControl(btnBack);
                 }
             }
+            setButtonShadows();
         }
 
         private void setButtonShadows()
@@ -622,6 +636,11 @@ namespace Project_Zero
                 btnUpdate.Text = "SAVE";
                 showProgress();
             }
+            else if (btnAdd.Text == "BACK")
+            {
+                btnAdd.Text = "NEW";
+                navigateRecords();
+            }
             else
             {
                 enableControl(btnPlus);
@@ -631,7 +650,6 @@ namespace Project_Zero
                 navigateRecords();
             }
             changeSituation();
-            setButtonShadows();
             progressBar.Focus();
         }
 
@@ -810,6 +828,12 @@ namespace Project_Zero
             if (e.KeyCode == Keys.Enter)
             {
                 searchRecord();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                btnAdd.Text = "NEW";
+                changeSituation();
+                navigateRecords();
             }
         }
 
