@@ -82,7 +82,7 @@ namespace Project_Zero
         {
             txtName.Text = dataRow.ItemArray.GetValue(0).ToString();
             txtSeries.Text = dataRow.ItemArray.GetValue(1).ToString();
-            txtStatus.Text = dataRow.ItemArray.GetValue(2).ToString();
+            cBoxStatus.Text = dataRow.ItemArray.GetValue(2).ToString();
             txtWatched.Text = dataRow.ItemArray.GetValue(3).ToString();
             txtEpisodes.Text = dataRow.ItemArray.GetValue(4).ToString();
             txtRating.Text = dataRow.ItemArray.GetValue(5).ToString();
@@ -99,7 +99,7 @@ namespace Project_Zero
             if (watched > episodes) { watched = episodes; }
             newRow[0] = txtName.Text;
             newRow[1] = txtSeries.Text;
-            newRow[2] = txtStatus.Text;
+            newRow[2] = cBoxStatus.Text;
             newRow[3] = watched.ToString();
             newRow[4] = episodes.ToString();
             if (txtRating.Text != "") newRow[5] = txtRating.Text;
@@ -171,7 +171,7 @@ namespace Project_Zero
                     txtWatched.Clear();
                     txtEpisodes.Clear();
                     txtRating.Clear();
-                    txtStatus.Checked = false;
+                    cBoxStatus.Checked = false;
                     showProgress();
                     showInfo("No matching");
                 }
@@ -356,14 +356,16 @@ namespace Project_Zero
                 disableControl(btnNext);
                 disableControl(btnBack);
                 disableControl(btnPlus);
+                hideControl(cBoxStatus);
                 hideControl(btnReset);
-                txtStatus.Checked = false;
+                cBoxStatus.Checked = false;
             }
             else
             {
                 enableControl(btnSearch);
                 enableControl(btnPlus);
                 enableControl(btnDelete);
+                showControl(cBoxStatus);
                 showControl(btnReset);
             }
         }
@@ -509,7 +511,7 @@ namespace Project_Zero
 
         private void completeSeries()
         {
-            txtStatus.Text = "Completed";
+            cBoxStatus.Text = "Completed";
             updateRecord();
         }
 
@@ -521,21 +523,21 @@ namespace Project_Zero
 
             if (watched == episodes)
             {
-                txtStatus.Text = "Completed";
+                cBoxStatus.Text = "Completed";
                 showInfo("Series finished");
             }
             else
             {
-                txtStatus.Text = "Watching";
+                cBoxStatus.Text = "Watching";
             }
-            if (txtStatus.Text == "Completed")
+            if (cBoxStatus.Text == "Completed")
             {
-                txtStatus.Checked = true;
+                cBoxStatus.Checked = true;
                 disableControl(btnPlus);
             }
             else
             {
-                txtStatus.Checked = false;
+                cBoxStatus.Checked = false;
                 enableControl(btnPlus);
             }
         }
@@ -550,9 +552,9 @@ namespace Project_Zero
         private void seriesEnded()
         {
             txtWatched.Text = txtEpisodes.Text;
-            if (txtStatus.Text != "Completed")
+            if (cBoxStatus.Text != "Completed")
             {
-                txtStatus.Checked = false;
+                cBoxStatus.Checked = false;
                 showMessage("finish");
             }
             else
@@ -635,14 +637,14 @@ namespace Project_Zero
 
         private void txtStatus_CheckedChanged(object sender, EventArgs e)
         {
-            if(txtStatus.Checked)
+            if(cBoxStatus.Checked)
             {
                 seriesEnded();
                 
             }
             else
             {
-                txtStatus.Text = "Watching";          
+                cBoxStatus.Text = "Watching";          
             }
         }
 
