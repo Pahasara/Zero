@@ -81,7 +81,7 @@
             // 
             // progressCorner
             // 
-            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(0)))));
+            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
             this.progressCorner.Location = new System.Drawing.Point(108, 129);
             this.progressCorner.Name = "progressCorner";
             this.progressCorner.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

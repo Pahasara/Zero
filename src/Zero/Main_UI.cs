@@ -31,6 +31,7 @@ namespace Project_Zero
 
         private void Main_UI_Load(object sender, EventArgs e)
         {
+            hideRating();
             setProgressBar();
             setToolTips();
             createConnection();
@@ -317,6 +318,7 @@ namespace Project_Zero
             tool_tip.SetToolTip(starName, "*Required");
             tool_tip.SetToolTip(starWatched, "*Required");
             tool_tip.SetToolTip(starEpisodes, "*Required");
+            tool_tip.SetToolTip(cBoxStatus, "Status");
 
         }
 
@@ -345,6 +347,15 @@ namespace Project_Zero
                 showInfo("Empty name", "Error");
             }
             return false;
+        }
+
+        private void hideRating()
+        {
+            hideControl(lbRating);
+            hideControl(txtRatingBack);
+            hideControl(txtRating);
+            hideControl(txtRatingOut);
+            hideControl(txtRatingShadow);
         }
 
         private void changeSituation()
@@ -718,6 +729,33 @@ namespace Project_Zero
             txtSeries.ForeColor = Color.FromArgb(255, 180, 180);
         }
 
+        
+
+        private void txtName_Click(object sender, EventArgs e)
+        {
+            if (tempName == txtName.Text)
+            {
+                txtName.Clear();
+            }
+        }
+
+        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                searchRecord();
+            }
+            else if (e.KeyCode == Keys.Back)
+            {
+                if (btnAdd.Text == "BACK")
+                {
+                    btnAdd.Text = "NEW";
+                    changeSituation();
+                    navigateRecords();
+                }
+            }
+        }
+
         private void txtName_Enter(object sender, EventArgs e)
         {
             showControl(txtNameBack);
@@ -813,28 +851,6 @@ namespace Project_Zero
         private void MUID_Deactivate(object sender, EventArgs e)
         {
             progressBar.Focus();
-        }
-
-        private void txtName_Click(object sender, EventArgs e)
-        {
-            if (tempName == txtName.Text)
-            {
-                txtName.Clear();
-            }
-        }
-
-        private void txtName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                searchRecord();
-            }
-            else if (e.KeyCode == Keys.Back)
-            {
-                btnAdd.Text = "NEW";
-                changeSituation();
-                navigateRecords();
-            }
         }
 
         private void txtRating_KeyPress(object sender, KeyPressEventArgs e)
