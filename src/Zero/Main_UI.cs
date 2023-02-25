@@ -385,6 +385,7 @@ namespace Project_Zero
             else
             {
                 enableControl(btnSearch);
+                enableControl(btnAdd);
                 enableControl(btnPlus);
                 enableControl(btnUpdate);
                 enableControl(btnDelete);
