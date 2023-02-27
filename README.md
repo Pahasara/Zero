@@ -1,7 +1,7 @@
 # Zero
 A simple UI to manage TV shows that u r watching.
 
-![Untitled](https://user-images.githubusercontent.com/46932317/221478178-4aae9ada-ed23-47ca-8cd8-2fc177acf32e.png)
+![Untitled](https://user-images.githubusercontent.com/46932317/221478875-64e1d374-bf9e-4fe3-8056-e93fdbd22dbf.png)
 
 ## Requirements
 * Framework **[.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer)**
