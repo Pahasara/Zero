@@ -125,6 +125,9 @@
       <DependentUpon>data.mdf</DependentUpon>
     </Content>
     <Content Include="icon.ico" />
+    <None Include="Resources\btnStar_move.png" />
+    <None Include="Resources\btnStar_down.png" />
+    <None Include="Resources\btnStar.png" />
     <None Include="Resources\Zero-Splash.jpg" />
     <None Include="Resources\btn_Reset_move.png" />
     <None Include="Resources\btn_Reset_down.png" />

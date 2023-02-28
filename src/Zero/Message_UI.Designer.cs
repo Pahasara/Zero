@@ -37,21 +37,22 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnYesShadow = new System.Windows.Forms.Button();
             this.btnNoShadow = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelTitle.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(4)))), ((int)(((byte)(1)))));
-            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(1)))), ((int)(((byte)(0)))));
-            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(4)))), ((int)(((byte)(1)))));
+            this.btnCancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(4)))), ((int)(((byte)(2)))));
+            this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(18)))), ((int)(((byte)(4)))));
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnCancel.Location = new System.Drawing.Point(120, 53);
+            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnCancel.Location = new System.Drawing.Point(119, 52);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(64, 23);
             this.btnCancel.TabIndex = 21;
@@ -63,15 +64,15 @@
             // 
             // btnYes
             // 
-            this.btnYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnYes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.btnYes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(4)))), ((int)(((byte)(1)))));
-            this.btnYes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(10)))), ((int)(((byte)(2)))));
+            this.btnYes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(10)))), ((int)(((byte)(2)))));
             this.btnYes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(18)))), ((int)(((byte)(4)))));
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYes.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.btnYes.Location = new System.Drawing.Point(45, 53);
+            this.btnYes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.btnYes.Location = new System.Drawing.Point(44, 52);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(64, 23);
             this.btnYes.TabIndex = 20;
@@ -85,7 +86,7 @@
             // 
             this.msgText.BackColor = System.Drawing.Color.Transparent;
             this.msgText.Font = new System.Drawing.Font("Russo One", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.msgText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
             this.msgText.Location = new System.Drawing.Point(12, 11);
             this.msgText.Name = "msgText";
             this.msgText.Size = new System.Drawing.Size(209, 35);
@@ -106,7 +107,7 @@
             // 
             this.msgTitle.BackColor = System.Drawing.Color.Transparent;
             this.msgTitle.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.msgTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.msgTitle.Location = new System.Drawing.Point(3, 6);
             this.msgTitle.Name = "msgTitle";
             this.msgTitle.Size = new System.Drawing.Size(225, 16);
@@ -117,6 +118,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.msgText);
             this.panel1.Controls.Add(this.btnYes);
             this.panel1.Controls.Add(this.btnCancel);
@@ -163,11 +165,19 @@
             this.btnNoShadow.UseVisualStyleBackColor = false;
             this.btnNoShadow.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(-10, -11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(260, 12);
+            this.label1.TabIndex = 25;
+            // 
             // Message_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(134)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
             this.ClientSize = new System.Drawing.Size(233, 118);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
@@ -195,5 +205,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnYesShadow;
         private System.Windows.Forms.Button btnNoShadow;
+        private System.Windows.Forms.Label label1;
     }
 }

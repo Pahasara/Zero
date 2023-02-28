@@ -93,6 +93,26 @@ namespace Project_Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnStar {
+            get {
+                object obj = ResourceManager.GetObject("btnStar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnStar_default {
+            get {
+                object obj = ResourceManager.GetObject("btnStar_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Zero_Icon {
             get {
                 object obj = ResourceManager.GetObject("Zero-Icon", resourceCulture);

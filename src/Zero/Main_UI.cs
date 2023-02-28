@@ -26,12 +26,11 @@ namespace Project_Zero
 
         int maxRows = 0, currentRow = 0, progressBarValue, progressBarMaxLength, progressForwardCount; 
         
-        bool isProgressReset = false;
+        bool isProgressReset = false; int rating, delayTime;
 
 
         private void Main_UI_Load(object sender, EventArgs e)
         {
-            hideRating();
             setProgressBar();
             setToolTips();
             createConnection();
@@ -71,6 +70,7 @@ namespace Project_Zero
                 showProgress();
                 showInfo(maxRows + " series");
                 setWatchingStatus();
+                setRating();
                 progressBar.Focus();
             }
             catch (Exception)
@@ -86,8 +86,7 @@ namespace Project_Zero
             cBoxStatus.Text = dataRow.ItemArray.GetValue(2).ToString();
             txtWatched.Text = dataRow.ItemArray.GetValue(3).ToString();
             txtEpisodes.Text = dataRow.ItemArray.GetValue(4).ToString();
-            txtRating.Text = dataRow.ItemArray.GetValue(5).ToString();
-            if (txtRating.Text == "0") txtRating.Text = "";
+            int.TryParse(dataRow.ItemArray.GetValue(5).ToString(), out rating);
         }
 
         private void setRecord(DataRow newRow)
@@ -103,19 +102,27 @@ namespace Project_Zero
             newRow[2] = cBoxStatus.Text;
             newRow[3] = watched.ToString();
             newRow[4] = episodes.ToString();
-            if (txtRating.Text != "") newRow[5] = txtRating.Text;
+            newRow[5] = rating.ToString();
         }
 
-        private void updateRecord()
+        private void updateRecord(bool isRatingUpdate = false)
         {
+            
             DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
 
             setWatchingStatus();
             setRecord(dataRow);
             dataAdapter.Update(dataSet, "Series");
 
-            navigateRecords();
-            showInfo("Series updated");
+            if (!isRatingUpdate) 
+            { 
+                navigateRecords();
+                showInfo("Series updated");
+            }
+            else
+            {
+                setRating();
+            }
         }
 
         private void insertRecord()
@@ -126,7 +133,7 @@ namespace Project_Zero
             dataSet.Tables["Series"].Rows.Add(newRow);
             dataAdapter.Update(dataSet, "Series");
 
-            btnAdd.Text = "NEW";
+            btnNew.Text = "NEW";
             btnUpdate.Text = "UPDATE";
             changeSituation();
 
@@ -170,8 +177,8 @@ namespace Project_Zero
                     txtSeries.Clear();
                     txtWatched.Clear();
                     txtEpisodes.Clear();
-                    txtRating.Clear();
-                    btnAdd.Text = "BACK";
+                    resetRating();
+                    btnNew.Text = "BACK";
                     changeSituation();
                     showProgress();
                     showInfo("No matching");
@@ -252,6 +259,63 @@ namespace Project_Zero
             navigateRecords();
         }
 
+        private void setRating()
+        {
+            PictureBox[] star = new PictureBox[5];
+            star[0] = star1;
+            star[1] = star2;
+            star[2] = star3;
+            star[3] = star4;
+            star[4] = star5;
+
+            try
+            {
+                for (int i = 0; i < rating; i++)
+                {
+                    star[i].Image = Project_Zero.Properties.Resources.btnStar;
+                }
+
+                for (int i = 4; i >= rating; i--)
+                {
+                    star[i].Image = Project_Zero.Properties.Resources.btnStar_default;
+                }
+            }
+		catch (Exception)
+            {
+                resetRating();
+                updateRating();
+            }
+        }
+
+        private void disableRating()
+        {
+            disableControl(star1);
+            disableControl(star2);
+            disableControl(star3);
+            disableControl(star4);
+            disableControl(star5);
+        }
+
+        private void enableRating()
+        {
+            enableControl(star1);
+            enableControl(star2);
+            enableControl(star3);
+            enableControl(star4);
+            enableControl(star5);
+        }
+
+        private void updateRating()
+        {
+            updateRecord(true);
+        }
+
+        private void resetRating()
+        {
+            rating = 0;
+            setRating();
+        }
+
         private void showMessage(string mode)
         {
             Message_UI msgForm = new Message_UI();
@@ -273,14 +337,14 @@ namespace Project_Zero
         {
             txtName.Clear();
             txtSeries.Clear();
-            txtRating.Clear();
+            resetRating();
 
             txtWatched.Text = "0";
             txtEpisodes.Text = "12";
-            btnAdd.Text = "CANCEL";
+            btnNew.Text = "CANCEL";
             btnUpdate.Text = "SAVE";
 
-            disableControl(btnAdd);
+            disableControl(btnNew);
             changeSituation();
 
             showProgress();
@@ -306,19 +370,21 @@ namespace Project_Zero
 
         private void setToolTips()
         {
+            string starMark = "*required";
+
             tool_tip.OwnerDraw = true;
             tool_tip.BackColor = Color.FromArgb(28, 28, 28);
             tool_tip.ForeColor = Color.FromArgb(255, 45, 45);
 
-            tool_tip.SetToolTip(btnReset, "Reset Progress");
-            tool_tip.SetToolTip(btnSearch, "Search Series");
+            tool_tip.SetToolTip(btnReset, "Reset progress");
+            tool_tip.SetToolTip(btnSearch, "Search series");
             tool_tip.SetToolTip(btnPlus, "Progress +1");
-            tool_tip.SetToolTip(btnNext, "Next Series");
-            tool_tip.SetToolTip(btnBack, "Previous Series");
-            tool_tip.SetToolTip(starName, "*Required");
-            tool_tip.SetToolTip(starWatched, "*Required");
-            tool_tip.SetToolTip(starEpisodes, "*Required");
-            tool_tip.SetToolTip(cBoxStatus, "Status");
+            tool_tip.SetToolTip(btnNext, "Next series");
+            tool_tip.SetToolTip(btnBack, "Previous series");
+            tool_tip.SetToolTip(starName, starMark);
+            tool_tip.SetToolTip(starWatched, starMark);
+            tool_tip.SetToolTip(starEpisodes, starMark);
+            tool_tip.SetToolTip(cBoxStatus, "Series status");
 
         }
 
@@ -349,15 +415,6 @@ namespace Project_Zero
             return false;
         }
 
-        private void hideRating()
-        {
-            hideControl(lbRating);
-            hideControl(txtRatingBack);
-            hideControl(txtRating);
-            hideControl(txtRatingOut);
-            hideControl(txtRatingShadow);
-        }
-
         private void changeSituation()
         {
             if (btnUpdate.Text == "SAVE")
@@ -369,9 +426,10 @@ namespace Project_Zero
                 disableControl(btnPlus);
                 disableControl(cBoxStatus);
                 hideControl(btnReset);
+                disableRating();
                 cBoxStatus.Checked = false;
             }
-            else if (btnAdd.Text == "BACK")
+            else if (btnNew.Text == "BACK")
             {
                 disableControl(btnDelete);
                 disableControl(btnNext);
@@ -380,17 +438,19 @@ namespace Project_Zero
                 disableControl(btnUpdate);
                 disableControl(cBoxStatus);
                 hideControl(btnReset);
+                disableRating();
                 cBoxStatus.Checked = false;
             }
             else
             {
                 enableControl(btnSearch);
-                enableControl(btnAdd);
+                enableControl(btnNew);
                 enableControl(btnPlus);
                 enableControl(btnUpdate);
                 enableControl(btnDelete);
                 enableControl(cBoxStatus);
                 showControl(btnReset);
+                enableRating();
             }
             setButtonShadows();
         }
@@ -452,7 +512,7 @@ namespace Project_Zero
                 hideControl(btnBackShadow);
             }
 
-            if (btnAdd.Enabled)
+            if (btnNew.Enabled)
             {
                 showControl(btnAddShadow);
             }
@@ -537,6 +597,7 @@ namespace Project_Zero
 
         private void completeSeries()
         {
+            txtWatched.Text = txtEpisodes.Text;
             cBoxStatus.Text = "Completed";
             updateRecord();
         }
@@ -577,7 +638,7 @@ namespace Project_Zero
 
         private void seriesEnded()
         {
-            txtWatched.Text = txtEpisodes.Text;
+            
             if (cBoxStatus.Text != "Completed")
             {
                 cBoxStatus.Checked = false;
@@ -585,6 +646,7 @@ namespace Project_Zero
             }
             else
             {
+                //txtWatched.Text = txtEpisodes.Text;
                 setWatchingStatus();
                 showInfo("Series finished");
             }
@@ -634,30 +696,30 @@ namespace Project_Zero
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(btnAdd.Text == "NEW")
+            if(btnNew.Text == "NEW")
             {
                 resetProgressBar();
                 showInfo("Adding series");
                 txtName.Clear();
                 txtSeries.Clear();
-                txtRating.Clear();
+                resetRating();
                 setTempName();
                 txtWatched.Text = "0";
                 txtEpisodes.Text = "12";
-                btnAdd.Text = "CANCEL";
+                btnNew.Text = "CANCEL";
                 btnUpdate.Text = "SAVE";
                 showProgress();
             }
-            else if (btnAdd.Text == "BACK")
+            else if (btnNew.Text == "BACK")
             {
-                btnAdd.Text = "NEW";
+                btnNew.Text = "NEW";
                 navigateRecords();
             }
             else
             {
                 enableControl(btnPlus);
                 setJumpingButtons();
-                btnAdd.Text = "NEW";
+                btnNew.Text = "NEW";
                 btnUpdate.Text = "UPDATE";
                 navigateRecords();
             }
@@ -707,30 +769,11 @@ namespace Project_Zero
             showMessage("delete");
         }
 
-        private void btnPlus_Click(object sender, EventArgs e)
-        {
-            progressForward();
-        }
-
         protected override void OnHandleCreated(EventArgs e)
         {
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
                 DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
         }
-
-        private void txtSeries_Enter(object sender, EventArgs e)
-        {
-            showControl(txtSeriesBack);
-            txtSeries.ForeColor = Color.FromArgb(255, 200, 200);
-        }
-
-        private void txtSeries_Leave(object sender, EventArgs e)
-        {
-            hideControl(txtSeriesBack);
-            txtSeries.ForeColor = Color.FromArgb(255, 180, 180);
-        }
-
-        
 
         private void txtName_Click(object sender, EventArgs e)
         {
@@ -748,9 +791,9 @@ namespace Project_Zero
             }
             else if (e.KeyCode == Keys.Back)
             {
-                if (btnAdd.Text == "BACK")
+                if (btnNew.Text == "BACK")
                 {
-                    btnAdd.Text = "NEW";
+                    btnNew.Text = "NEW";
                     changeSituation();
                     navigateRecords();
                 }
@@ -760,7 +803,7 @@ namespace Project_Zero
         private void txtName_Enter(object sender, EventArgs e)
         {
             showControl(txtNameBack);
-            txtName.ForeColor = Color.FromArgb(255, 200, 200);
+            txtName.ForeColor = Color.FromArgb(255, 230, 230);
         }
 
         private void txtName_Leave(object sender, EventArgs e)
@@ -774,53 +817,58 @@ namespace Project_Zero
                 setTempName();
             }
             hideControl(txtNameBack);
-            txtName.ForeColor = Color.FromArgb(255, 180, 180);
-        }
-
-        private void txtRating_Enter(object sender, EventArgs e)
-        {
-            showControl(txtRatingBack);
-            txtRating.ForeColor = Color.FromArgb(255, 200, 200);
-        }
-
-        private void txtRating_Leave(object sender, EventArgs e)
-        {
-            hideControl(txtRatingBack);
-            txtRating.ForeColor = Color.FromArgb(255, 180, 180);
+            txtName.ForeColor = Color.FromArgb(255, 210, 210);
         }
 
         private void txtWatched_Enter(object sender, EventArgs e)
         {
             showControl(txtWatchedBack);
-            txtWatched.ForeColor = Color.FromArgb(255, 200, 200);
+            txtWatched.ForeColor = Color.FromArgb(255, 230, 230);
         }
 
         private void txtWatched_Leave(object sender, EventArgs e)
         {
             hideControl(txtWatchedBack);
-            txtWatched.ForeColor = Color.FromArgb(255, 180, 180);
+            txtWatched.ForeColor = Color.FromArgb(255, 210, 210);
         }
 
         private void txtEpisodes_Enter(object sender, EventArgs e)
         {
             showControl(txtEpisodesBack);
-            txtEpisodes.ForeColor = Color.FromArgb(255, 200, 200);
+            txtEpisodes.ForeColor = Color.FromArgb(255, 230, 230);
         }
 
         private void txtEpisodes_Leave(object sender, EventArgs e)
         {
             hideControl(txtEpisodesBack);
-            txtEpisodes.ForeColor = Color.FromArgb(255, 180, 180);
+            txtEpisodes.ForeColor = Color.FromArgb(255, 210, 210);
         }
-        
+
+        private void txtSeries_Enter(object sender, EventArgs e)
+        {
+            showControl(txtSeriesBack);
+            txtSeries.ForeColor = Color.FromArgb(255, 230, 230);
+        }
+
+        private void txtSeries_Leave(object sender, EventArgs e)
+        {
+            hideControl(txtSeriesBack);
+            txtSeries.ForeColor = Color.FromArgb(255, 210, 210);
+        }
+
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
         {
             btnPlus.ForeColor = Color.FromArgb(100, 0, 0);
         }
 
+        private void btnPlus_Click(object sender, EventArgs e)
+        {
+            progressForward();
+        }
+        
         private void btnPlus_MouseMove(object sender, MouseEventArgs e)
         {
-            btnPlus.ForeColor = Color.FromArgb(240, 37, 40);
+            btnPlus.ForeColor = Color.FromArgb(255, 37, 40);
         }
 
         private void btnPlus_MouseLeave(object sender, EventArgs e)
@@ -841,6 +889,36 @@ namespace Project_Zero
         private void btnReset_MouseDown(object sender, MouseEventArgs e)
         {
             btnReset.Image = Project_Zero.Properties.Resources.btn_Reset_down;
+        }
+
+        private void star1_Click(object sender, EventArgs e)
+        {
+            rating = 1;
+            updateRating();
+        }
+
+        private void star2_Click(object sender, EventArgs e)
+        {
+            rating = 2;
+            updateRating();
+        }
+
+        private void star3_Click(object sender, EventArgs e)
+        {
+            rating = 3;
+            updateRating();
+        }
+
+        private void star4_Click(object sender, EventArgs e)
+        {
+            rating = 4;
+            updateRating();
+        }
+
+        private void star5_Click(object sender, EventArgs e)
+        {
+            rating = 5;
+            updateRating();
         }
 
         private void MUI_FormClosing(object sender, FormClosingEventArgs e)

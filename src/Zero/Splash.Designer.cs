@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
-            this.TIMER = new System.Windows.Forms.Timer(this.components);
+            this.timerProgress = new System.Windows.Forms.Timer(this.components);
             this.progressBar = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.panelBackground = new System.Windows.Forms.Panel();
@@ -39,10 +39,10 @@
             this.panelBackground.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TIMER
+            // timerProgress
             // 
-            this.TIMER.Interval = 10;
-            this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
+            this.timerProgress.Interval = 10;
+            this.timerProgress.Tick += new System.EventHandler(this.timerProgress_Tick);
             // 
             // progressBar
             // 
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(28)))), ((int)(((byte)(20)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(340, 164);
             this.Controls.Add(this.panelBackground);
@@ -120,7 +120,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer TIMER;
+        private System.Windows.Forms.Timer timerProgress;
         private System.Windows.Forms.Label progressBar;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Panel panelBackground;

@@ -31,14 +31,14 @@ namespace Project_Zero
                 msgTitle.Text = title;
                 btnCancel.Focus();
             }
-            if (mode == "reset")
+            else if (mode == "reset")
             {
                 text = "Are you sure want to reset the progress of this series?";
                 title = "Confirm Reset";
                 msgText.Text = text;
                 msgTitle.Text = title;
             }
-            if (mode == "dbLost")
+            else if(mode == "dbLost")
             {
                 btnYes.Location = new Point(80, 53);
                 btnYesShadow.Location = new Point(83, 56);
@@ -49,10 +49,21 @@ namespace Project_Zero
                 msgText.Text = text;
                 msgTitle.Text = title;
             }
-            if (mode == "finish")
+            else if(mode == "finish")
             {
                 text = "Are you sure want to finish the progress of this series?";
                 title = "Confirm Finish";
+                msgText.Text = text;
+                msgTitle.Text = title;
+            }
+            else
+            {
+                btnYes.Location = new Point(80, 53);
+                btnYesShadow.Location = new Point(83, 56);
+                text = mode;
+                title = "Error Occured";
+                btnYes.Text = "OK";
+                btnCancel.Visible = false;
                 msgText.Text = text;
                 msgTitle.Text = title;
             }

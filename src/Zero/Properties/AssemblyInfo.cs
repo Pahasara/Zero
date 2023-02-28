@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Zero")]
-[assembly: AssemblyDescription("Zero effort for memorizing")]
+[assembly: AssemblyDescription("A smart ui to manage ur tv shows")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DvNET Systems, Inc.")]
 [assembly: AssemblyProduct("DvNET Zero")]

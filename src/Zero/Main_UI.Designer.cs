@@ -37,10 +37,8 @@
             this.lbWatched = new System.Windows.Forms.Label();
             this.txtEpisodes = new System.Windows.Forms.TextBox();
             this.lbNOEP = new System.Windows.Forms.Label();
-            this.txtRating = new System.Windows.Forms.TextBox();
-            this.lbRating = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnNew = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
@@ -66,15 +64,18 @@
             this.progressTimer = new System.Windows.Forms.Timer(this.components);
             this.txtSeriesBack = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtRatingOut = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.txtWatchedBack = new System.Windows.Forms.TextBox();
-            this.txtRatingBack = new System.Windows.Forms.TextBox();
             this.txtEpisodesBack = new System.Windows.Forms.TextBox();
             this.progressOut = new System.Windows.Forms.Label();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panelData = new System.Windows.Forms.Panel();
+            this.star5 = new System.Windows.Forms.PictureBox();
+            this.star4 = new System.Windows.Forms.PictureBox();
+            this.star3 = new System.Windows.Forms.PictureBox();
+            this.star2 = new System.Windows.Forms.PictureBox();
+            this.star1 = new System.Windows.Forms.PictureBox();
             this.txtNameBack = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -82,17 +83,22 @@
             this.progressCorner = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.PictureBox();
             this.txtSeriesShadow = new System.Windows.Forms.TextBox();
-            this.txtRatingShadow = new System.Windows.Forms.TextBox();
             this.txtWatchedShadow = new System.Windows.Forms.TextBox();
             this.txtEpisodesShadow = new System.Windows.Forms.TextBox();
             this.btnSearchShadow = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
+            this.timerDelay = new System.Windows.Forms.Timer(this.components);
             this.panelControls.SuspendLayout();
             this.panelStatus.SuspendLayout();
             this.panelForm.SuspendLayout();
             this.panelData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.star5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +106,7 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lbName.Location = new System.Drawing.Point(11, 16);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(49, 16);
@@ -112,7 +118,7 @@
             this.txtSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtSeries.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSeries.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.txtSeries.Location = new System.Drawing.Point(82, 54);
             this.txtSeries.MaxLength = 50;
             this.txtSeries.Multiline = true;
@@ -126,7 +132,7 @@
             // 
             this.lbSeries.AutoSize = true;
             this.lbSeries.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lbSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lbSeries.Location = new System.Drawing.Point(11, 54);
             this.lbSeries.Name = "lbSeries";
             this.lbSeries.Size = new System.Drawing.Size(55, 16);
@@ -138,12 +144,11 @@
             this.txtWatched.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtWatched.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWatched.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.txtWatched.Location = new System.Drawing.Point(97, 96);
             this.txtWatched.MaxLength = 4;
             this.txtWatched.Multiline = true;
             this.txtWatched.Name = "txtWatched";
-            this.txtWatched.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtWatched.Size = new System.Drawing.Size(45, 17);
             this.txtWatched.TabIndex = 7;
             this.txtWatched.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -155,7 +160,7 @@
             // 
             this.lbWatched.AutoSize = true;
             this.lbWatched.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lbWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lbWatched.Location = new System.Drawing.Point(11, 96);
             this.lbWatched.Name = "lbWatched";
             this.lbWatched.Size = new System.Drawing.Size(72, 16);
@@ -167,7 +172,7 @@
             this.txtEpisodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtEpisodes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpisodes.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.txtEpisodes.Location = new System.Drawing.Point(302, 96);
             this.txtEpisodes.MaxLength = 4;
             this.txtEpisodes.Multiline = true;
@@ -184,41 +189,12 @@
             // 
             this.lbNOEP.AutoSize = true;
             this.lbNOEP.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNOEP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.lbNOEP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lbNOEP.Location = new System.Drawing.Point(214, 96);
             this.lbNOEP.Name = "lbNOEP";
             this.lbNOEP.Size = new System.Drawing.Size(74, 16);
             this.lbNOEP.TabIndex = 8;
             this.lbNOEP.Text = "Episodes";
-            // 
-            // txtRating
-            // 
-            this.txtRating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.txtRating.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRating.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.txtRating.Location = new System.Drawing.Point(369, 17);
-            this.txtRating.MaxLength = 3;
-            this.txtRating.Multiline = true;
-            this.txtRating.Name = "txtRating";
-            this.txtRating.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtRating.Size = new System.Drawing.Size(29, 17);
-            this.txtRating.TabIndex = 11;
-            this.txtRating.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtRating.Enter += new System.EventHandler(this.txtRating_Enter);
-            this.txtRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRating_KeyPress);
-            this.txtRating.Leave += new System.EventHandler(this.txtRating_Leave);
-            // 
-            // lbRating
-            // 
-            this.lbRating.AutoSize = true;
-            this.lbRating.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRating.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lbRating.Location = new System.Drawing.Point(344, 16);
-            this.lbRating.Name = "lbRating";
-            this.lbRating.Size = new System.Drawing.Size(54, 16);
-            this.lbRating.TabIndex = 10;
-            this.lbRating.Text = "Rating";
             // 
             // btnSearch
             // 
@@ -229,8 +205,8 @@
             this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnSearch.Location = new System.Drawing.Point(242, 11);
+            this.btnSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnSearch.Location = new System.Drawing.Point(227, 11);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 6;
@@ -238,23 +214,23 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnAdd
+            // btnNew
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(4)))), ((int)(((byte)(1)))));
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(1)))), ((int)(((byte)(0)))));
-            this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnAdd.Location = new System.Drawing.Point(148, 11);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(72, 23);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "NEW";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.btnNew.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNew.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(4)))), ((int)(((byte)(1)))));
+            this.btnNew.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(1)))), ((int)(((byte)(0)))));
+            this.btnNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
+            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNew.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNew.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnNew.Location = new System.Drawing.Point(155, 11);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(72, 23);
+            this.btnNew.TabIndex = 3;
+            this.btnNew.Text = "NEW";
+            this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -265,8 +241,8 @@
             this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnUpdate.Location = new System.Drawing.Point(232, 11);
+            this.btnUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnUpdate.Location = new System.Drawing.Point(241, 11);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 4;
@@ -283,8 +259,8 @@
             this.btnDelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(18)))), ((int)(((byte)(4)))));
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnDelete.Location = new System.Drawing.Point(319, 11);
+            this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnDelete.Location = new System.Drawing.Point(330, 11);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(72, 23);
             this.btnDelete.TabIndex = 5;
@@ -302,8 +278,8 @@
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnBack.Location = new System.Drawing.Point(14, 11);
+            this.btnBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnBack.Location = new System.Drawing.Point(17, 11);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 23);
             this.btnBack.TabIndex = 1;
@@ -320,8 +296,8 @@
             this.btnNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(3)))), ((int)(((byte)(1)))));
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnNext.Location = new System.Drawing.Point(82, 11);
+            this.btnNext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btnNext.Location = new System.Drawing.Point(87, 11);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(54, 23);
             this.btnNext.TabIndex = 2;
@@ -339,7 +315,7 @@
             this.cBoxStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cBoxStatus.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cBoxStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.cBoxStatus.Location = new System.Drawing.Point(242, 132);
+            this.cBoxStatus.Location = new System.Drawing.Point(262, 132);
             this.cBoxStatus.Name = "cBoxStatus";
             this.cBoxStatus.Size = new System.Drawing.Size(85, 20);
             this.cBoxStatus.TabIndex = 20;
@@ -351,8 +327,8 @@
             // 
             this.lbProgress.AutoSize = true;
             this.lbProgress.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.lbProgress.Location = new System.Drawing.Point(11, 133);
+            this.lbProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lbProgress.Location = new System.Drawing.Point(10, 133);
             this.lbProgress.Name = "lbProgress";
             this.lbProgress.Size = new System.Drawing.Size(76, 16);
             this.lbProgress.TabIndex = 21;
@@ -362,19 +338,21 @@
             // 
             this.txtProgress.AutoSize = true;
             this.txtProgress.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.txtProgress.Location = new System.Drawing.Point(182, 133);
+            this.txtProgress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.txtProgress.Location = new System.Drawing.Point(195, 133);
             this.txtProgress.Name = "txtProgress";
+            this.txtProgress.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtProgress.Size = new System.Drawing.Size(31, 16);
             this.txtProgress.TabIndex = 22;
             this.txtProgress.Text = "0%";
+            this.txtProgress.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // panelControls
             // 
             this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.panelControls.Controls.Add(this.btnDelete);
             this.panelControls.Controls.Add(this.btnNext);
-            this.panelControls.Controls.Add(this.btnAdd);
+            this.panelControls.Controls.Add(this.btnNew);
             this.panelControls.Controls.Add(this.btnUpdate);
             this.panelControls.Controls.Add(this.btnBack);
             this.panelControls.Controls.Add(this.btnDeleteShadow);
@@ -384,7 +362,7 @@
             this.panelControls.Controls.Add(this.btnBackShadow);
             this.panelControls.Location = new System.Drawing.Point(15, 178);
             this.panelControls.Name = "panelControls";
-            this.panelControls.Size = new System.Drawing.Size(405, 45);
+            this.panelControls.Size = new System.Drawing.Size(421, 45);
             this.panelControls.TabIndex = 23;
             // 
             // btnDeleteShadow
@@ -398,7 +376,7 @@
             this.btnDeleteShadow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnDeleteShadow.Location = new System.Drawing.Point(322, 14);
+            this.btnDeleteShadow.Location = new System.Drawing.Point(333, 14);
             this.btnDeleteShadow.Name = "btnDeleteShadow";
             this.btnDeleteShadow.Size = new System.Drawing.Size(72, 23);
             this.btnDeleteShadow.TabIndex = 22;
@@ -416,7 +394,7 @@
             this.btnNextShadow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNextShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNextShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnNextShadow.Location = new System.Drawing.Point(85, 14);
+            this.btnNextShadow.Location = new System.Drawing.Point(90, 14);
             this.btnNextShadow.Name = "btnNextShadow";
             this.btnNextShadow.Size = new System.Drawing.Size(54, 23);
             this.btnNextShadow.TabIndex = 24;
@@ -435,7 +413,7 @@
             this.btnAddShadow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnAddShadow.Location = new System.Drawing.Point(151, 14);
+            this.btnAddShadow.Location = new System.Drawing.Point(158, 14);
             this.btnAddShadow.Name = "btnAddShadow";
             this.btnAddShadow.Size = new System.Drawing.Size(72, 23);
             this.btnAddShadow.TabIndex = 20;
@@ -453,7 +431,7 @@
             this.btnUpdateShadow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnUpdateShadow.Location = new System.Drawing.Point(235, 14);
+            this.btnUpdateShadow.Location = new System.Drawing.Point(244, 14);
             this.btnUpdateShadow.Name = "btnUpdateShadow";
             this.btnUpdateShadow.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateShadow.TabIndex = 21;
@@ -472,7 +450,7 @@
             this.btnBackShadow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnBackShadow.Location = new System.Drawing.Point(17, 14);
+            this.btnBackShadow.Location = new System.Drawing.Point(20, 14);
             this.btnBackShadow.Name = "btnBackShadow";
             this.btnBackShadow.Size = new System.Drawing.Size(56, 23);
             this.btnBackShadow.TabIndex = 23;
@@ -485,9 +463,9 @@
             this.panelStatus.Controls.Add(this.labelCP);
             this.panelStatus.Controls.Add(this.labelST);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatus.Location = new System.Drawing.Point(0, 232);
+            this.panelStatus.Location = new System.Drawing.Point(0, 234);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(434, 28);
+            this.panelStatus.Size = new System.Drawing.Size(452, 28);
             this.panelStatus.TabIndex = 24;
             // 
             // labelCP
@@ -522,9 +500,9 @@
             this.btnPlus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.btnPlus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
             this.btnPlus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlus.Font = new System.Drawing.Font("Cascadia Mono", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlus.Font = new System.Drawing.Font("Cascadia Mono", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.btnPlus.Location = new System.Drawing.Point(158, 86);
+            this.btnPlus.Location = new System.Drawing.Point(155, 85);
             this.btnPlus.Name = "btnPlus";
             this.btnPlus.Size = new System.Drawing.Size(21, 31);
             this.btnPlus.TabIndex = 6;
@@ -575,7 +553,7 @@
             // progressBar
             // 
             this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
-            this.progressBar.Location = new System.Drawing.Point(91, 139);
+            this.progressBar.Location = new System.Drawing.Point(97, 139);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(20, 7);
             this.progressBar.TabIndex = 34;
@@ -583,7 +561,7 @@
             // pgLbl
             // 
             this.pgLbl.BackColor = System.Drawing.Color.Black;
-            this.pgLbl.Location = new System.Drawing.Point(90, 138);
+            this.pgLbl.Location = new System.Drawing.Point(96, 138);
             this.pgLbl.Name = "pgLbl";
             this.pgLbl.Size = new System.Drawing.Size(80, 9);
             this.pgLbl.TabIndex = 33;
@@ -595,7 +573,7 @@
             // 
             // txtSeriesBack
             // 
-            this.txtSeriesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtSeriesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
             this.txtSeriesBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSeriesBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeriesBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
@@ -603,7 +581,7 @@
             this.txtSeriesBack.MaxLength = 50;
             this.txtSeriesBack.Multiline = true;
             this.txtSeriesBack.Name = "txtSeriesBack";
-            this.txtSeriesBack.Size = new System.Drawing.Size(299, 1);
+            this.txtSeriesBack.Size = new System.Drawing.Size(300, 1);
             this.txtSeriesBack.TabIndex = 35;
             this.txtSeriesBack.Text = "Ben 10 (new Season)";
             this.txtSeriesBack.Visible = false;
@@ -621,22 +599,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(302, 19);
             this.textBox2.TabIndex = 38;
-            // 
-            // txtRatingOut
-            // 
-            this.txtRatingOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
-            this.txtRatingOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRatingOut.Enabled = false;
-            this.txtRatingOut.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRatingOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtRatingOut.Location = new System.Drawing.Point(368, 16);
-            this.txtRatingOut.MaxLength = 3;
-            this.txtRatingOut.Multiline = true;
-            this.txtRatingOut.Name = "txtRatingOut";
-            this.txtRatingOut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtRatingOut.Size = new System.Drawing.Size(31, 19);
-            this.txtRatingOut.TabIndex = 39;
-            this.txtRatingOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox4
             // 
@@ -672,7 +634,7 @@
             // 
             // txtWatchedBack
             // 
-            this.txtWatchedBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtWatchedBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
             this.txtWatchedBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWatchedBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWatchedBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -687,26 +649,9 @@
             this.txtWatchedBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtWatchedBack.Visible = false;
             // 
-            // txtRatingBack
-            // 
-            this.txtRatingBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
-            this.txtRatingBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRatingBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRatingBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtRatingBack.Location = new System.Drawing.Point(369, 34);
-            this.txtRatingBack.MaxLength = 3;
-            this.txtRatingBack.Multiline = true;
-            this.txtRatingBack.Name = "txtRatingBack";
-            this.txtRatingBack.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtRatingBack.Size = new System.Drawing.Size(29, 1);
-            this.txtRatingBack.TabIndex = 43;
-            this.txtRatingBack.Text = "8.7";
-            this.txtRatingBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtRatingBack.Visible = false;
-            // 
             // txtEpisodesBack
             // 
-            this.txtEpisodesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtEpisodesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
             this.txtEpisodesBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpisodesBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpisodesBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -724,7 +669,7 @@
             // progressOut
             // 
             this.progressOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.progressOut.Location = new System.Drawing.Point(91, 139);
+            this.progressOut.Location = new System.Drawing.Point(97, 139);
             this.progressOut.Name = "progressOut";
             this.progressOut.Size = new System.Drawing.Size(78, 7);
             this.progressOut.TabIndex = 45;
@@ -736,14 +681,19 @@
             this.panelForm.Controls.Add(this.panelData);
             this.panelForm.Controls.Add(this.panelStatus);
             this.panelForm.Controls.Add(this.panel2);
-            this.panelForm.Location = new System.Drawing.Point(1, 0);
+            this.panelForm.Location = new System.Drawing.Point(-1, 0);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(434, 260);
+            this.panelForm.Size = new System.Drawing.Size(452, 262);
             this.panelForm.TabIndex = 51;
             // 
             // panelData
             // 
             this.panelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(22)))));
+            this.panelData.Controls.Add(this.star5);
+            this.panelData.Controls.Add(this.star4);
+            this.panelData.Controls.Add(this.star3);
+            this.panelData.Controls.Add(this.star2);
+            this.panelData.Controls.Add(this.star1);
             this.panelData.Controls.Add(this.txtNameBack);
             this.panelData.Controls.Add(this.txtName);
             this.panelData.Controls.Add(this.textBox1);
@@ -753,7 +703,6 @@
             this.panelData.Controls.Add(this.btnReset);
             this.panelData.Controls.Add(this.btnPlus);
             this.panelData.Controls.Add(this.txtEpisodesBack);
-            this.panelData.Controls.Add(this.txtRatingBack);
             this.panelData.Controls.Add(this.txtWatchedBack);
             this.panelData.Controls.Add(this.lbProgress);
             this.panelData.Controls.Add(this.txtWatched);
@@ -761,7 +710,6 @@
             this.panelData.Controls.Add(this.txtProgress);
             this.panelData.Controls.Add(this.txtEpisodes);
             this.panelData.Controls.Add(this.txtSeriesBack);
-            this.panelData.Controls.Add(this.txtRating);
             this.panelData.Controls.Add(this.progressBar);
             this.panelData.Controls.Add(this.btnSearch);
             this.panelData.Controls.Add(this.starName);
@@ -769,7 +717,6 @@
             this.panelData.Controls.Add(this.progressOut);
             this.panelData.Controls.Add(this.textBox2);
             this.panelData.Controls.Add(this.starEpisodes);
-            this.panelData.Controls.Add(this.txtRatingOut);
             this.panelData.Controls.Add(this.textBox4);
             this.panelData.Controls.Add(this.textBox5);
             this.panelData.Controls.Add(this.pgLbl);
@@ -778,20 +725,78 @@
             this.panelData.Controls.Add(this.lbWatched);
             this.panelData.Controls.Add(this.lbNOEP);
             this.panelData.Controls.Add(this.txtSeriesShadow);
-            this.panelData.Controls.Add(this.txtRatingShadow);
             this.panelData.Controls.Add(this.txtWatchedShadow);
             this.panelData.Controls.Add(this.txtEpisodesShadow);
             this.panelData.Controls.Add(this.btnSearchShadow);
             this.panelData.Controls.Add(this.label1);
-            this.panelData.Controls.Add(this.lbRating);
             this.panelData.Location = new System.Drawing.Point(15, 8);
             this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(405, 164);
+            this.panelData.Size = new System.Drawing.Size(421, 164);
             this.panelData.TabIndex = 52;
+            // 
+            // star5
+            // 
+            this.star5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star5.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star5.Location = new System.Drawing.Point(392, 16);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(16, 16);
+            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star5.TabIndex = 68;
+            this.star5.TabStop = false;
+            this.star5.Click += new System.EventHandler(this.star5_Click);
+            // 
+            // star4
+            // 
+            this.star4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star4.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star4.Location = new System.Drawing.Point(375, 16);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(16, 16);
+            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star4.TabIndex = 67;
+            this.star4.TabStop = false;
+            this.star4.Click += new System.EventHandler(this.star4_Click);
+            // 
+            // star3
+            // 
+            this.star3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star3.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star3.Location = new System.Drawing.Point(356, 16);
+            this.star3.Name = "star3";
+            this.star3.Size = new System.Drawing.Size(16, 16);
+            this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star3.TabIndex = 66;
+            this.star3.TabStop = false;
+            this.star3.Click += new System.EventHandler(this.star3_Click);
+            // 
+            // star2
+            // 
+            this.star2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star2.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star2.Location = new System.Drawing.Point(338, 16);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(16, 16);
+            this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star2.TabIndex = 65;
+            this.star2.TabStop = false;
+            this.star2.Click += new System.EventHandler(this.star2_Click);
+            // 
+            // star1
+            // 
+            this.star1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star1.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star1.Location = new System.Drawing.Point(320, 16);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(16, 16);
+            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star1.TabIndex = 64;
+            this.star1.TabStop = false;
+            this.star1.Click += new System.EventHandler(this.star1_Click);
             // 
             // txtNameBack
             // 
-            this.txtNameBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtNameBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
             this.txtNameBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNameBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -809,7 +814,7 @@
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.txtName.Location = new System.Drawing.Point(82, 14);
             this.txtName.MaxLength = 20;
             this.txtName.Multiline = true;
@@ -852,7 +857,7 @@
             // progressCorner
             // 
             this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.progressCorner.Location = new System.Drawing.Point(111, 139);
+            this.progressCorner.Location = new System.Drawing.Point(117, 139);
             this.progressCorner.Name = "progressCorner";
             this.progressCorner.Size = new System.Drawing.Size(10, 7);
             this.progressCorner.TabIndex = 58;
@@ -861,7 +866,7 @@
             // 
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.Image = global::Project_Zero.Properties.Resources.btn_Reset;
-            this.btnReset.Location = new System.Drawing.Point(351, 131);
+            this.btnReset.Location = new System.Drawing.Point(368, 132);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(20, 20);
             this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -885,22 +890,6 @@
             this.txtSeriesShadow.Name = "txtSeriesShadow";
             this.txtSeriesShadow.Size = new System.Drawing.Size(302, 19);
             this.txtSeriesShadow.TabIndex = 52;
-            // 
-            // txtRatingShadow
-            // 
-            this.txtRatingShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.txtRatingShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRatingShadow.Enabled = false;
-            this.txtRatingShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRatingShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtRatingShadow.Location = new System.Drawing.Point(370, 19);
-            this.txtRatingShadow.MaxLength = 3;
-            this.txtRatingShadow.Multiline = true;
-            this.txtRatingShadow.Name = "txtRatingShadow";
-            this.txtRatingShadow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtRatingShadow.Size = new System.Drawing.Size(31, 19);
-            this.txtRatingShadow.TabIndex = 53;
-            this.txtRatingShadow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtWatchedShadow
             // 
@@ -944,7 +933,7 @@
             this.btnSearchShadow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearchShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(53)))), ((int)(((byte)(53)))));
-            this.btnSearchShadow.Location = new System.Drawing.Point(245, 14);
+            this.btnSearchShadow.Location = new System.Drawing.Point(229, 14);
             this.btnSearchShadow.Name = "btnSearchShadow";
             this.btnSearchShadow.Size = new System.Drawing.Size(75, 23);
             this.btnSearchShadow.TabIndex = 56;
@@ -954,7 +943,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.label1.Location = new System.Drawing.Point(93, 140);
+            this.label1.Location = new System.Drawing.Point(99, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 8);
             this.label1.TabIndex = 57;
@@ -980,8 +969,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(434, 261);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(447, 261);
             this.Controls.Add(this.panelForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -998,6 +987,11 @@
             this.panelForm.ResumeLayout(false);
             this.panelData.ResumeLayout(false);
             this.panelData.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             this.ResumeLayout(false);
 
@@ -1012,10 +1006,8 @@
         private System.Windows.Forms.Label lbWatched;
         private System.Windows.Forms.TextBox txtEpisodes;
         private System.Windows.Forms.Label lbNOEP;
-        private System.Windows.Forms.TextBox txtRating;
-        private System.Windows.Forms.Label lbRating;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBack;
@@ -1036,11 +1028,9 @@
         private System.Windows.Forms.Timer progressTimer;
         private System.Windows.Forms.TextBox txtSeriesBack;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox txtRatingOut;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox txtWatchedBack;
-        private System.Windows.Forms.TextBox txtRatingBack;
         private System.Windows.Forms.TextBox txtEpisodesBack;
         private System.Windows.Forms.Label progressOut;
         private System.Windows.Forms.PictureBox btnReset;
@@ -1049,7 +1039,6 @@
         private System.Windows.Forms.Panel panelData;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtSeriesShadow;
-        private System.Windows.Forms.TextBox txtRatingShadow;
         private System.Windows.Forms.TextBox txtWatchedShadow;
         private System.Windows.Forms.TextBox txtEpisodesShadow;
         private System.Windows.Forms.Button btnDeleteShadow;
@@ -1064,6 +1053,12 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtNameShadow;
+        private System.Windows.Forms.PictureBox star1;
+        private System.Windows.Forms.PictureBox star5;
+        private System.Windows.Forms.PictureBox star4;
+        private System.Windows.Forms.PictureBox star3;
+        private System.Windows.Forms.PictureBox star2;
+        private System.Windows.Forms.Timer timerDelay;
     }
 }
 

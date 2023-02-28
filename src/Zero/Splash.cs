@@ -16,37 +16,20 @@ namespace Project_Zero
         int showTime = 296, hideTime = 300;
         int height = 2, width = 6;
 
-
-
         private void Splash_Load(object sender, EventArgs e)
         {
             setProgress();
-            TIMER.Enabled = true;
+            timerProgress.Enabled = true;
         }
 
-        private void setProgress()
-        {
-            progressBar.Width = width;
-            progressBarOut.Height = (height + 1);
-            progressBar.Height = height;
-            progressCorner.Width = (width - 2);
-            progressCorner.Height = height;
-        }
-
-        private void progressPlus(int i)
-        {
-            progressBar.Width += i;
-            progressCorner.Left = (progressBar.Right - 1);
-        }
-
-        private void TIMER_Tick(object sender, EventArgs e)
+        private void timerProgress_Tick(object sender, EventArgs e)
         {
             int value = progressBar.Width;
 
             if (value == hideTime)
             {
                 this.Hide();
-                TIMER.Stop();
+                timerProgress.Stop();
             }
             else if (value == showTime)
             {
@@ -74,6 +57,22 @@ namespace Project_Zero
             {
                 progressPlus(4);
             }
+        }
+
+
+        private void setProgress()
+        {
+            progressBar.Width = width;
+            progressBarOut.Height = (height + 1);
+            progressBar.Height = height;
+            progressCorner.Width = (width - 2);
+            progressCorner.Height = height;
+        }
+
+        private void progressPlus(int i)
+        {
+            progressBar.Width += i;
+            progressCorner.Left = (progressBar.Right - 1);
         }
     }
 }
