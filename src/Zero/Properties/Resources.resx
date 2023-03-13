@@ -118,31 +118,133 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Zero-Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zero-Icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zero_Icon_clicked" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zero-Icon_clicked.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnAdd_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdd_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zero_Icon_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zero-Icon_move.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnAdd_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdd_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_Reset" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Reset.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnAdd_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAdd_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_Reset_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Reset_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnBack_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnBack_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btn_Reset_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btn_Reset_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnBack_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnBack_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Zero_Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Zero-Splash.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnBack_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnBack_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCancel_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancel_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCancel_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancel_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDelete_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDelete_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDelete_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDelete_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDelete_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDelete_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNext_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNext_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNext_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNext_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnNext_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnNext_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnRefresh_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnRefresh_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnRefresh_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnRefresh_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnRefresh_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnRefresh_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReset_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReset_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReset_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReset_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReset_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReset_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSave_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSave_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSearch_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSearch_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSearch_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSearch_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSearch_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSearch_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnStar_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnStar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\btnStar_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnStar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnStar_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnStar_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnStar_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnStar_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnStar_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnUpdate_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnUpdate_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnUpdate_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnUpdate_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnUpdate_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnUpdate_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnCancel_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancel_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnForward_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnForward_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnForward_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnForward_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnForward_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnForward_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMsgNo_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMsgNo_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMsgNo_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMsgNo_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMsgNo_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMsgNo_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMsgOk_default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMsgOk_default.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMsgOk_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMsgOk_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnMsgOk_hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnMsgOk_hover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
