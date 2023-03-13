@@ -67,11 +67,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Message_UI.cs">
+    <Compile Include="Confirm_UI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Message_UI.Designer.cs">
-      <DependentUpon>Message_UI.cs</DependentUpon>
+    <Compile Include="Confirm_UI.Designer.cs">
+      <DependentUpon>Confirm_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,8 +92,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Message_UI.resx">
-      <DependentUpon>Message_UI.cs</DependentUpon>
+    <EmbeddedResource Include="Confirm_UI.resx">
+      <DependentUpon>Confirm_UI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -125,16 +125,51 @@
       <DependentUpon>data.mdf</DependentUpon>
     </Content>
     <Content Include="icon.ico" />
-    <None Include="Resources\btnStar_move.png" />
+    <None Include="Resources\btnMsgNo_down.png" />
+    <None Include="Resources\btnMsgNo_hover.png" />
+    <None Include="Resources\btnMsgNo_default.png" />
+    <None Include="Resources\btnMsgOk_default.png" />
+    <None Include="Resources\btnMsgOk_hover.png" />
+    <None Include="Resources\btnMsgOk_down.png" />
+    <None Include="Resources\btnMsgOk.png" />
+    <None Include="Resources\btnMsgNo.png" />
+    <None Include="Resources\btnSearch_default.png" />
+    <None Include="Resources\btnForward_hover.png" />
+    <None Include="Resources\btnForward_down.png" />
+    <None Include="Resources\btnForward_default.png" />
+    <None Include="Resources\btnDelete_hover.png" />
+    <None Include="Resources\btnDelete_down.png" />
+    <None Include="Resources\btnDelete_default.png" />
+    <None Include="Resources\btnReset_hover.png" />
+    <None Include="Resources\btnReset_down.png" />
+    <None Include="Resources\btnReset_default.png" />
+    <None Include="Resources\btnNext_down.png" />
+    <None Include="Resources\btnBack_down.png" />
+    <None Include="Resources\btnCancel_down.png" />
+    <None Include="Resources\btnUpdate_hover.png" />
+    <None Include="Resources\btnUpdate_down.png" />
+    <None Include="Resources\btnUpdate_default.png" />
+    <None Include="Resources\btnStar_hover.png" />
     <None Include="Resources\btnStar_down.png" />
-    <None Include="Resources\btnStar.png" />
-    <None Include="Resources\Zero-Splash.jpg" />
-    <None Include="Resources\btn_Reset_move.png" />
-    <None Include="Resources\btn_Reset_down.png" />
-    <None Include="Resources\btn_Reset.png" />
-    <None Include="Resources\Zero-Icon_move.jpg" />
-    <None Include="Resources\Zero-Icon_clicked.jpg" />
-    <None Include="Resources\Zero-Icon.jpg" />
+    <None Include="Resources\btnStar_default.png" />
+    <None Include="Resources\btnSearch_hover.png" />
+    <None Include="Resources\btnSearch_down.png" />
+    <None Include="Resources\btnSave_hover.png" />
+    <None Include="Resources\btnSave_down.png" />
+    <None Include="Resources\btnSave_default.png" />
+    <None Include="Resources\btnRefresh_hover.png" />
+    <None Include="Resources\btnRefresh_down.png" />
+    <None Include="Resources\btnRefresh_default.png" />
+    <None Include="Resources\btnNext_hover.png" />
+    <None Include="Resources\btnNext_default.png" />
+    <None Include="Resources\btnCancel_hover.png" />
+    <None Include="Resources\btnCancel_default.png" />
+    <None Include="Resources\btnBack_hover.png" />
+    <None Include="Resources\btnBack_default.png" />
+    <None Include="Resources\btnAdd_hover.png" />
+    <None Include="Resources\btnAdd_down.png" />
+    <None Include="Resources\btnAdd_default.png" />
+    <None Include="Resources\splash.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -147,6 +182,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Zero.Core\Zero.Core.csproj">
+      <Project>{15ff8b3d-90b9-4f30-b85e-e6661688b19f}</Project>
+      <Name>Zero.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
