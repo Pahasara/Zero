@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace Project_Zero
 {
-    public partial class Message_UI : Form
+    public partial class Confirm_UI : Form
     {
-        public Message_UI()
+        public Confirm_UI()
         {
             InitializeComponent();
         }
@@ -23,13 +23,18 @@ namespace Project_Zero
 
         private void MSG_Load(object sender, EventArgs e)
         {
+            showMessage();
+        }
+
+        private void showMessage()
+        {
             if (mode == "delete")
             {
                 text = "Are you sure want to permanently delete this series?";
                 title = "Confirm Delete";
                 msgText.Text = text;
                 msgTitle.Text = title;
-                btnCancel.Focus();
+                btnNo.Select();
             }
             else if (mode == "reset")
             {
@@ -38,75 +43,90 @@ namespace Project_Zero
                 msgText.Text = text;
                 msgTitle.Text = title;
             }
-            else if(mode == "dbLost")
+            else if (mode == "dbLost")
             {
-                btnYes.Location = new Point(80, 53);
-                btnYesShadow.Location = new Point(83, 56);
+                setButtonOk();
                 text = "Requirements not installed! Visit our github for more details.";
                 title = "Database Not Found";
-                btnYes.Text = "OK";
-                btnCancel.Visible = false;
                 msgText.Text = text;
                 msgTitle.Text = title;
             }
-            else if(mode == "finish")
+            else if (mode == "finish")
             {
                 text = "Are you sure want to finish the progress of this series?";
                 title = "Confirm Finish";
                 msgText.Text = text;
                 msgTitle.Text = title;
             }
+            else if (mode == "afterDelete")
+            {
+                setButtonOk();
+                text = "Information about that TV show no longer available.";
+                title = "TV show Deleted";
+                msgText.Text = text;
+                msgTitle.Text = title;
+            }
             else
             {
-                btnYes.Location = new Point(80, 53);
-                btnYesShadow.Location = new Point(83, 56);
+                setButtonOk();
                 text = mode;
                 title = "Error Occured";
-                btnYes.Text = "OK";
-                btnCancel.Visible = false;
                 msgText.Text = text;
                 msgTitle.Text = title;
             }
         }
 
+        private void setButtonOk()
+        {
+            btnOk.Location = new Point(100, 54);
+            btnNo.Visible = false;
+        }
 
-
-        private void btnYes_Click(object sender, EventArgs e)
+        private void btnOk_Click(object sender, EventArgs e)
         {
             isYesClicked = true;
             this.Close();
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnNo_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        
-        private void btnYes_MouseMove(object sender, MouseEventArgs e)
+
+        private void btnOk_MouseMove(object sender, MouseEventArgs e)
         {
-            btnYesShadow.Visible = true;
+            btnOk.Image = Properties.Resources.btnMsgOk_hover;
         }
 
-        private void btnYes_MouseLeave(object sender, EventArgs e)
+        private void btnOk_MouseDown(object sender, MouseEventArgs e)
         {
-            btnYesShadow.Visible = false;
+            btnOk.Image = Properties.Resources.btnMsgOk_down;
         }
 
-        private void btnCancel_MouseMove(object sender, MouseEventArgs e)
+        private void btnOk_MouseLeave(object sender, EventArgs e)
         {
-            btnNoShadow.Visible = true;
+            btnOk.Image = Properties.Resources.btnMsgOk_default;
         }
 
-        private void btnCancel_MouseLeave(object sender, EventArgs e)
+        private void btnNo_MouseMove(object sender, MouseEventArgs e)
         {
-            btnNoShadow.Visible = false;
+            btnNo.Image = Properties.Resources.btnMsgNo_hover;
+        }
+
+        private void btnNo_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnNo.Image = Properties.Resources.btnMsgNo_down;
+        }
+
+        private void btnNo_MouseLeave(object sender, EventArgs e)
+        {
+            btnNo.Image = Properties.Resources.btnMsgNo_default;
         }
 
         protected override void OnHandleCreated(EventArgs e)
         {
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
                 DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
-
         }
     }
 }
