@@ -1,15 +1,16 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Project_Zero
 {
     public partial class Splash : Form
     {
+
         public Splash()
         {
             InitializeComponent();
         }
-
 
         Main_UI mui = new Main_UI();
 
@@ -59,11 +60,10 @@ namespace Project_Zero
             }
         }
 
-
         private void setProgress()
         {
             progressBar.Width = width;
-            progressBarOut.Height = (height + 1);
+            progressOutline.Height = (height + 2);
             progressBar.Height = height;
             progressCorner.Width = (width - 2);
             progressCorner.Height = height;

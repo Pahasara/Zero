@@ -34,9 +34,10 @@
             this.progressBar = new System.Windows.Forms.Label();
             this.lblYear = new System.Windows.Forms.Label();
             this.panelBackground = new System.Windows.Forms.Panel();
+            this.progressOutline = new System.Windows.Forms.Panel();
             this.progressCorner = new System.Windows.Forms.Label();
-            this.progressBarOut = new System.Windows.Forms.Label();
             this.panelBackground.SuspendLayout();
+            this.progressOutline.SuspendLayout();
             this.SuspendLayout();
             // 
             // timerProgress
@@ -46,11 +47,11 @@
             // 
             // progressBar
             // 
-            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(14)))), ((int)(((byte)(5)))));
-            this.progressBar.Location = new System.Drawing.Point(18, 129);
+            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.progressBar.Location = new System.Drawing.Point(1, 1);
             this.progressBar.Name = "progressBar";
             this.progressBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.progressBar.Size = new System.Drawing.Size(100, 3);
+            this.progressBar.Size = new System.Drawing.Size(100, 4);
             this.progressBar.TabIndex = 7;
             // 
             // lblYear
@@ -68,34 +69,33 @@
             // panelBackground
             // 
             this.panelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelBackground.BackgroundImage = global::Project_Zero.Properties.Resources.Zero_Splash;
+            this.panelBackground.BackgroundImage = global::Project_Zero.Properties.Resources.splash;
             this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelBackground.Controls.Add(this.progressCorner);
-            this.panelBackground.Controls.Add(this.progressBar);
             this.panelBackground.Controls.Add(this.lblYear);
-            this.panelBackground.Controls.Add(this.progressBarOut);
+            this.panelBackground.Controls.Add(this.progressOutline);
             this.panelBackground.Location = new System.Drawing.Point(1, 1);
             this.panelBackground.Name = "panelBackground";
             this.panelBackground.Size = new System.Drawing.Size(338, 162);
             this.panelBackground.TabIndex = 9;
             // 
+            // progressOutline
+            // 
+            this.progressOutline.BackColor = System.Drawing.Color.Black;
+            this.progressOutline.Controls.Add(this.progressBar);
+            this.progressOutline.Controls.Add(this.progressCorner);
+            this.progressOutline.Location = new System.Drawing.Point(17, 125);
+            this.progressOutline.Name = "progressOutline";
+            this.progressOutline.Size = new System.Drawing.Size(302, 6);
+            this.progressOutline.TabIndex = 11;
+            // 
             // progressCorner
             // 
-            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(70)))), ((int)(((byte)(0)))));
-            this.progressCorner.Location = new System.Drawing.Point(108, 129);
+            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.progressCorner.Location = new System.Drawing.Point(99, 1);
             this.progressCorner.Name = "progressCorner";
             this.progressCorner.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.progressCorner.Size = new System.Drawing.Size(20, 3);
+            this.progressCorner.Size = new System.Drawing.Size(20, 4);
             this.progressCorner.TabIndex = 10;
-            // 
-            // progressBarOut
-            // 
-            this.progressBarOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
-            this.progressBarOut.Location = new System.Drawing.Point(18, 129);
-            this.progressBarOut.Name = "progressBarOut";
-            this.progressBarOut.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.progressBarOut.Size = new System.Drawing.Size(300, 3);
-            this.progressBarOut.TabIndex = 9;
             // 
             // Splash
             // 
@@ -115,6 +115,7 @@
             this.Load += new System.EventHandler(this.Splash_Load);
             this.panelBackground.ResumeLayout(false);
             this.panelBackground.PerformLayout();
+            this.progressOutline.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -124,7 +125,7 @@
         private System.Windows.Forms.Label progressBar;
         private System.Windows.Forms.Label lblYear;
         private System.Windows.Forms.Panel panelBackground;
-        private System.Windows.Forms.Label progressBarOut;
         private System.Windows.Forms.Label progressCorner;
+        private System.Windows.Forms.Panel progressOutline;
     }
 }
