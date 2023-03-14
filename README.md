@@ -16,7 +16,7 @@ A simple UI to manage TV shows that u r watching.
 * **[Zero v2.0.0 (recommended)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)**
 
 
-
+##
 ### Downloads (old versions)
 * **[Zero v1.0.4](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)**
 * **[Zero v1.0.3](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)**
