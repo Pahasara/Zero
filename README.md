@@ -2,7 +2,7 @@
 A simple UI to manage TV shows that u r watching.
 
 ![Untitled - Copy](https://user-images.githubusercontent.com/46932317/221479920-79fa04df-1bce-441d-a4c8-ba7a818a841a.png)
-![Untitled1](https://user-images.githubusercontent.com/46932317/224919668-6a8833d6-2bb9-45a1-a380-024945065df7.png)
+![Untitled](https://user-images.githubusercontent.com/46932317/224922079-6cdbe3c4-dee5-4c09-892e-ea43e740ef27.png)
 
 
 ## Requirements
