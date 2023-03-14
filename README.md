@@ -11,8 +11,11 @@ A simple UI to manage TV shows that u r watching.
 * Fonts **[Russo One](https://fonts.google.com/specimen/Russo+One)**, **[Orbitron](https://fonts.google.com/specimen/Orbitron)**
 
 
+
 ## Downloads
 * **[Zero v2.0.0 (recommended)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)**
+
+
 
 ## Downloads (old versions)
 * **[Zero v1.0.4](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)**
