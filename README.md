@@ -4,7 +4,9 @@
 
 A simple UI to manage TV shows that u r watching.
 
-[![Release](https://img.shields.io/badge/release-latest-red)](https://github.com/Pahasara/Zero/releases/latest)
+[![Latest](https://img.shields.io/badge/release-latest-red)](https://github.com/Pahasara/Zero/releases/latest)
+[![Releases](https://img.shields.io/badge/releases-all-informational)] 
+[![Download](https://img.shields.io/badge/download-v2.0-brightgreen)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 
 ![Zero Screenshot](https://user-images.githubusercontent.com/46932317/225495197-bc40235e-c1da-4a38-8d82-21cc177ce459.png)
 
