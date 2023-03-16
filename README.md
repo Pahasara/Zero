@@ -1,4 +1,4 @@
-![Zero Full](https://user-images.githubusercontent.com/46932317/225497024-d2b8728f-8b2d-409e-ad49-e03d0d2aa641.png)
+![Zero Full](https://user-images.githubusercontent.com/46932317/225497427-1dd18bcf-1da9-48a1-87fa-254a08a73b40.png)
 
 # Zero
 
