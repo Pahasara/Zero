@@ -12,7 +12,7 @@ Zero is a TV show manager which tries organize tv shows as simple as possible. I
 
 ## Requirements ##
 
-If ur using Windows 11 *build 22000* or later u don't need to install .NET Framework again. If ur using older windows version and don't have installed *.NET Framework 4.8* on it, then u must need to download and install it on ur pc before run this application. 
+If ur using Windows 11 *build 22000* or later u don't have to install .NET Framework. If ur using older version of windows and don't have installed *.NET Framework 4.8* on it, then u must need to download and install it on ur pc before run this application. 
 
 Before u run this application, u must need to download and install *SQL LocalDB 2019* on ur pc. Download it using the link below.
 
