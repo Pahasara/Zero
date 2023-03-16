@@ -2,7 +2,7 @@
 
 # Zero (for Windows)
 
-Zero is a TV show manager which tries to make organizing tv shows as simple as possible. It is written in C# and is powered by the .NET and SQL Local DB.
+Zero is a TV show manager which tries organize tv shows as simple as possible. It is written in C# and is powered by the .NET and SQL Local DB.
 
 [![Changelog](https://img.shields.io/badge/changelog-latest-red)](https://github.com/Pahasara/Zero/releases/latest)
 [![Releases](https://img.shields.io/badge/releases-all-informational)](https://github.com/Pahasara/Zero#downloads)
@@ -12,9 +12,9 @@ Zero is a TV show manager which tries to make organizing tv shows as simple as p
 
 ## Requirements ##
 
-If ur using Windows 11 *build 22000* or later u don't need to install .NET Framework again. If ur using older windows and don't have installed .NET Framework 4.8 on it, then u must need to download and install it on ur pc first. 
+If ur using Windows 11 *build 22000* or later u don't need to install .NET Framework again. If ur using older windows version and don't have installed *.NET Framework 4.8* on it, then u must need to download and install it on ur pc before run this application. 
 
-Before u run Zero, U must need to download and install *SQL LocalDB 2019* on ur pc. Download it using the link below.
+Before u run this application, u must need to download and install *SQL LocalDB 2019* on ur pc. Download it using the link below.
 
 Fonts are necessary, download and install both *Orbitron* and *Russo One* fonts. Download them using the links below.
 
@@ -25,6 +25,9 @@ Fonts are necessary, download and install both *Orbitron* and *Russo One* fonts.
 [![Orbitron](https://img.shields.io/badge/Font-Orbitron-blueviolet)](https://fonts.google.com/specimen/Orbitron)
 
 ## Downloads ##
+
+Try to use the latest version. Using older versions don't recommended. I'm providing them for using test purposes only.
+
 * [![Zero v2.0.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
