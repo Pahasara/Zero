@@ -2,7 +2,7 @@
 A simple UI to manage TV shows that u r watching.
 
 
-[![Release](https://img.shields.io/github/release/digimezzo/Dopamine-windows.svg?style=flat-square)](https://github.com/Pahasara/Zero/releases/latest)
+[![Release] [(https://img.shields.io/badge/release-v2.0.0-red))](https://img.shields.io/badge/release-v2.0.0-red](https://github.com/Pahasara/Zero/releases/latest)
 
 ![Untitled3](https://user-images.githubusercontent.com/46932317/224922447-804d5be0-e46a-4f83-a068-2aeb2745fbc9.png)
 
