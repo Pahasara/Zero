@@ -4,6 +4,8 @@ A simple UI to manage TV shows that u r watching.
 ![Untitled3](https://user-images.githubusercontent.com/46932317/224922447-804d5be0-e46a-4f83-a068-2aeb2745fbc9.png)
 
 
+[![Release](https://img.shields.io/github/release/digimezzo/Dopamine-windows.svg?style=flat-square)](https://github.com/Pahasara/Zero/releases/latest)
+
 
 ## Requirements
 * Framework, **[.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer)**
