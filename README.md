@@ -16,7 +16,7 @@ A simple UI to manage TV shows that u r watching.
 * Fonts, **[Russo One](https://fonts.google.com/specimen/Russo+One)**, **[Orbitron](https://fonts.google.com/specimen/Orbitron)**
 
 ## Downloads
-* [![Zero v2.0.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
+* [![Zero](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
 * [![Zero v1.0.2](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.2/bin.zip)
