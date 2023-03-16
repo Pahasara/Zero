@@ -2,7 +2,6 @@
 
 # Zero (for Windows)
 
-A simple UI to manage TV shows that u r watching.
 Zero is a TV show manager which tries to make organizing tv shows as simple as possible. It is written in C# and is powered by the .NET sound SQL Local DB.
 
 [![Changelog](https://img.shields.io/badge/changelog-latest-red)](https://github.com/Pahasara/Zero/releases/latest)
