@@ -2,7 +2,7 @@
 
 # Zero (for Windows)
 
-Zero is a TV show manager which tries organize tv shows as simple as possible. It is written in C# and is powered by the .NET and SQL Local DB.
+Zero is a TV show manager which tries to organize tv shows as simple as possible. It is written in C# and is powered by the .NET and SQL Local DB.
 
 [![Changelog](https://img.shields.io/badge/changelog-latest-red)](https://github.com/Pahasara/Zero/releases/latest)
 [![Releases](https://img.shields.io/badge/releases-all-informational)](https://github.com/Pahasara/Zero#downloads)
