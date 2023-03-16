@@ -11,6 +11,14 @@ Zero is a TV show manager which tries to make organizing tv shows as simple as p
 ![Zero Screenshot](https://user-images.githubusercontent.com/46932317/225495197-bc40235e-c1da-4a38-8d82-21cc177ce459.png)
 
 ## Requirements ##
+
+If ur using Windows 11 *build 22000* or later u don't need to install .NET Framework again. If ur using older windows and don't have installed .NET Framework 4.8 on it, then u must need to download and install it on ur pc first. 
+
+Before u run Zero, U must need to download and install *SQL LocalDB 2019* on ur pc. Download it using the link below.
+
+Fonts are necessary, download and install both *Orbitron* and *Russo One* fonts. Download them using the links below.
+
+
 [![.NET Framework](https://img.shields.io/badge/.NET%20Framework-v4.8-blue)](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer)
 [![SQL LocalDB](https://img.shields.io/badge/SQL%20Local%20DB-2019-orange)](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SqlLocalDB.msi)
 [![Russo One](https://img.shields.io/badge/Font-Russo%20One-blueviolet)](https://fonts.google.com/specimen/Russo+One) 
