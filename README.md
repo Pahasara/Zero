@@ -1,10 +1,10 @@
-![Zero Full](https://user-images.githubusercontent.com/46932317/225497427-1dd18bcf-1da9-48a1-87fa-254a08a73b40.png)
+![Zero Full](https://user-images.githubusercontent.com/46932317/225497619-0204744e-d57e-4c39-a839-9c067f52f3fa.png)
 
-# Zero
+# Zero (for Windows)
 
 A simple UI to manage TV shows that u r watching.
 
-[![Release](https://img.shields.io/badge/release-v2.0-red)](https://github.com/Pahasara/Zero/releases/latest)
+[![Release](https://img.shields.io/badge/release-latest-red)](https://github.com/Pahasara/Zero/releases/latest)
 
 ![Zero Screenshot](https://user-images.githubusercontent.com/46932317/225495197-bc40235e-c1da-4a38-8d82-21cc177ce459.png)
 
