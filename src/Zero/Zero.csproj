@@ -67,11 +67,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Confirm_UI.cs">
+    <Compile Include="Message_UI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Confirm_UI.Designer.cs">
-      <DependentUpon>Confirm_UI.cs</DependentUpon>
+    <Compile Include="Message_UI.Designer.cs">
+      <DependentUpon>Message_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,8 +92,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Confirm_UI.resx">
-      <DependentUpon>Confirm_UI.cs</DependentUpon>
+    <EmbeddedResource Include="Message_UI.resx">
+      <DependentUpon>Message_UI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
