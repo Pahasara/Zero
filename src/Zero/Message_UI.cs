@@ -5,26 +5,16 @@ using System.Windows.Forms;
 
 namespace Project_Zero
 {
-    public partial class Confirm_UI : Form
+    public partial class Message_UI : Form
     {
-        public Confirm_UI()
+        public Message_UI()
         {
             InitializeComponent();
         }
 
-        // TODO: Title bar 'DARK'
-        [DllImport("DwmApi")]
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
-
-
         public bool isYesClicked = false;
-        public string mode; string text, title;
-
-
-        private void MSG_Load(object sender, EventArgs e)
-        {
-            showMessage();
-        }
+        public string mode; 
+        string text, title;
 
         private void showMessage()
         {
@@ -76,6 +66,11 @@ namespace Project_Zero
             }
         }
 
+        private void MSG_Load(object sender, EventArgs e)
+        {
+            showMessage();
+        }
+
         private void setButtonOk()
         {
             btnOk.Location = new Point(100, 54);
@@ -123,10 +118,15 @@ namespace Project_Zero
             btnNo.Image = Properties.Resources.btnMsgNo_default;
         }
 
+        // Import DwmApi to set title bar "DARK"
+        [DllImport("DwmApi")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
         protected override void OnHandleCreated(EventArgs e)
         {
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
-                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+            {
+                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); //Set 'DARK' title bar
+            }
         }
     }
 }

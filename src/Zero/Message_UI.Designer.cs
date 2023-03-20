@@ -1,6 +1,6 @@
 ﻿namespace Project_Zero
 {
-    partial class Confirm_UI
+    partial class Message_UI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         public void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Confirm_UI));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Message_UI));
             this.msgText = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.msgTitle = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.msgText.Name = "msgText";
             this.msgText.Size = new System.Drawing.Size(209, 43);
             this.msgText.TabIndex = 22;
-            this.msgText.Text = "Are you sure want to permanently add this text here?";
+            this.msgText.Text = "Tho zmilla sughbishuzannan tachorrin.\r\n(haha, message here)";
             this.msgText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelTitle
@@ -67,12 +67,12 @@
             // 
             this.msgTitle.BackColor = System.Drawing.Color.Transparent;
             this.msgTitle.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msgTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.msgTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.msgTitle.Location = new System.Drawing.Point(3, 6);
             this.msgTitle.Name = "msgTitle";
             this.msgTitle.Size = new System.Drawing.Size(225, 16);
             this.msgTitle.TabIndex = 1;
-            this.msgTitle.Text = "Confirm Title";
+            this.msgTitle.Text = "DsH.B.U.Wrld (Title)";
             this.msgTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
@@ -125,7 +125,7 @@
             this.label1.Size = new System.Drawing.Size(260, 12);
             this.label1.TabIndex = 25;
             // 
-            // Confirm_UI
+            // Message_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +135,7 @@
             this.Controls.Add(this.panelTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Confirm_UI";
+            this.Name = "Message_UI";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Confirm Delete";
