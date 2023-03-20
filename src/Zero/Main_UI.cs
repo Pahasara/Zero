@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Data.SqlClient;
-using System.Data.Odbc;
 
 namespace Project_Zero
 {
@@ -19,26 +18,27 @@ namespace Project_Zero
             InitializeComponent();
         }
 
-        // SET: Title Bar 'DARK MODE'
-        [DllImport("DwmApi")]
-        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
-
-
+        // Public Variables
         SqlConnection conn; SqlDataAdapter dataAdapter; DataSet dataSet; SqlCommandBuilder commandBuilder;
 
-        string database = "data.mdf", table = "Series", tempName = "", devURL = "https://www.github.com/pahasara/zero";
+        string databaseFile = "data.mdf", table = "Series", tempName = "", devURL = "https://www.github.com/pahasara/zero";
 
-        int maxRows, currentRow, progressBarValue, progressBarMaxLength, forwardCount = 0, rating;
+        int maxRows, currentRow, progressBarLength, progressBarMaxLength, forwardCount = 0, rating;
 
-        bool isProgressForward = false, canShowPercentage = true;
+        bool isHidePercentage = false;
+
         Color textEnterForeColor = Color.FromArgb(255, 255, 255);
         Color textLeaveForeColor = Color.FromArgb(255, 240, 240);
 
 
         private void Main_UI_Load(object sender, EventArgs e)
         {
+            //initialize ui
             setProgressBar();
+            setProgressCorner();
             setToolTips();
+
+            //initialize connection
             createConnection();
             navigateRecords();
         }
@@ -50,14 +50,14 @@ namespace Project_Zero
             {
                 conn = new SqlConnection();
                 dataSet = new DataSet();
-                conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\" + database + ";Integrated Security=True";
+                conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\" + databaseFile + ";Integrated Security=True";
                 string sql = "SELECT * FROM " + table;
                 dataAdapter = new SqlDataAdapter(sql, conn);
                 dataAdapter.Fill(dataSet, "Series");
                 commandBuilder = new SqlCommandBuilder(dataAdapter);
-                maxRows = dataSet.Tables["Series"].Rows.Count;
+                maxRows = dataSet.Tables["Series"].Rows.Count; //initialize the  number of records
             }
-            catch (Exception)
+            catch (SqlException)
             {
                 errorEmptyDatabase();
                 showMessage("dbLost");
@@ -65,7 +65,7 @@ namespace Project_Zero
             }
         }
 
-        private void navigateRecords(bool canShow = true)
+        private void navigateRecords()
         {
             try
             {
@@ -74,9 +74,9 @@ namespace Project_Zero
                 setTempName();
                 setJumpingButtons();
                 setRating();
-                showProgress(canShow);
+                showProgress();
                 setRowScroll();
-                changeState();
+                updateUI();
                 setWatchingStatus();
                 progressBar.Select();
             }
@@ -110,33 +110,35 @@ namespace Project_Zero
             newRow[5] = rating.ToString();
         }
 
-        private void updateRecord(bool isRatingUpdate = false, bool isProgressForward = false)
+        private void updateRecord()
         {
             try
             {
                 DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
                 setRecord(dataRow);
                 dataAdapter.Update(dataSet, "Series");
-
-                if (isRatingUpdate)
-                {
-                    setRating();
-                }
-                else
-                {
-                    if (!isProgressForward)
-                    {
-                        navigateRecords();
-                    }
-                    else
-                    {
-                        navigateRecords(false);
-                    }
-                    showInfo("Updated");
-                }
+                hidePercentage();
+                navigateRecords();
+                showInfo("Updated");
                 setWatchingStatus();
             }
-            catch (Exception)
+            catch (SqlException)
+            {
+                showMessage("An error occured during update!");
+            }
+        }
+
+        private void updateRating()
+        {
+            try
+            {
+                DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
+                setRecord(dataRow);
+                dataAdapter.Update(dataSet, "Series");
+                setRating();
+                setWatchingStatus();
+            }
+            catch (SqlException)
             {
                 showMessage("An error occured during update!");
             }
@@ -154,15 +156,17 @@ namespace Project_Zero
 
                 showControl(btnAdd);
                 btnUpdate.Image = Properties.Resources.btnUpdate_default;
-                changeState();
+                updateUI();
 
+                currentRow = maxRows;
                 maxRows++;
-                currentRow = maxRows - 1;
-                navigateRecords(false);
+                hidePercentage();
+                navigateRecords();
                 showInfo("Saved");
             }
-            catch (Exception)
+            catch (SqlException)
             {
+                setTempName();
                 showMessage("'" + tempName + "' is available! Try another index.");
             }
         }
@@ -182,12 +186,11 @@ namespace Project_Zero
                 }
                 else 
                 {
-                    resetProgressBar();
                     navigateRecords();
                 }
                 showMessage("afterDelete");
             }
-            catch (Exception)
+            catch (SqlException)
             {
                 showMessage("An error occured during delete!");
             }
@@ -199,20 +202,20 @@ namespace Project_Zero
             {
                 string searchFor = txtName.Text.Trim();
                 if (searchFor == "" || searchFor == tempName)
-                {
                     return;
-                }
+
                 DataRow[] returnedRows = dataSet.Tables["Series"].Select("Name='" + searchFor + "'");
                 int numberOfResults = returnedRows.Length;
+                hidePercentage();
 
                 if (numberOfResults > 0)
                 {
                     DataRow dataRow = returnedRows[0];
                     getRecord(dataRow);
-
                     currentRow = dataSet.Tables["Series"].Rows.IndexOf(dataRow);
                     setJumpingButtons();
                     setRowScroll();
+                    showProgress();
                     showInfo("Search success");
                 }
                 else
@@ -221,18 +224,20 @@ namespace Project_Zero
                     txtWatched.Clear();
                     txtEpisodes.Clear();
                     resetRating();
-                    changeState("searchError");
-                    showProgress(false);
+                    updateUI("invalidSearch");
+                    showProgress();
                     showInfo("No matching", "Search");
+                    labelCR.Text = 0 + " / " + 0; // show rowCount = '0 / 0'
+                    showPercentage();
                 }
             }
-            catch (Exception)
+            catch (SqlException)
             {
-                showMessage("Error occured during search!");
+                showMessage("An error occured during search!");
             }
         }
 
-        private void progressForward()
+        private void forwardProgress()
         {
             try
             {
@@ -240,8 +245,11 @@ namespace Project_Zero
                 int episodes = int.Parse(txtEpisodes.Text);
                 current++;
                 txtWatched.Text = current.ToString();
-                progressBarValue = 0;
-                updateRecord(false, true);
+                progressBarLength = 0;
+
+                hidePercentage();
+                updateRecord();
+
                 if (current < episodes)
                 {
                     forwardCount++;
@@ -258,124 +266,41 @@ namespace Project_Zero
             }
         }
 
-        private void showProgress(bool canShow = true)
+        private void showProgress()
         {
             try
             {
                 int current = int.Parse(txtWatched.Text);
                 double episodes = double.Parse(txtEpisodes.Text);
-
                 double percentage = (current / episodes);
-                progressBarValue = (int) (percentage * progressBarMaxLength);
+                progressBarLength = (int) (percentage * progressBarMaxLength);
                 percentage *= 100;
 
-                setProgressCorner();
-                canShowPercentage = canShow;
-                isProgressForward = true;
-                progressTimer.Start();
-                if (percentage == 0)
-                {
-                    showInfo(percentage.ToString() + " %", "Progress");
-                }
+                // Fill ProgressBar
+                progressTimer.Start(); 
             }
             catch (Exception)
             {
-                progressBar.Width = 0;
-                progressCorner.Width = 0;
-                showInfo("Completed 0 %");
+                resetProgressBar();
             }
         }
 
-        private void setRowScroll(bool addingRow = false)
+        private void setRowScroll()
         {
+            //Set scrollBar Length
+            rowScrollBar.Width = compute.getScrollBarLength(maxRows);
+
+            //Set ScrollBar Location
             int x, y = 0;
             const int LENGTH_FIX = 1;
             int max_X = (rowProgressOut.Width) - (rowScrollBar.Width + LENGTH_FIX);
-
-            if(addingRow)
-            {
-                rowScrollBar.Visible = false;
-            }
-            else
-            {
-                rowScrollBar.Visible = true;
-            }
-            x = compute.getScroll_X(currentRow, maxRows, max_X, LENGTH_FIX);
+            x = compute.getScrollBarLocation(currentRow, maxRows, max_X, LENGTH_FIX);
             rowScrollBar.Location = new Point(x, y);
-        }
-
-        private void getNextRow()
-        {
-            currentRow++;
-            navigateRecords();
-        }
-
-        private void getPreviousRow()
-        {
-            currentRow--;
-            navigateRecords();
-        }
-
-        private void setRating()
-        {
-            PictureBox[] star = new PictureBox[5];
-            star[0] = star1;
-            star[1] = star2;
-            star[2] = star3;
-            star[3] = star4;
-            star[4] = star5;
-
-            try
-            {
-                for (int i = 0; i < rating; i++)
-                {
-                    star[i].Image = Properties.Resources.btnStar_hover;
-                }
-
-                for (int i = 4; i >= rating; i--)
-                {
-                    star[i].Image = Properties.Resources.btnStar_default;
-                }
-            }
-		    catch (Exception)
-            {
-                resetRating();
-                updateRating();
-            }
-        }
-
-        private void hideRating()
-        {
-            hideControl(star1);
-            hideControl(star2);
-            hideControl(star3);
-            hideControl(star4);
-            hideControl(star5);
-        }
-
-        private void showRating()
-        {
-            showControl(star1);
-            showControl(star2);
-            showControl(star3);
-            showControl(star4);
-            showControl(star5);
-        }
-
-        private void updateRating()
-        {
-            updateRecord(true);
-        }
-
-        private void resetRating()
-        {
-            rating = 0;
-            setRating();
         }
 
         private void showMessage(string mode)
         {
-            Confirm_UI msgForm = new Confirm_UI();
+            Message_UI msgForm = new Message_UI();
             msgForm.mode = mode;
             msgForm.ShowDialog();
             bool confirm = msgForm.isYesClicked;
@@ -394,27 +319,116 @@ namespace Project_Zero
             txtName.Clear();
             txtSeries.Clear();
             resetRating();
-
             txtWatched.Text = "0";
             txtEpisodes.Text = "12";
-            
-            changeState("emptyState");
-
-            showProgress(false);
+            updateUI("empty");
+            showProgress();
             showInfo("Database empty");
             txtName.Select();
         }
 
         private void showInfo(string infoText, string infoTitle = "Info")
         {
-            labelST.Text = infoTitle + "  |   " + infoText;
-
-            int cRow = currentRow, mRows = maxRows;
-            if (mRows > 0)
-            {
+            int cRow = currentRow;
+            if (maxRows > 0)
                 cRow++;
+            labelST.Text = infoTitle + "  |   " + infoText;
+            labelCR.Text = cRow + " / " + maxRows;
+        }
+
+        private void updateUI(string state = "update")
+        {
+            if (state == "empty")
+            {
+                disableControl(btnCancel);
+                setSaveState();
             }
-            labelCR.Text = cRow + " / " + mRows;
+            else if(state == "insert")
+            {
+                setInsertState();
+            }
+            else if(state == "save")
+            {
+                setSaveState();
+                enableControl(btnCancel);
+            }
+            else if(state == "invalidSearch")
+            {
+                setSaveState();
+                showControl(btnRefresh);
+                hideControl(btnSave);
+                hideControl(btnCancel);
+            }
+            else
+            {
+                setUpdateState();
+            }
+        }
+
+        private void setInsertState()
+        {
+            resetProgressBar();
+            txtName.Clear();
+            setTempName();
+            txtSeries.Clear();
+            resetRating();
+            txtWatched.Text = "0";
+            txtEpisodes.Text = "12";
+            hidePercentage();
+            showProgress();
+            updateUI("save"); //call => setSaveState()
+
+            labelST.Text = "Info" + "  |   " + "Adding a show";
+            int mRows = (maxRows + 1);
+            labelCR.Text = mRows + " / " + mRows; ;
+            txtName.Select();
+        }
+
+        private void setUpdateState()
+        {
+            hideControl(btnSave);
+            hideControl(btnCancel);
+            showControl(btnAdd);
+            showControl(btnSearch);
+            showControl(btnForward);
+            showControl(btnUpdate);
+            showControl(rowScrollBar);
+            showControl(btnDelete);
+            showControl(btnReset);
+            showRating();
+        }
+        private void setSaveState()
+        {
+            showControl(btnSave);
+            showControl(btnCancel);
+            hideControl(btnAdd);
+            hideControl(btnSearch);
+            hideControl(btnForward);
+            hideControl(btnUpdate);
+            hideControl(btnDelete);
+            hideControl(btnReset);
+            hideControl(rowScrollBar);
+            disableJumpingButtons();
+            hideRating();
+        }
+
+        private void getNextRow()
+        {
+            currentRow++;
+            navigateRecords();
+        }
+
+        private void getPreviousRow()
+        {
+            currentRow--;
+            navigateRecords();
+        }
+
+        private void refreshFromSearch()
+        {
+            hideControl(btnRefresh);
+            updateUI();
+            navigateRecords();
         }
 
         private void setTempName(string temp = " ")
@@ -427,114 +441,6 @@ namespace Project_Zero
             {
                 tempName = temp;
             }
-        }
-
-        private void setToolTips()
-        {
-            string starMark = "*required";
-
-            tool_tip.BackColor = Color.FromArgb(28, 28, 28);
-            tool_tip.ForeColor = Color.FromArgb(255, 50, 50);
-
-            tool_tip.SetToolTip(btnReset, "Reset");
-            tool_tip.SetToolTip(btnSearch, "Search");
-            tool_tip.SetToolTip(btnForward, "Forward");
-            tool_tip.SetToolTip(btnRefresh, "Back");
-            tool_tip.SetToolTip(btnUpdate, "Update");
-            tool_tip.SetToolTip(btnDelete, "Delete");
-            tool_tip.SetToolTip(btnCancel, "Cancel");
-            tool_tip.SetToolTip(btnSave, "Save");
-            tool_tip.SetToolTip(btnAdd, "New");
-            tool_tip.SetToolTip(starName, starMark);
-            tool_tip.SetToolTip(starWatched, starMark);
-            tool_tip.SetToolTip(starEpisodes, starMark);
-
-        }
-
-        private bool checkInputFields()
-        {
-            if (txtName.Text != "")
-            {
-                if (txtWatched.Text != "")
-                {
-                    if (txtEpisodes.Text != "")
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        showInfo("Enter episodes", "Error");
-                    }
-                }
-                else
-                {
-                    showInfo("Enter watched", "Error");
-                }
-            }
-            else
-            {
-                showInfo("Index can't be empty", "Error");
-            }
-            return false;
-        }
-
-        private void changeState(string state = "updateState")
-        {
-            if (state == "emptyState")
-            {
-                disableControl(btnCancel);
-                setSaveStage();
-            }
-            else if(state == "saveState")
-            {
-                enableControl(btnCancel);
-                setSaveStage();
-            }
-            else if(state == "searchError")
-            {
-                showControl(btnRefresh);
-                setSaveStage();
-                hideControl(btnSave);
-                hideControl(btnCancel);
-            }
-            else
-            {
-                setUpdateStage();
-            }
-        }
-
-        private void setUpdateStage()
-        {
-            showControl(btnAdd);
-            showControl(btnSearch);
-            showControl(btnForward);
-            showControl(btnUpdate);
-            hideControl(btnSave);
-            hideControl(btnCancel);
-            showControl(btnDelete);
-            showControl(btnReset);
-            showRating();
-        }
-        private void setSaveStage()
-        {
-            hideControl(btnAdd);
-            hideControl(btnSearch);
-            hideControl(btnForward);
-            hideControl(btnUpdate);
-            showControl(btnSave);
-            showControl(btnCancel);
-            hideControl(btnDelete);
-            hideControl(btnReset);
-            disableJumpingButtons();
-            hideRating();
-        }
-
-        private void disableJumpingButtons()
-        {
-            disableControl(btnNext);
-            disableControl(btnBack);
-            btnBack.Image = Properties.Resources.btnBack_down;
-            btnNext.Image = Properties.Resources.btnNext_down;
         }
 
         private void setJumpingButtons()
@@ -581,39 +487,13 @@ namespace Project_Zero
             }
         }
 
-        private void refreshFromSearch()
+        private void disableJumpingButtons()
         {
-            hideControl(btnRefresh);
-            changeState();
-            navigateRecords(true);
-        }
+            disableControl(btnNext);
+            btnNext.Image = Properties.Resources.btnNext_down;
+            disableControl(btnBack);
+            btnBack.Image = Properties.Resources.btnBack_down;
 
-        private void enableControl(Control button)
-        {
-            button.Enabled = true;
-        }
-
-        private void disableControl(Control button)
-        {
-            button.Enabled = false;
-        }
-
-        private void showControl(Control shadow)
-        {
-            shadow.Visible = true;
-        }
-
-        private void hideControl(Control shadow)
-        {
-            shadow.Visible = false;
-        }
-
-        private void isNumeric(KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
         }
 
         private void setProgressBar()
@@ -631,14 +511,19 @@ namespace Project_Zero
 
         private void setProgressCorner()
         {
-            if(progressBar.Width == 0)
+            int cornerWidth = 2;
+
+            if(progressBar.Width == 0 || ((progressBar.Width == progressBarLength) && (progressBarLength == progressBarMaxLength)))
             {
                 progressCorner.Width = 0;
+                progressCorner2.Width = 0;
             }
             else
             {
-                progressCorner.Width = 2;
+                progressCorner.Width = cornerWidth;
+                progressCorner2.Width = (cornerWidth - 1);
                 progressCorner.Left = (progressBar.Right - 1);
+                progressCorner2.Left = (progressBar.Right + 1);
             }
         }
 
@@ -665,48 +550,182 @@ namespace Project_Zero
             forwardCount = 0;
             updateRecord();
             resetProgressBar();
+            showPercentage();
             showInfo("Resetted", "Progress");
         }
 
-        private void progressTimer_Tick(object sender, EventArgs e)
+        private void hideRating()
         {
-            if (isProgressForward)
+            hideControl(star1);
+            hideControl(star2);
+            hideControl(star3);
+            hideControl(star4);
+            hideControl(star5);
+        }
+
+        private void showRating()
+        {
+            showControl(star1);
+            showControl(star2);
+            showControl(star3);
+            showControl(star4);
+            showControl(star5);
+        }
+
+        private void setRating()
+        {
+            PictureBox[] star = new PictureBox[5];
+            star[0] = star1;
+            star[1] = star2;
+            star[2] = star3;
+            star[3] = star4;
+            star[4] = star5;
+
+            try
             {
-                if (progressBar.Width > progressBarValue)
+                for (int i = 0; i < rating; i++)
                 {
-                    progressBar.Width = progressBarValue;
-                    setProgressCorner();
+                    star[i].Image = Properties.Resources.btnStar_hover;
                 }
-                isProgressForward = false;
+
+                for (int i = 4; i >= rating; i--)
+                {
+                    star[i].Image = Properties.Resources.btnStar_default;
+                }
             }
-
-            else
+            catch (Exception)
             {
-                if (progressBar.Width >= (progressBarValue - 4) && progressBar.Width < progressBarValue)
-                {
-                    progressBar.Width += 2;
-                    setProgressCorner();
-                }
-                else if (progressBar.Width >= (progressBarValue - 10) && progressBar.Width < progressBarValue)
-                {
-                    progressBar.Width += 6;
-                    setProgressCorner();
-                }
+                resetRating();
+                updateRating();
+            }
+        }
 
-                else if (progressBar.Width < progressBarValue)
-                {
-                    progressBar.Width += 10;
-                    setProgressCorner();
+        private void resetRating()
+        {
+            rating = 0;
+            setRating();
+        }
 
-                    if (canShowPercentage)
+        private bool validInputs()
+        {
+            if (txtName.Text != "")
+            {
+                if (txtWatched.Text != "")
+                {
+                    if (txtEpisodes.Text != "")
                     {
-                        int progress = compute.getProgressValue(progressBar.Width, progressBarMaxLength);
-                        showInfo(progress.ToString() + " %", "Progress");
+                        return true;
+                    }
+                    else
+                    {
+                        showInfo("Enter episodes", "Error");
                     }
                 }
                 else
                 {
-                    if (canShowPercentage)
+                    showInfo("Enter watched", "Error");
+                }
+            }
+            else
+            {
+                showInfo("Index can't be empty", "Error");
+            }
+            return false;
+        }
+
+        private void isNumeric(KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void setToolTips()
+        {
+            string starMark = "*required";
+            tool_tip.BackColor = Color.FromArgb(28, 28, 28);
+            tool_tip.ForeColor = Color.FromArgb(255, 50, 50);
+
+            tool_tip.SetToolTip(btnReset, "Reset");
+            tool_tip.SetToolTip(btnSearch, "Search");
+            tool_tip.SetToolTip(btnForward, "Forward");
+            tool_tip.SetToolTip(btnRefresh, "Back");
+            tool_tip.SetToolTip(btnUpdate, "Update");
+            tool_tip.SetToolTip(btnDelete, "Delete");
+            tool_tip.SetToolTip(btnCancel, "Cancel");
+            tool_tip.SetToolTip(btnSave, "Save");
+            tool_tip.SetToolTip(btnAdd, "New");
+            tool_tip.SetToolTip(starName, starMark);
+            tool_tip.SetToolTip(starWatched, starMark);
+            tool_tip.SetToolTip(starEpisodes, starMark);
+        }
+
+        private void hidePercentage()
+        {
+            isHidePercentage = true;
+        }
+        private void showPercentage()
+        {
+            isHidePercentage = false;
+        }
+
+        private void enableControl(Control button)
+        {
+            button.Enabled = true;
+        }
+
+        private void disableControl(Control button)
+        {
+            button.Enabled = false;
+        }
+
+        private void showControl(Control shadow)
+        {
+            shadow.Visible = true;
+        }
+
+        private void hideControl(Control shadow)
+        {
+            shadow.Visible = false;
+        }
+
+
+        private void progressTimer_Tick(object sender, EventArgs e)
+        {
+            if (progressBar.Width > progressBarLength)
+            {
+                progressBar.Width = progressBarLength;
+                setProgressCorner();
+            }
+            else
+            {
+                if(progressBar.Width < progressBarLength)
+                {
+                    if (progressBar.Width >= (progressBarLength - 4))
+                    {
+                        progressBar.Width += 2;
+                    }
+                    else if (progressBar.Width >= (progressBarLength - 10))
+                    {
+                        progressBar.Width += 6;
+                    }
+                    else
+                    {
+                        progressBar.Width += 10;
+
+                        // Show Progress Percentage (0~100%)
+                        if (!isHidePercentage)
+                        {
+                            int percentage = compute.getPercentage(progressBar.Width, progressBarMaxLength);
+                            showInfo(percentage.ToString() + " %", "Progress");
+                        }
+                    }
+                    setProgressCorner();
+                }
+                else
+                {
+                    if (!isHidePercentage)
                     {
                         // Reset forwardCount
                         forwardCount = 0;
@@ -718,22 +737,26 @@ namespace Project_Zero
 
                         showInfo(((int)(progress * 100)).ToString() + " %", "Progress");
                     }
-                    // Stop progressTimer
-                    if (progressBarValue == progressBarMaxLength)
-                    {
-                        progressCorner.Width = 0;
-                    }
+
+                    // End of progressTimer
+                    setProgressCorner();
+                    showPercentage();
                     progressTimer.Stop();
                 }
             }
-    }
-        
+        }
+
+        // Import DwmApi to set title bar "DARK"
+        [DllImport("DwmApi")]
+        private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
         protected override void OnHandleCreated(EventArgs e)
         {
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
-                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
+            {
+                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); //Set 'DARK' title bar
+            }
         }
-
+        
         private void txtName_Click(object sender, EventArgs e)
         {
             if (tempName == txtName.Text)
@@ -823,7 +846,7 @@ namespace Project_Zero
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            progressForward();
+            forwardProgress();
         }
         
         private void btnPlus_MouseMove(object sender, MouseEventArgs e)
@@ -897,7 +920,7 @@ namespace Project_Zero
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (checkInputFields())
+            if (validInputs())
             {
                 updateRecord();
             }
@@ -921,7 +944,7 @@ namespace Project_Zero
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (checkInputFields())
+            if (validInputs())
             {
                 insertRecord();
             }
@@ -944,21 +967,7 @@ namespace Project_Zero
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            showControl(btnSave);
-            resetProgressBar();
-            txtName.Clear();
-            txtSeries.Clear();
-            resetRating();
-            setTempName();
-            txtWatched.Text = "0";
-            txtEpisodes.Text = "12";
-            showProgress(false);
-            changeState("saveState");
-            labelST.Text = "Info" + "  |   " + "Adding a show";
-            int mRows = (maxRows + 1);
-            labelCR.Text = mRows + " / " + mRows; ;
-            setRowScroll(true);
-            txtName.Select();
+            updateUI("insert");
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -968,7 +977,7 @@ namespace Project_Zero
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            changeState();
+            updateUI();
             setJumpingButtons();
             navigateRecords();
         }

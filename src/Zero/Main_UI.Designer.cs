@@ -89,6 +89,7 @@
             this.txtSeriesShadow = new System.Windows.Forms.TextBox();
             this.panelDataShadow = new System.Windows.Forms.Panel();
             this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
+            this.progressCorner2 = new System.Windows.Forms.Label();
             this.panelNavigation.SuspendLayout();
             this.rowProgressOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
@@ -322,7 +323,7 @@
             this.labelST.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.labelST.Size = new System.Drawing.Size(200, 28);
             this.labelST.TabIndex = 30;
-            this.labelST.Text = "Info |   Ganbare Ganbare!";
+            this.labelST.Text = "Shinzo |   Ganbare Ganbare!";
             this.labelST.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // starName
@@ -331,7 +332,7 @@
             this.starName.BackColor = System.Drawing.Color.Transparent;
             this.starName.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.starName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.starName.Location = new System.Drawing.Point(55, 13);
+            this.starName.Location = new System.Drawing.Point(54, 13);
             this.starName.Name = "starName";
             this.starName.Size = new System.Drawing.Size(13, 16);
             this.starName.TabIndex = 26;
@@ -376,7 +377,7 @@
             // 
             // txtSeriesBack
             // 
-            this.txtSeriesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtSeriesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.txtSeriesBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSeriesBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeriesBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
@@ -437,7 +438,7 @@
             // 
             // txtWatchedBack
             // 
-            this.txtWatchedBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtWatchedBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.txtWatchedBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWatchedBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtWatchedBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -454,7 +455,7 @@
             // 
             // txtEpisodesBack
             // 
-            this.txtEpisodesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtEpisodesBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.txtEpisodesBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpisodesBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpisodesBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -652,7 +653,6 @@
             this.panelData.Controls.Add(this.txtWatched);
             this.panelData.Controls.Add(this.txtEpisodes);
             this.panelData.Controls.Add(this.txtSeriesBack);
-            this.panelData.Controls.Add(this.starName);
             this.panelData.Controls.Add(this.starWatched);
             this.panelData.Controls.Add(this.starEpisodes);
             this.panelData.Controls.Add(this.textBox4);
@@ -666,6 +666,7 @@
             this.panelData.Controls.Add(this.txtSeries);
             this.panelData.Controls.Add(this.textBox2);
             this.panelData.Controls.Add(this.txtSeriesShadow);
+            this.panelData.Controls.Add(this.starName);
             this.panelData.Location = new System.Drawing.Point(16, 14);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(402, 146);
@@ -674,6 +675,7 @@
             // panelProgress
             // 
             this.panelProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.panelProgress.Controls.Add(this.progressCorner2);
             this.panelProgress.Controls.Add(this.progressBar);
             this.panelProgress.Controls.Add(this.progressCorner);
             this.panelProgress.Controls.Add(this.progressBarOut);
@@ -688,7 +690,7 @@
             this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
             this.progressCorner.Location = new System.Drawing.Point(22, 0);
             this.progressCorner.Name = "progressCorner";
-            this.progressCorner.Size = new System.Drawing.Size(10, 3);
+            this.progressCorner.Size = new System.Drawing.Size(20, 3);
             this.progressCorner.TabIndex = 58;
             // 
             // progressBarOut
@@ -791,7 +793,7 @@
             // 
             // txtNameBack
             // 
-            this.txtNameBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
+            this.txtNameBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
             this.txtNameBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNameBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
@@ -913,6 +915,14 @@
             this.tool_tip.ReshowDelay = 100;
             this.tool_tip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.tool_tip_Draw);
             // 
+            // progressCorner2
+            // 
+            this.progressCorner2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.progressCorner2.Location = new System.Drawing.Point(46, 0);
+            this.progressCorner2.Name = "progressCorner2";
+            this.progressCorner2.Size = new System.Drawing.Size(20, 3);
+            this.progressCorner2.TabIndex = 77;
+            // 
             // Main_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1019,6 +1029,7 @@
         private System.Windows.Forms.Label labelCR;
         private System.Windows.Forms.Panel panelProgress;
         private System.Windows.Forms.Label progressBarOut;
+        private System.Windows.Forms.Label progressCorner2;
     }
 }
 
