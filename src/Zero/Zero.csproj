@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{22CB554F-4135-4558-90A5-BB12521FF590}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Project_Zero</RootNamespace>
+    <RootNamespace>Zero</RootNamespace>
     <AssemblyName>zero</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,7 +44,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -67,11 +67,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Guide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guide.Designer.cs">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </Compile>
     <Compile Include="Message_UI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Message_UI.Designer.cs">
       <DependentUpon>Message_UI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -91,7 +102,9 @@
       <DependentUpon>Main_UI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Guide.resx">
+      <DependentUpon>Guide.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Message_UI.resx">
       <DependentUpon>Message_UI.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,11 +133,30 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data.mdf" />
+    <Content Include="data.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="data_log.ldf">
       <DependentUpon>data.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="icon.ico" />
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\splash.png" />
+    <None Include="Resources\guide_05.png" />
+    <None Include="Resources\guide_04.png" />
+    <None Include="Resources\guide_03.png" />
+    <None Include="Resources\guide_02.png" />
+    <None Include="Resources\guide_01.png" />
+    <None Include="Resources\guide_00.png" />
+    <None Include="Resources\btnGuideNext.png" />
+    <None Include="Resources\btnGuideClose.png" />
+    <None Include="Resources\btnGuideBack.png" />
+    <None Include="Resources\Orbitron-VariableFont.ttf" />
+    <None Include="Resources\RussoOne-Regular.ttf" />
     <None Include="Resources\btnMsgNo_down.png" />
     <None Include="Resources\btnMsgNo_hover.png" />
     <None Include="Resources\btnMsgNo_default.png" />
@@ -169,7 +201,6 @@
     <None Include="Resources\btnAdd_hover.png" />
     <None Include="Resources\btnAdd_down.png" />
     <None Include="Resources\btnAdd_default.png" />
-    <None Include="Resources\splash.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
@@ -184,10 +215,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Zero.Core\Zero.Core.csproj">
       <Project>{15ff8b3d-90b9-4f30-b85e-e6661688b19f}</Project>
       <Name>Zero.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>"$(DevEnvDir)\TextTransform.exe" -a !!BuildConfiguration!$(Configuration) "$(ProjectDir)Properties\AssemblyInfo.tt"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
