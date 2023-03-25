@@ -16,13 +16,9 @@ If ur using Windows 11 *build 22000* or later u don't have to install .NET Frame
 
 Before u run this application, u must need to download and install *SQL LocalDB 2019* on ur pc. Download it using the link below.
 
-Fonts are necessary, download and install both *Orbitron* and *Russo One* fonts. Download them using the links below.
-
 
 [![.NET Framework](https://img.shields.io/badge/.NET%20Framework-v4.8-blue)](https://dotnet.microsoft.com/en-us/download/dotnet-framework/thank-you/net48-offline-installer)
 [![SQL LocalDB](https://img.shields.io/badge/SQL%20Local%20DB-2019-orange)](https://download.microsoft.com/download/7/c/1/7c14e92e-bdcb-4f89-b7cf-93543e7112d1/SqlLocalDB.msi)
-[![Russo One](https://img.shields.io/badge/Font-Russo%20One-blueviolet)](https://fonts.google.com/specimen/Russo+One) 
-[![Orbitron](https://img.shields.io/badge/Font-Orbitron-blueviolet)](https://fonts.google.com/specimen/Orbitron)
 
 ## Downloads ##
 
@@ -31,7 +27,7 @@ Try to use the latest version. Using older versions don't recommended. I'm provi
 **These releases are windows execlusive.*
 
 
-* [![Zero v2.0.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
+* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip) (UNDER DEVELOPMENT)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
 * [![Zero v1.0.2](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.2/bin.zip)
