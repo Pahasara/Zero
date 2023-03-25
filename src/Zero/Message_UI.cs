@@ -1,69 +1,85 @@
-﻿using System;
+﻿// Copyright (c) 2023 Dewnith Fernando @github.com/Pahasara.
+// Licensed under the MIT license.
+
+using System;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Project_Zero
+namespace Zero
 {
     public partial class Message_UI : Form
     {
+        // Initialize library
+        Core.Message message = new Core.Message();
+
+        // Initialize custom fonts
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
+        private PrivateFontCollection fonts = new PrivateFontCollection();
+        Font customFont;
+
         public Message_UI()
         {
             InitializeComponent();
+
+            // Set custom fonts
+            setFontRussoOne();
         }
 
         public bool isYesClicked = false;
         public string mode; 
-        string text, title;
 
         private void showMessage()
         {
             if (mode == "delete")
             {
-                text = "Are you sure want to permanently delete this series?";
-                title = "Confirm Delete";
-                msgText.Text = text;
-                msgTitle.Text = title;
+                msgText.Text = message.DeleteConfirmMessage;
+                msgTitle.Text = message.DeleteConfirmTitle;
                 btnNo.Select();
             }
             else if (mode == "reset")
             {
-                text = "Are you sure want to reset the progress of this series?";
-                title = "Confirm Reset";
-                msgText.Text = text;
-                msgTitle.Text = title;
+                msgText.Text = message.ResetMessage;
+                msgTitle.Text = message.ResetTitle;
             }
             else if (mode == "dbLost")
             {
                 setButtonOk();
-                text = "Requirements not installed! Visit our github for more details.";
-                title = "Database Not Found";
-                msgText.Text = text;
-                msgTitle.Text = title;
-            }
-            else if (mode == "finish")
-            {
-                text = "Are you sure want to finish the progress of this series?";
-                title = "Confirm Finish";
-                msgText.Text = text;
-                msgTitle.Text = title;
+                msgText.Text = message.DatabaseLostMessage;
+                msgTitle.Text = message.DatabaseLostTitle; ;
             }
             else if (mode == "afterDelete")
             {
                 setButtonOk();
-                text = "Information about that TV show no longer available.";
-                title = "TV show Deleted";
-                msgText.Text = text;
-                msgTitle.Text = title;
+                msgText.Text = message.DeleteSuccessMessage;
+                msgTitle.Text = message.DeleteSuccessTitle;
             }
             else
             {
+                // IF Unknown error occured
+                // 'mode' holds the message text
                 setButtonOk();
-                text = mode;
-                title = "Error Occured";
-                msgText.Text = text;
-                msgTitle.Text = title;
+                msgText.Text = mode;
+                msgTitle.Text = message.UnknownErrorTitle;
             }
+        }
+
+        private void setFontRussoOne()
+        {
+            byte[] fontRussoOne = Properties.Resources.fontRussoOne;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontRussoOne.Length);
+            Marshal.Copy(fontRussoOne, 0, fontPtr, fontRussoOne.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.fontRussoOne.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.fontRussoOne.Length, IntPtr.Zero, ref dummy);
+            Marshal.FreeCoTaskMem(fontPtr);
+
+            customFont = new Font(fonts.Families[0], 8.0F);
+            msgText.Font = customFont;
+            customFont = new Font(fonts.Families[0], 9.75F);
+            msgTitle.Font = customFont;
         }
 
         private void MSG_Load(object sender, EventArgs e)
@@ -80,12 +96,12 @@ namespace Project_Zero
         private void btnOk_Click(object sender, EventArgs e)
         {
             isYesClicked = true;
-            this.Close();
+            Close();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnOk_MouseMove(object sender, MouseEventArgs e)
@@ -118,14 +134,15 @@ namespace Project_Zero
             btnNo.Image = Properties.Resources.btnMsgNo_default;
         }
 
-        // Import DwmApi to set title bar "DARK"
+        // Import DwmApi to set title bar DARK
         [DllImport("DwmApi")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
         protected override void OnHandleCreated(EventArgs e)
         {
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
             {
-                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); //Set 'DARK' title bar
+                // SET TITLE BAR DARK
+                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
             }
         }
     }

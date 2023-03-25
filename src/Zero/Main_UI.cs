@@ -1,48 +1,113 @@
-﻿using System;
+﻿// Copyright (c) 2023 Dewnith Fernando @github.com/Pahasara.
+// Licensed under the MIT license.
+
+using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Data.SqlClient;
+using Zero.Core;
 
-namespace Project_Zero
+namespace Zero
 {
     public partial class Main_UI : Form
     {
-        // Initialize library
-        Zero.Core.Compute compute = new Zero.Core.Compute();
+        // Initialize library: Zero.Data
+        Compute compute = new Compute();
+        Error error = new Error();
+        Info info = new Info();
+        Data data = new Data();
+
+        // Initialize custom fonts
+        [DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont, IntPtr pdv, [In] ref uint pcFonts);
+        private PrivateFontCollection fonts = new PrivateFontCollection();
+        Font customFont;
 
         public Main_UI()
         {
             InitializeComponent();
+
+            // Set custom fonts
+            setFontRussoOne();
+            setFontOrbitron();
         }
 
         // Public Variables
         SqlConnection conn; SqlDataAdapter dataAdapter; DataSet dataSet; SqlCommandBuilder commandBuilder;
 
-        string databaseFile = "data.mdf", table = "Series", tempName = "", devURL = "https://www.github.com/pahasara/zero";
+        string databaseFile = "data.mdf", table = "Series", tempName = "", devUrl = "https://www.github.com/pahasara/zero";
 
-        int maxRows, currentRow, progressBarLength, progressBarMaxLength, forwardCount = 0, rating;
+        int maxRows, currentRow, progressBarLength, progressBarMaxLength, forwardCount = 0, zeroTime = 0, rating;
 
-        bool isHidePercentage = false;
+        bool isHidePercentage = false, isFirstTime = false;
 
         Color textEnterForeColor = Color.FromArgb(255, 255, 255);
         Color textLeaveForeColor = Color.FromArgb(255, 240, 240);
 
-
         private void Main_UI_Load(object sender, EventArgs e)
         {
-            //initialize ui
+            // Initialize ui
             setProgressBar();
             setProgressCorner();
             setToolTips();
 
-            //initialize connection
+            // Initialize connection
             createConnection();
+
+            // Request data
             navigateRecords();
+
+            // Check whether a new user or existing one
+            // If a new user, show beginner's guide
+            checkFirstRun();
         }
 
+
+        private void setFontOrbitron()
+        {
+            byte[] fontOrbitron = Properties.Resources.fontOrbitron;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontOrbitron.Length);
+            Marshal.Copy(fontOrbitron, 0, fontPtr, fontOrbitron.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.fontOrbitron.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.fontOrbitron.Length, IntPtr.Zero, ref dummy);
+            Marshal.FreeCoTaskMem(fontPtr);
+
+            customFont = new Font(fonts.Families[0], 9.75F, FontStyle.Bold);
+            lbIndex.Font = customFont;
+            lbShow.Font = customFont;
+            lbEpisodes.Font = customFont;
+            lbWatched.Font = customFont;
+        }
+
+        private void setFontRussoOne()
+        {
+            byte[] fontRussoOne = Properties.Resources.fontRussoOne;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontRussoOne.Length);
+            Marshal.Copy(fontRussoOne, 0, fontPtr, fontRussoOne.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.fontRussoOne.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.fontRussoOne.Length, IntPtr.Zero, ref dummy);
+            Marshal.FreeCoTaskMem(fontPtr);
+
+            customFont = new Font(fonts.Families[0], 8.0F, FontStyle.Italic);
+            labelCP.Font = customFont;
+            labelST.Font = customFont;
+            customFont = new Font(fonts.Families[0], 9.0F);
+            labelCR.Font = customFont;
+            customFont = new Font(fonts.Families[0], 9.75F);
+            txtIndex.Font = customFont;
+            txtShow.Font = customFont;
+            txtEpisodes.Font = customFont;
+            txtWatched.Font =  customFont;
+            starIndex.Font = customFont;
+            starEpisodes.Font = customFont;
+            starWatched.Font = customFont;
+        }
 
         private void createConnection()
         {
@@ -50,12 +115,13 @@ namespace Project_Zero
             {
                 conn = new SqlConnection();
                 dataSet = new DataSet();
-                conn.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\" + databaseFile + ";Integrated Security=True";
+                string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\" + databaseFile + ";Integrated Security=True";
+                conn.ConnectionString = connString;
                 string sql = "SELECT * FROM " + table;
                 dataAdapter = new SqlDataAdapter(sql, conn);
                 dataAdapter.Fill(dataSet, "Series");
                 commandBuilder = new SqlCommandBuilder(dataAdapter);
-                maxRows = dataSet.Tables["Series"].Rows.Count; //initialize the  number of records
+                maxRows = dataSet.Tables["Series"].Rows.Count;  // Initialize number of records
             }
             catch (SqlException)
             {
@@ -65,6 +131,12 @@ namespace Project_Zero
             }
         }
 
+        private void Shutdown()
+        {
+            conn.Close();
+            Application.Exit();
+        }
+
         private void navigateRecords()
         {
             try
@@ -72,12 +144,12 @@ namespace Project_Zero
                 DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
                 getRecord(dataRow);
                 setTempName();
-                setJumpingButtons();
+                setControlButtons();
                 setRating();
                 showProgress();
-                setRowScroll();
+                setScrollBar();
                 updateUI();
-                setWatchingStatus();
+                checkProgress();
                 progressBar.Select();
             }
             catch (Exception)
@@ -88,8 +160,8 @@ namespace Project_Zero
 
         private void getRecord(DataRow dataRow)
         {
-            txtName.Text = dataRow.ItemArray.GetValue(0).ToString();
-            txtSeries.Text = dataRow.ItemArray.GetValue(1).ToString();
+            txtIndex.Text = dataRow.ItemArray.GetValue(0).ToString();
+            txtShow.Text = dataRow.ItemArray.GetValue(1).ToString();
             txtWatched.Text = dataRow.ItemArray.GetValue(3).ToString();
             txtEpisodes.Text = dataRow.ItemArray.GetValue(4).ToString();
             int.TryParse(dataRow.ItemArray.GetValue(5).ToString(), out rating);
@@ -103,8 +175,8 @@ namespace Project_Zero
 
             if (episodes == 0) { episodes = 1; }
             if (watched > episodes) { watched = episodes; }
-            newRow[0] = txtName.Text.Trim();
-            newRow[1] = txtSeries.Text;
+            newRow[0] = txtIndex.Text.Trim();
+            newRow[1] = txtShow.Text;
             newRow[3] = watched.ToString();
             newRow[4] = episodes.ToString();
             newRow[5] = rating.ToString();
@@ -119,12 +191,12 @@ namespace Project_Zero
                 dataAdapter.Update(dataSet, "Series");
                 hidePercentage();
                 navigateRecords();
-                showInfo("Updated");
-                setWatchingStatus();
+                showInfo(info.Update);
+                checkProgress();
             }
             catch (SqlException)
             {
-                showMessage("An error occured during update!");
+                showMessage(error.Update);
             }
         }
 
@@ -136,11 +208,11 @@ namespace Project_Zero
                 setRecord(dataRow);
                 dataAdapter.Update(dataSet, "Series");
                 setRating();
-                setWatchingStatus();
+                checkProgress();
             }
             catch (SqlException)
             {
-                showMessage("An error occured during update!");
+                showMessage(error.Rating);
             }
         }
 
@@ -154,7 +226,7 @@ namespace Project_Zero
                 dataSet.Tables["Series"].Rows.Add(newRow);
                 dataAdapter.Update(dataSet, "Series");
 
-                showControl(btnAdd);
+                show(btnAdd);
                 btnUpdate.Image = Properties.Resources.btnUpdate_default;
                 updateUI();
 
@@ -162,16 +234,16 @@ namespace Project_Zero
                 maxRows++;
                 hidePercentage();
                 navigateRecords();
-                showInfo("Saved");
+                showInfo(info.Save);
             }
             catch (SqlException)
             {
                 setTempName();
-                showMessage("'" + tempName + "' is available! Try another index.");
+                showMessage("'" + tempName + "' " + error.Insert);
             }
         }
 
-        private void deleteRecord()
+        private void deleteRecord(bool isFirstRun = false)
         {
             try
             {
@@ -188,11 +260,12 @@ namespace Project_Zero
                 {
                     navigateRecords();
                 }
-                showMessage("afterDelete");
+                if(!isFirstRun)
+                    showMessage("afterDelete");
             }
             catch (SqlException)
             {
-                showMessage("An error occured during delete!");
+                showMessage(error.Delete);
             }
         }
 
@@ -200,7 +273,7 @@ namespace Project_Zero
         {
             try
             {
-                string searchFor = txtName.Text.Trim();
+                string searchFor = txtIndex.Text.Trim();
                 if (searchFor == "" || searchFor == tempName)
                     return;
 
@@ -213,27 +286,46 @@ namespace Project_Zero
                     DataRow dataRow = returnedRows[0];
                     getRecord(dataRow);
                     currentRow = dataSet.Tables["Series"].Rows.IndexOf(dataRow);
-                    setJumpingButtons();
-                    setRowScroll();
-                    showProgress();
-                    showInfo("Search success");
+                    updateUI("searchSuccess");
                 }
                 else
                 {
-                    txtSeries.Clear();
-                    txtWatched.Clear();
-                    txtEpisodes.Clear();
-                    resetRating();
                     updateUI("invalidSearch");
-                    showProgress();
-                    showInfo("No matching", "Search");
-                    labelCR.Text = 0 + " / " + 0; // show rowCount = '0 / 0'
-                    showPercentage();
                 }
             }
             catch (SqlException)
             {
-                showMessage("An error occured during search!");
+                showMessage(error.Search);
+            }
+        }
+
+        private void checkFirstRun()
+        {
+            string code = "####-12-info-zero-12";
+            if (zeroTime == 0) 
+            {
+                timerFirstRun.Enabled = true;
+            }
+            else if(zeroTime == 2)
+            {
+                if (txtIndex.Text == code)
+                {
+                    deleteRecord(true);
+                    isFirstTime = true;
+                }
+            }
+            else if (zeroTime == 14)
+            {
+                if (isFirstTime)
+                {
+                    Guide guide = new Guide();
+                    guide.ShowDialog();
+                }
+            }
+            else if(zeroTime == 15)
+            {
+                zeroTime = 0;
+                timerFirstRun.Stop();
             }
         }
 
@@ -245,24 +337,20 @@ namespace Project_Zero
                 int episodes = int.Parse(txtEpisodes.Text);
                 current++;
                 txtWatched.Text = current.ToString();
-                progressBarLength = 0;
-
-                hidePercentage();
                 updateRecord();
-
                 if (current < episodes)
                 {
                     forwardCount++;
-                    showInfo("+ " + forwardCount , "Progress");
+                    showInfo(info.Forward + " " + forwardCount , "Progress");
                 }
                 else
                 {
-                    setWatchingStatus();
+                    checkProgress();
                 }
             }
             catch (Exception)
             {
-                showMessage("Update failed");
+                showMessage(error.Forward);
             }
         }
 
@@ -276,7 +364,7 @@ namespace Project_Zero
                 progressBarLength = (int) (percentage * progressBarMaxLength);
                 percentage *= 100;
 
-                // Fill ProgressBar
+                // Increment/Decrement progressBar Value
                 progressTimer.Start(); 
             }
             catch (Exception)
@@ -285,12 +373,12 @@ namespace Project_Zero
             }
         }
 
-        private void setRowScroll()
+        private void setScrollBar()
         {
-            //Set scrollBar Length
+            // Set scrollBar length
             rowScrollBar.Width = compute.getScrollBarLength(maxRows);
 
-            //Set ScrollBar Location
+            // Set scrollBar location
             int x, y = 0;
             const int LENGTH_FIX = 1;
             int max_X = (rowProgressOut.Width) - (rowScrollBar.Width + LENGTH_FIX);
@@ -308,40 +396,63 @@ namespace Project_Zero
 
             if (confirm)
             {
-                if (mode == "delete") deleteRecord();
-                if (mode == "reset") resetWatchingProgress();
-                if (mode == "dbLost") Process.Start(devURL);
+                if (mode == "delete")
+                {
+                    deleteRecord();
+                }
+                if (mode == "reset")
+                {
+                    resetWatchingProgress();
+                }
+                if (mode == "dbLost")
+                {
+                    Process.Start(data.SqlLocalDBurl);
+                    Process.Start(devUrl);
+                }
             }
         }
 
         private void errorEmptyDatabase()
         {
-            txtName.Clear();
-            txtSeries.Clear();
-            resetRating();
+            txtIndex.Clear();
+            txtShow.Clear();
             txtWatched.Text = "0";
             txtEpisodes.Text = "12";
             updateUI("empty");
             showProgress();
-            showInfo("Database empty");
-            txtName.Select();
+            showInfo(error.DatabaseEmpty);
+            txtIndex.Select();
         }
 
         private void showInfo(string infoText, string infoTitle = "Info")
         {
-            int cRow = currentRow;
-            if (maxRows > 0)
-                cRow++;
             labelST.Text = infoTitle + "  |   " + infoText;
-            labelCR.Text = cRow + " / " + maxRows;
+            showRowCount();
+        }
+
+        private void showRowCount(int cRow = -1, int mRows = -1)
+        {
+            if (cRow == -1)
+                cRow = currentRow;
+            if (mRows == -1)
+                mRows = maxRows;
+
+            if (mRows > 0)
+            { 
+                cRow++; 
+            }
+            labelCR.Text = cRow + " / " + mRows;
         }
 
         private void updateUI(string state = "update")
         {
-            if (state == "empty")
+            // This function performs a UI update according to the STATE of its
+            if(state == "searchSuccess")
             {
-                disableControl(btnCancel);
-                setSaveState();
+                setControlButtons();
+                setScrollBar();
+                showProgress();
+                showInfo(info.SearchSuccess);
             }
             else if(state == "insert")
             {
@@ -350,14 +461,16 @@ namespace Project_Zero
             else if(state == "save")
             {
                 setSaveState();
-                enableControl(btnCancel);
+                enable(btnCancel);
             }
             else if(state == "invalidSearch")
             {
+                setInvalidSearchState();
+            }
+            else if (state == "empty")
+            {
                 setSaveState();
-                showControl(btnRefresh);
-                hideControl(btnSave);
-                hideControl(btnCancel);
+                disable(btnCancel);
             }
             else
             {
@@ -368,48 +481,60 @@ namespace Project_Zero
         private void setInsertState()
         {
             resetProgressBar();
-            txtName.Clear();
+            txtIndex.Clear();
             setTempName();
-            txtSeries.Clear();
-            resetRating();
+            txtShow.Clear();
             txtWatched.Text = "0";
             txtEpisodes.Text = "12";
             hidePercentage();
             showProgress();
-            updateUI("save"); //call => setSaveState()
-
-            labelST.Text = "Info" + "  |   " + "Adding a show";
-            int mRows = (maxRows + 1);
-            labelCR.Text = mRows + " / " + mRows; ;
-            txtName.Select();
+            updateUI("save");   // Call => setSaveState()
+            showInfo(info.Insert);
+            showRowCount(maxRows, (maxRows + 1));
+            txtIndex.Select();
         }
 
         private void setUpdateState()
         {
-            hideControl(btnSave);
-            hideControl(btnCancel);
-            showControl(btnAdd);
-            showControl(btnSearch);
-            showControl(btnForward);
-            showControl(btnUpdate);
-            showControl(rowScrollBar);
-            showControl(btnDelete);
-            showControl(btnReset);
+            hide(btnSave);
+            hide(btnCancel);
+            show(btnAdd);
+            show(btnSearch);
+            show(btnForward);
+            show(btnUpdate);
+            show(rowScrollBar);
+            show(btnDelete);
+            show(btnReset);
             showRating();
         }
         private void setSaveState()
         {
-            showControl(btnSave);
-            showControl(btnCancel);
-            hideControl(btnAdd);
-            hideControl(btnSearch);
-            hideControl(btnForward);
-            hideControl(btnUpdate);
-            hideControl(btnDelete);
-            hideControl(btnReset);
-            hideControl(rowScrollBar);
-            disableJumpingButtons();
+            show(btnSave);
+            show(btnCancel);
+            hide(btnAdd);
+            hide(btnSearch);
+            hide(btnForward);
+            hide(btnUpdate);
+            hide(btnDelete);
+            hide(btnReset);
+            hide(rowScrollBar);
+            disableButtons();
             hideRating();
+        }
+
+        private void setInvalidSearchState()
+        {
+            txtShow.Clear();
+            txtWatched.Clear();
+            txtEpisodes.Clear();
+            setSaveState();
+            show(btnRefresh);
+            hide(btnSave);
+            hide(btnCancel);
+            showProgress();
+            showInfo(error.SearchNotFound, "Search");
+            showRowCount(0, 0);
+            showPercentage(); // When NEXT NAVIGATION occurs, PERCENTAGE will show
         }
 
         private void getNextRow()
@@ -426,7 +551,7 @@ namespace Project_Zero
 
         private void refreshFromSearch()
         {
-            hideControl(btnRefresh);
+            hide(btnRefresh);
             updateUI();
             navigateRecords();
         }
@@ -434,64 +559,60 @@ namespace Project_Zero
         private void setTempName(string temp = " ")
         {
             if (temp == " ")
-            {
-                tempName = txtName.Text;
-            }
+                tempName = txtIndex.Text;
             else
-            {
                 tempName = temp;
-            }
         }
 
-        private void setJumpingButtons()
+        private void setControlButtons()
         {
             if (currentRow == 0)
             {
-                disableControl(btnBack);
+                disable(btnBack);
                 btnBack.Image = Properties.Resources.btnBack_down;
                 if (maxRows > 1)
                 {
-                    enableControl(btnNext);
+                    enable(btnNext);
                     btnNext.Image = Properties.Resources.btnNext_default;
                 }
                 else
                 {
-                    disableControl(btnNext);
+                    disable(btnNext);
                     btnNext.Image = Properties.Resources.btnNext_down;
                 }
             }
             else if (currentRow < (maxRows - 1))
             {
-                enableControl(btnNext);
+                enable(btnNext);
                 btnNext.Image = Properties.Resources.btnNext_default;
                 if (currentRow == (maxRows - 1))
                 {
-                    disableControl(btnBack);
+                    disable(btnBack);
                     btnBack.Image = Properties.Resources.btnBack_down;
                 }
                 else
                 {
-                    enableControl(btnBack);
+                    enable(btnBack);
                     btnBack.Image = Properties.Resources.btnBack_default;
                 }
             }
             else
             {
-                disableControl(btnNext);
+                disable(btnNext);
                 btnNext.Image = Properties.Resources.btnNext_down;
                 if (currentRow > 0)
                 {
-                    enableControl(btnBack);
+                    enable(btnBack);
                     btnBack.Image = Properties.Resources.btnBack_default;
                 }
             }
         }
 
-        private void disableJumpingButtons()
+        private void disableButtons()
         {
-            disableControl(btnNext);
+            disable(btnNext);
             btnNext.Image = Properties.Resources.btnNext_down;
-            disableControl(btnBack);
+            disable(btnBack);
             btnBack.Image = Properties.Resources.btnBack_down;
 
         }
@@ -527,7 +648,7 @@ namespace Project_Zero
             }
         }
 
-        private void setWatchingStatus()
+        private void checkProgress()
         {
             int watched, episodes;
             int.TryParse(txtWatched.Text, out watched);
@@ -536,11 +657,11 @@ namespace Project_Zero
             if (watched == episodes)
             {
                 showInfo("100 %", "Progress");
-                hideControl(btnForward);
+                hide(btnForward);
             }
             else
             {
-                showControl(btnForward);
+                show(btnForward);
             }
         }
 
@@ -551,25 +672,25 @@ namespace Project_Zero
             updateRecord();
             resetProgressBar();
             showPercentage();
-            showInfo("Resetted", "Progress");
+            showInfo(info.Reset, "Progress");
         }
 
         private void hideRating()
         {
-            hideControl(star1);
-            hideControl(star2);
-            hideControl(star3);
-            hideControl(star4);
-            hideControl(star5);
+            hide(star1);
+            hide(star2);
+            hide(star3);
+            hide(star4);
+            hide(star5);
         }
 
         private void showRating()
         {
-            showControl(star1);
-            showControl(star2);
-            showControl(star3);
-            showControl(star4);
-            showControl(star5);
+            show(star1);
+            show(star2);
+            show(star3);
+            show(star4);
+            show(star5);
         }
 
         private void setRating()
@@ -608,7 +729,7 @@ namespace Project_Zero
 
         private bool validInputs()
         {
-            if (txtName.Text != "")
+            if (txtIndex.Text != "")
             {
                 if (txtWatched.Text != "")
                 {
@@ -618,17 +739,17 @@ namespace Project_Zero
                     }
                     else
                     {
-                        showInfo("Enter episodes", "Error");
+                        showInfo(error.EpisodesNull, "Error");
                     }
                 }
                 else
                 {
-                    showInfo("Enter watched", "Error");
+                    showInfo(error.WatchedNull, "Error");
                 }
             }
             else
             {
-                showInfo("Index can't be empty", "Error");
+                showInfo(error.IndexNull, "Error");
             }
             return false;
         }
@@ -656,7 +777,7 @@ namespace Project_Zero
             tool_tip.SetToolTip(btnCancel, "Cancel");
             tool_tip.SetToolTip(btnSave, "Save");
             tool_tip.SetToolTip(btnAdd, "New");
-            tool_tip.SetToolTip(starName, starMark);
+            tool_tip.SetToolTip(starIndex, starMark);
             tool_tip.SetToolTip(starWatched, starMark);
             tool_tip.SetToolTip(starEpisodes, starMark);
         }
@@ -670,37 +791,40 @@ namespace Project_Zero
             isHidePercentage = false;
         }
 
-        private void enableControl(Control button)
+        private void enable(Control button)
         {
             button.Enabled = true;
         }
 
-        private void disableControl(Control button)
+        private void disable(Control button)
         {
             button.Enabled = false;
         }
 
-        private void showControl(Control shadow)
+        private void show(Control component)
         {
-            shadow.Visible = true;
+            component.Visible = true;
         }
 
-        private void hideControl(Control shadow)
+        private void hide(Control component)
         {
-            shadow.Visible = false;
+            component.Visible = false;
         }
 
 
         private void progressTimer_Tick(object sender, EventArgs e)
         {
-            if (progressBar.Width > progressBarLength)
+            // NO ANIMATION occurs.
+            // Just QUICKLY FILL the progressBar
+            if (progressBar.Width > progressBarLength) // If PREVIOUS record's progress SMALLER than CURRENT record's progress
             {
                 progressBar.Width = progressBarLength;
                 setProgressCorner();
             }
             else
             {
-                if(progressBar.Width < progressBarLength)
+                // Performs progressBar FILLING ANIMATION
+                if (progressBar.Width < progressBarLength)
                 {
                     if (progressBar.Width >= (progressBarLength - 4))
                     {
@@ -713,130 +837,121 @@ namespace Project_Zero
                     else
                     {
                         progressBar.Width += 10;
-
-                        // Show Progress Percentage (0~100%)
                         if (!isHidePercentage)
                         {
+                            // Show progress PERCENTAGE (0~100%)
                             int percentage = compute.getPercentage(progressBar.Width, progressBarMaxLength);
                             showInfo(percentage.ToString() + " %", "Progress");
                         }
                     }
-                    setProgressCorner();
+                    setProgressCorner();   // Change corner's location
                 }
                 else
                 {
                     if (!isHidePercentage)
                     {
-                        // Reset forwardCount
-                        forwardCount = 0;
+                        
+                        forwardCount = 0;  // Reset forwardCount
 
-                        // Fix wrong percentage calculation due to progressBar Length
+                        // Fix WRONG percentage calculation due to progressBar length calculation
                         double current = double.Parse(txtWatched.Text);
                         double episodes = double.Parse(txtEpisodes.Text);
                         double progress = (current / episodes);
-
                         showInfo(((int)(progress * 100)).ToString() + " %", "Progress");
                     }
-
-                    // End of progressTimer
-                    setProgressCorner();
-                    showPercentage();
+                    setProgressCorner();   // Reset progressBar CORNER
+                    showPercentage();      // Show more ACCURATE percentage
                     progressTimer.Stop();
                 }
             }
         }
 
-        // Import DwmApi to set title bar "DARK"
+        // Import DwmApi to set TITLE bar DARK
         [DllImport("DwmApi")]
         private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
         protected override void OnHandleCreated(EventArgs e)
         {
             if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0)
             {
-                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); //Set 'DARK' title bar
+                // Set title bar DARK
+                DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);  
             }
         }
         
-        private void txtName_Click(object sender, EventArgs e)
+        private void txtIndex_Click(object sender, EventArgs e)
         {
-            if (tempName == txtName.Text)
-            {
-                txtName.Clear();
-            }
+            if (tempName == txtIndex.Text)
+                txtIndex.Clear();
         }
 
-        private void txtName_KeyDown(object sender, KeyEventArgs e)
+        private void txtIndex_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (btnSearch.Visible)
-                {
                     searchRecord();
-                }
             }
-            else if (e.KeyCode == Keys.Back)
+            if (e.KeyCode == Keys.Back)
             {
                 if (btnRefresh.Visible)
-                {
                     refreshFromSearch();
-                }
             }
         }
 
-        private void txtName_Enter(object sender, EventArgs e)
+        private void txtIndex_Enter(object sender, EventArgs e)
         {
-            showControl(txtNameBack);
-            txtName.ForeColor = textEnterForeColor;
+            show(txtNameBack);
+            txtIndex.ForeColor = textEnterForeColor;
         }
 
-        private void txtName_Leave(object sender, EventArgs e)
+        private void txtIndex_Leave(object sender, EventArgs e)
         {
-            if (txtName.Text == "")
+            if (txtIndex.Text == "")
             {
-                txtName.Text = tempName;
+                txtIndex.Text = tempName;
             }
-            else if (tempName != txtName.Text)
+            else if (tempName != txtIndex.Text)
             {
                 setTempName();
             }
-            hideControl(txtNameBack);
-            txtName.ForeColor = textLeaveForeColor;
+            hide(txtNameBack);
+            txtIndex.ForeColor = textLeaveForeColor;
         }
 
         private void txtWatched_Enter(object sender, EventArgs e)
         {
-            showControl(txtWatchedBack);
+            show(txtWatchedBack);
             txtWatched.ForeColor = textEnterForeColor;
         }
 
         private void txtWatched_Leave(object sender, EventArgs e)
         {
-            hideControl(txtWatchedBack);
+            hide(txtWatchedBack);
             txtWatched.ForeColor = textLeaveForeColor;
         }
 
         private void txtEpisodes_Enter(object sender, EventArgs e)
         {
-            showControl(txtEpisodesBack);
+            show(txtEpisodesBack);
             txtEpisodes.ForeColor = textEnterForeColor;
         }
 
         private void txtEpisodes_Leave(object sender, EventArgs e)
         {
-            hideControl(txtEpisodesBack);
+            hide(txtEpisodesBack);
             txtEpisodes.ForeColor = textLeaveForeColor;
         }
 
         private void txtSeries_Enter(object sender, EventArgs e)
         {
-            showControl(txtSeriesBack);
-            txtSeries.ForeColor = textEnterForeColor;
+            show(txtSeriesBack);
+            txtShow.ForeColor = textEnterForeColor;
         }
 
         private void txtSeries_Leave(object sender, EventArgs e)
         {
-            hideControl(txtSeriesBack);
-            txtSeries.ForeColor = textLeaveForeColor;
+            hide(txtSeriesBack);
+            txtShow.ForeColor = textLeaveForeColor;
         }
 
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
@@ -978,7 +1093,7 @@ namespace Project_Zero
         private void btnCancel_Click(object sender, EventArgs e)
         {
             updateUI();
-            setJumpingButtons();
+            setControlButtons();
             navigateRecords();
         }
 
@@ -1087,6 +1202,15 @@ namespace Project_Zero
             btnSearch.Image = Properties.Resources.btnSearch_down;
         }
 
+        private void timerFirstRun_Tick(object sender, EventArgs e)
+        {
+            if(zeroTime < 15)
+            {
+                zeroTime++;
+                checkFirstRun();
+            }
+        }
+
         private void star5_Click(object sender, EventArgs e)
         {
             rating = 5;
@@ -1095,8 +1219,7 @@ namespace Project_Zero
 
         private void MUI_FormClosing(object sender, FormClosingEventArgs e)
         {
-            conn.Close();
-            Application.Exit();
+            Shutdown();
         }
 
         private void MUID_Deactivate(object sender, EventArgs e)
@@ -1108,7 +1231,7 @@ namespace Project_Zero
         {
             isNumeric(e);
 
-            // Only one decimal allowed
+            // Valid only one decimal
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;

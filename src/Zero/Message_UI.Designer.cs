@@ -1,4 +1,4 @@
-﻿namespace Project_Zero
+﻿namespace Zero
 {
     partial class Message_UI
     {
@@ -90,7 +90,7 @@
             // btnNo
             // 
             this.btnNo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNo.Image = global::Project_Zero.Properties.Resources.btnMsgNo_default;
+            this.btnNo.Image = global::Zero.Properties.Resources.btnMsgNo_default;
             this.btnNo.Location = new System.Drawing.Point(135, 54);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(24, 24);
@@ -105,7 +105,7 @@
             // btnOk
             // 
             this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOk.Image = global::Project_Zero.Properties.Resources.btnMsgOk_default;
+            this.btnOk.Image = global::Zero.Properties.Resources.btnMsgOk_default;
             this.btnOk.Location = new System.Drawing.Point(72, 53);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(24, 24);

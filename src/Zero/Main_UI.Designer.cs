@@ -1,4 +1,4 @@
-﻿namespace Project_Zero
+﻿namespace Zero
 {
     partial class Main_UI
     {
@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_UI));
-            this.lbName = new System.Windows.Forms.Label();
-            this.txtSeries = new System.Windows.Forms.TextBox();
-            this.lbSeries = new System.Windows.Forms.Label();
+            this.lbIndex = new System.Windows.Forms.Label();
+            this.txtShow = new System.Windows.Forms.TextBox();
+            this.lbShow = new System.Windows.Forms.Label();
             this.txtWatched = new System.Windows.Forms.TextBox();
             this.lbWatched = new System.Windows.Forms.Label();
             this.txtEpisodes = new System.Windows.Forms.TextBox();
-            this.lbNOEP = new System.Windows.Forms.Label();
+            this.lbEpisodes = new System.Windows.Forms.Label();
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.rowProgressOut = new System.Windows.Forms.Panel();
             this.rowScrollBar = new System.Windows.Forms.Panel();
@@ -46,7 +46,7 @@
             this.labelCR = new System.Windows.Forms.Label();
             this.labelCP = new System.Windows.Forms.Label();
             this.labelST = new System.Windows.Forms.Label();
-            this.starName = new System.Windows.Forms.Label();
+            this.starIndex = new System.Windows.Forms.Label();
             this.starEpisodes = new System.Windows.Forms.Label();
             this.starWatched = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@
             this.panelControlsShadow = new System.Windows.Forms.Panel();
             this.panelData = new System.Windows.Forms.Panel();
             this.panelProgress = new System.Windows.Forms.Panel();
+            this.progressCorner2 = new System.Windows.Forms.Label();
             this.progressCorner = new System.Windows.Forms.Label();
             this.progressBarOut = new System.Windows.Forms.Label();
             this.btnForward = new System.Windows.Forms.PictureBox();
@@ -81,7 +82,7 @@
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
             this.txtNameBack = new System.Windows.Forms.TextBox();
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtIndex = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtNameShadow = new System.Windows.Forms.TextBox();
             this.txtWatchedShadow = new System.Windows.Forms.TextBox();
@@ -89,7 +90,7 @@
             this.txtSeriesShadow = new System.Windows.Forms.TextBox();
             this.panelDataShadow = new System.Windows.Forms.Panel();
             this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
-            this.progressCorner2 = new System.Windows.Forms.Label();
+            this.timerFirstRun = new System.Windows.Forms.Timer(this.components);
             this.panelNavigation.SuspendLayout();
             this.rowProgressOut.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
@@ -116,42 +117,42 @@
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbName
+            // lbIndex
             // 
-            this.lbName.AutoSize = true;
-            this.lbName.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lbName.Location = new System.Drawing.Point(11, 14);
-            this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(46, 16);
-            this.lbName.TabIndex = 0;
-            this.lbName.Text = "Index";
+            this.lbIndex.AutoSize = true;
+            this.lbIndex.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lbIndex.Location = new System.Drawing.Point(11, 14);
+            this.lbIndex.Name = "lbIndex";
+            this.lbIndex.Size = new System.Drawing.Size(46, 16);
+            this.lbIndex.TabIndex = 0;
+            this.lbIndex.Text = "Index";
             // 
-            // txtSeries
+            // txtShow
             // 
-            this.txtSeries.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.txtSeries.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSeries.Font = new System.Drawing.Font("Russo One", 9.75F);
-            this.txtSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtSeries.Location = new System.Drawing.Point(100, 55);
-            this.txtSeries.MaxLength = 50;
-            this.txtSeries.Multiline = true;
-            this.txtSeries.Name = "txtSeries";
-            this.txtSeries.Size = new System.Drawing.Size(272, 17);
-            this.txtSeries.TabIndex = 70;
-            this.txtSeries.Enter += new System.EventHandler(this.txtSeries_Enter);
-            this.txtSeries.Leave += new System.EventHandler(this.txtSeries_Leave);
+            this.txtShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.txtShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtShow.Font = new System.Drawing.Font("Russo One", 9.75F);
+            this.txtShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtShow.Location = new System.Drawing.Point(100, 55);
+            this.txtShow.MaxLength = 50;
+            this.txtShow.Multiline = true;
+            this.txtShow.Name = "txtShow";
+            this.txtShow.Size = new System.Drawing.Size(272, 17);
+            this.txtShow.TabIndex = 70;
+            this.txtShow.Enter += new System.EventHandler(this.txtSeries_Enter);
+            this.txtShow.Leave += new System.EventHandler(this.txtSeries_Leave);
             // 
-            // lbSeries
+            // lbShow
             // 
-            this.lbSeries.AutoSize = true;
-            this.lbSeries.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeries.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lbSeries.Location = new System.Drawing.Point(11, 55);
-            this.lbSeries.Name = "lbSeries";
-            this.lbSeries.Size = new System.Drawing.Size(74, 16);
-            this.lbSeries.TabIndex = 2;
-            this.lbSeries.Text = "TV show";
+            this.lbShow.AutoSize = true;
+            this.lbShow.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lbShow.Location = new System.Drawing.Point(11, 55);
+            this.lbShow.Name = "lbShow";
+            this.lbShow.Size = new System.Drawing.Size(74, 16);
+            this.lbShow.TabIndex = 2;
+            this.lbShow.Text = "TV show";
             // 
             // txtWatched
             // 
@@ -173,11 +174,11 @@
             // lbWatched
             // 
             this.lbWatched.AutoSize = true;
-            this.lbWatched.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWatched.Font = new System.Drawing.Font("Neptune Lander", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lbWatched.Location = new System.Drawing.Point(183, 98);
+            this.lbWatched.Location = new System.Drawing.Point(181, 98);
             this.lbWatched.Name = "lbWatched";
-            this.lbWatched.Size = new System.Drawing.Size(72, 16);
+            this.lbWatched.Size = new System.Drawing.Size(80, 13);
             this.lbWatched.TabIndex = 6;
             this.lbWatched.Text = "Watched";
             // 
@@ -187,7 +188,7 @@
             this.txtEpisodes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpisodes.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtEpisodes.Location = new System.Drawing.Point(100, 98);
+            this.txtEpisodes.Location = new System.Drawing.Point(101, 98);
             this.txtEpisodes.MaxLength = 4;
             this.txtEpisodes.Multiline = true;
             this.txtEpisodes.Name = "txtEpisodes";
@@ -199,16 +200,16 @@
             this.txtEpisodes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEpisodes_KeyPress);
             this.txtEpisodes.Leave += new System.EventHandler(this.txtEpisodes_Leave);
             // 
-            // lbNOEP
+            // lbEpisodes
             // 
-            this.lbNOEP.AutoSize = true;
-            this.lbNOEP.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNOEP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.lbNOEP.Location = new System.Drawing.Point(11, 98);
-            this.lbNOEP.Name = "lbNOEP";
-            this.lbNOEP.Size = new System.Drawing.Size(74, 16);
-            this.lbNOEP.TabIndex = 6;
-            this.lbNOEP.Text = "Episodes";
+            this.lbEpisodes.AutoSize = true;
+            this.lbEpisodes.Font = new System.Drawing.Font("Orbitron", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.lbEpisodes.Location = new System.Drawing.Point(11, 98);
+            this.lbEpisodes.Name = "lbEpisodes";
+            this.lbEpisodes.Size = new System.Drawing.Size(74, 16);
+            this.lbEpisodes.TabIndex = 6;
+            this.lbEpisodes.Text = "Episodes";
             // 
             // panelNavigation
             // 
@@ -245,7 +246,7 @@
             // 
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.Enabled = false;
-            this.btnNext.Image = global::Project_Zero.Properties.Resources.btnNext_default;
+            this.btnNext.Image = global::Zero.Properties.Resources.btnNext_default;
             this.btnNext.Location = new System.Drawing.Point(81, 10);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(24, 24);
@@ -288,7 +289,7 @@
             // 
             this.labelCR.BackColor = System.Drawing.Color.Transparent;
             this.labelCR.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelCR.Font = new System.Drawing.Font("Russo One", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCR.Font = new System.Drawing.Font("Russo One", 9F);
             this.labelCR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.labelCR.Location = new System.Drawing.Point(200, 0);
             this.labelCR.Name = "labelCR";
@@ -302,7 +303,7 @@
             // 
             this.labelCP.BackColor = System.Drawing.Color.Transparent;
             this.labelCP.Dock = System.Windows.Forms.DockStyle.Right;
-            this.labelCP.Font = new System.Drawing.Font("Russo One", 8.249999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCP.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Italic);
             this.labelCP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.labelCP.Location = new System.Drawing.Point(326, 0);
             this.labelCP.Name = "labelCP";
@@ -316,7 +317,7 @@
             // 
             this.labelST.BackColor = System.Drawing.Color.Transparent;
             this.labelST.Dock = System.Windows.Forms.DockStyle.Left;
-            this.labelST.Font = new System.Drawing.Font("Russo One", 8.249999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelST.Font = new System.Drawing.Font("Russo One", 8F, System.Drawing.FontStyle.Italic);
             this.labelST.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.labelST.Location = new System.Drawing.Point(0, 0);
             this.labelST.Name = "labelST";
@@ -326,17 +327,17 @@
             this.labelST.Text = "Shinzo |   Ganbare Ganbare!";
             this.labelST.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // starName
+            // starIndex
             // 
-            this.starName.AutoSize = true;
-            this.starName.BackColor = System.Drawing.Color.Transparent;
-            this.starName.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.starName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.starName.Location = new System.Drawing.Point(54, 13);
-            this.starName.Name = "starName";
-            this.starName.Size = new System.Drawing.Size(13, 16);
-            this.starName.TabIndex = 26;
-            this.starName.Text = "*";
+            this.starIndex.AutoSize = true;
+            this.starIndex.BackColor = System.Drawing.Color.Transparent;
+            this.starIndex.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.starIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.starIndex.Location = new System.Drawing.Point(54, 13);
+            this.starIndex.Name = "starIndex";
+            this.starIndex.Size = new System.Drawing.Size(13, 16);
+            this.starIndex.TabIndex = 26;
+            this.starIndex.Text = "*";
             // 
             // starEpisodes
             // 
@@ -344,7 +345,7 @@
             this.starEpisodes.BackColor = System.Drawing.Color.Transparent;
             this.starEpisodes.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.starEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.starEpisodes.Location = new System.Drawing.Point(80, 96);
+            this.starEpisodes.Location = new System.Drawing.Point(81, 96);
             this.starEpisodes.Name = "starEpisodes";
             this.starEpisodes.Size = new System.Drawing.Size(13, 16);
             this.starEpisodes.TabIndex = 27;
@@ -411,7 +412,7 @@
             this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.textBox4.Location = new System.Drawing.Point(99, 97);
+            this.textBox4.Location = new System.Drawing.Point(100, 97);
             this.textBox4.MaxLength = 4;
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -459,7 +460,7 @@
             this.txtEpisodesBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpisodesBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpisodesBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtEpisodesBack.Location = new System.Drawing.Point(100, 115);
+            this.txtEpisodesBack.Location = new System.Drawing.Point(101, 115);
             this.txtEpisodesBack.MaxLength = 4;
             this.txtEpisodesBack.Multiline = true;
             this.txtEpisodesBack.Name = "txtEpisodesBack";
@@ -513,7 +514,7 @@
             // btnDelete
             // 
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Image = global::Project_Zero.Properties.Resources.btnDelete_default;
+            this.btnDelete.Image = global::Zero.Properties.Resources.btnDelete_default;
             this.btnDelete.Location = new System.Drawing.Point(30, 11);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(24, 24);
@@ -528,7 +529,7 @@
             // btnReset
             // 
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Image = global::Project_Zero.Properties.Resources.btnReset_default;
+            this.btnReset.Image = global::Zero.Properties.Resources.btnReset_default;
             this.btnReset.Location = new System.Drawing.Point(84, 11);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(24, 24);
@@ -543,7 +544,7 @@
             // btnUpdate
             // 
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Image = global::Project_Zero.Properties.Resources.btnUpdate_default;
+            this.btnUpdate.Image = global::Zero.Properties.Resources.btnUpdate_default;
             this.btnUpdate.Location = new System.Drawing.Point(137, 11);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(24, 24);
@@ -558,7 +559,7 @@
             // btnAdd
             // 
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Image = global::Project_Zero.Properties.Resources.btnAdd_default;
+            this.btnAdd.Image = global::Zero.Properties.Resources.btnAdd_default;
             this.btnAdd.Location = new System.Drawing.Point(191, 11);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(24, 24);
@@ -573,7 +574,7 @@
             // btnRefresh
             // 
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Image = global::Project_Zero.Properties.Resources.btnRefresh_default;
+            this.btnRefresh.Image = global::Zero.Properties.Resources.btnRefresh_default;
             this.btnRefresh.Location = new System.Drawing.Point(192, 11);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(24, 24);
@@ -589,7 +590,7 @@
             // btnCancel
             // 
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Image = global::Project_Zero.Properties.Resources.btnCancel_default;
+            this.btnCancel.Image = global::Zero.Properties.Resources.btnCancel_default;
             this.btnCancel.Location = new System.Drawing.Point(192, 11);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(24, 24);
@@ -605,8 +606,8 @@
             // btnSave
             // 
             this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Image = global::Project_Zero.Properties.Resources.btnSave_default;
-            this.btnSave.Location = new System.Drawing.Point(140, 11);
+            this.btnSave.Image = global::Zero.Properties.Resources.btnSave_default;
+            this.btnSave.Location = new System.Drawing.Point(136, 11);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(24, 24);
             this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -645,7 +646,7 @@
             this.panelData.Controls.Add(this.star2);
             this.panelData.Controls.Add(this.star1);
             this.panelData.Controls.Add(this.txtNameBack);
-            this.panelData.Controls.Add(this.txtName);
+            this.panelData.Controls.Add(this.txtIndex);
             this.panelData.Controls.Add(this.textBox1);
             this.panelData.Controls.Add(this.txtNameShadow);
             this.panelData.Controls.Add(this.txtEpisodesBack);
@@ -657,16 +658,16 @@
             this.panelData.Controls.Add(this.starEpisodes);
             this.panelData.Controls.Add(this.textBox4);
             this.panelData.Controls.Add(this.textBox5);
-            this.panelData.Controls.Add(this.lbName);
-            this.panelData.Controls.Add(this.lbSeries);
+            this.panelData.Controls.Add(this.lbIndex);
+            this.panelData.Controls.Add(this.lbShow);
             this.panelData.Controls.Add(this.lbWatched);
-            this.panelData.Controls.Add(this.lbNOEP);
+            this.panelData.Controls.Add(this.lbEpisodes);
             this.panelData.Controls.Add(this.txtWatchedShadow);
             this.panelData.Controls.Add(this.txtEpisodesShadow);
-            this.panelData.Controls.Add(this.txtSeries);
+            this.panelData.Controls.Add(this.txtShow);
             this.panelData.Controls.Add(this.textBox2);
             this.panelData.Controls.Add(this.txtSeriesShadow);
-            this.panelData.Controls.Add(this.starName);
+            this.panelData.Controls.Add(this.starIndex);
             this.panelData.Location = new System.Drawing.Point(16, 14);
             this.panelData.Name = "panelData";
             this.panelData.Size = new System.Drawing.Size(402, 146);
@@ -684,6 +685,14 @@
             this.panelProgress.Name = "panelProgress";
             this.panelProgress.Size = new System.Drawing.Size(402, 4);
             this.panelProgress.TabIndex = 76;
+            // 
+            // progressCorner2
+            // 
+            this.progressCorner2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.progressCorner2.Location = new System.Drawing.Point(46, 0);
+            this.progressCorner2.Name = "progressCorner2";
+            this.progressCorner2.Size = new System.Drawing.Size(20, 3);
+            this.progressCorner2.TabIndex = 77;
             // 
             // progressCorner
             // 
@@ -704,7 +713,7 @@
             // btnForward
             // 
             this.btnForward.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnForward.Image = global::Project_Zero.Properties.Resources.btnForward_default;
+            this.btnForward.Image = global::Zero.Properties.Resources.btnForward_default;
             this.btnForward.Location = new System.Drawing.Point(325, 98);
             this.btnForward.Name = "btnForward";
             this.btnForward.Size = new System.Drawing.Size(20, 17);
@@ -719,7 +728,7 @@
             // btnSearch
             // 
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Image = global::Project_Zero.Properties.Resources.btnSearch_default;
+            this.btnSearch.Image = global::Zero.Properties.Resources.btnSearch_default;
             this.btnSearch.Location = new System.Drawing.Point(221, 9);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(24, 24);
@@ -734,7 +743,7 @@
             // star4
             // 
             this.star4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star4.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star4.Image = global::Zero.Properties.Resources.btnStar_default;
             this.star4.Location = new System.Drawing.Point(322, 15);
             this.star4.Name = "star4";
             this.star4.Size = new System.Drawing.Size(15, 15);
@@ -746,7 +755,7 @@
             // star5
             // 
             this.star5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star5.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star5.Image = global::Zero.Properties.Resources.btnStar_default;
             this.star5.Location = new System.Drawing.Point(340, 15);
             this.star5.Name = "star5";
             this.star5.Size = new System.Drawing.Size(15, 15);
@@ -758,7 +767,7 @@
             // star3
             // 
             this.star3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star3.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star3.Image = global::Zero.Properties.Resources.btnStar_default;
             this.star3.Location = new System.Drawing.Point(304, 15);
             this.star3.Name = "star3";
             this.star3.Size = new System.Drawing.Size(15, 15);
@@ -770,7 +779,7 @@
             // star2
             // 
             this.star2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star2.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star2.Image = global::Zero.Properties.Resources.btnStar_default;
             this.star2.Location = new System.Drawing.Point(286, 15);
             this.star2.Name = "star2";
             this.star2.Size = new System.Drawing.Size(15, 15);
@@ -782,7 +791,7 @@
             // star1
             // 
             this.star1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star1.Image = global::Project_Zero.Properties.Resources.btnStar_default;
+            this.star1.Image = global::Zero.Properties.Resources.btnStar_default;
             this.star1.Location = new System.Drawing.Point(268, 15);
             this.star1.Name = "star1";
             this.star1.Size = new System.Drawing.Size(15, 15);
@@ -806,22 +815,22 @@
             this.txtNameBack.Text = "BEN 10";
             this.txtNameBack.Visible = false;
             // 
-            // txtName
+            // txtIndex
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtName.Location = new System.Drawing.Point(100, 12);
-            this.txtName.MaxLength = 20;
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 17);
-            this.txtName.TabIndex = 75;
-            this.txtName.Click += new System.EventHandler(this.txtName_Click);
-            this.txtName.Enter += new System.EventHandler(this.txtName_Enter);
-            this.txtName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtName_KeyDown);
-            this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
+            this.txtIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.txtIndex.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIndex.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtIndex.Location = new System.Drawing.Point(100, 12);
+            this.txtIndex.MaxLength = 20;
+            this.txtIndex.Multiline = true;
+            this.txtIndex.Name = "txtIndex";
+            this.txtIndex.Size = new System.Drawing.Size(100, 17);
+            this.txtIndex.TabIndex = 75;
+            this.txtIndex.Click += new System.EventHandler(this.txtIndex_Click);
+            this.txtIndex.Enter += new System.EventHandler(this.txtIndex_Enter);
+            this.txtIndex.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIndex_KeyDown);
+            this.txtIndex.Leave += new System.EventHandler(this.txtIndex_Leave);
             // 
             // textBox1
             // 
@@ -874,7 +883,7 @@
             this.txtEpisodesShadow.Enabled = false;
             this.txtEpisodesShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEpisodesShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtEpisodesShadow.Location = new System.Drawing.Point(101, 100);
+            this.txtEpisodesShadow.Location = new System.Drawing.Point(102, 100);
             this.txtEpisodesShadow.MaxLength = 4;
             this.txtEpisodesShadow.Multiline = true;
             this.txtEpisodesShadow.Name = "txtEpisodesShadow";
@@ -915,13 +924,9 @@
             this.tool_tip.ReshowDelay = 100;
             this.tool_tip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.tool_tip_Draw);
             // 
-            // progressCorner2
+            // timerFirstRun
             // 
-            this.progressCorner2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.progressCorner2.Location = new System.Drawing.Point(46, 0);
-            this.progressCorner2.Name = "progressCorner2";
-            this.progressCorner2.Size = new System.Drawing.Size(20, 3);
-            this.progressCorner2.TabIndex = 77;
+            this.timerFirstRun.Tick += new System.EventHandler(this.timerFirstRun_Tick);
             // 
             // Main_UI
             // 
@@ -935,7 +940,7 @@
             this.MaximizeBox = false;
             this.Name = "Main_UI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DvNET ZERO";
+            this.Text = "ZERO TVSM";
             this.Deactivate += new System.EventHandler(this.MUID_Deactivate);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MUI_FormClosing);
             this.Load += new System.EventHandler(this.Main_UI_Load);
@@ -970,18 +975,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbName;
-        private System.Windows.Forms.TextBox txtSeries;
-        private System.Windows.Forms.Label lbSeries;
+        private System.Windows.Forms.Label lbIndex;
+        private System.Windows.Forms.TextBox txtShow;
+        private System.Windows.Forms.Label lbShow;
         private System.Windows.Forms.TextBox txtWatched;
         private System.Windows.Forms.Label lbWatched;
         private System.Windows.Forms.TextBox txtEpisodes;
-        private System.Windows.Forms.Label lbNOEP;
+        private System.Windows.Forms.Label lbEpisodes;
         private System.Windows.Forms.Panel panelNavigation;
         private System.Windows.Forms.Panel panelStatus;
         private System.Windows.Forms.Label labelST;
         private System.Windows.Forms.Label labelCP;
-        private System.Windows.Forms.Label starName;
+        private System.Windows.Forms.Label starIndex;
         private System.Windows.Forms.Label starEpisodes;
         private System.Windows.Forms.Label starWatched;
         private System.Windows.Forms.Label progressBar;
@@ -1002,7 +1007,7 @@
         private System.Windows.Forms.TextBox txtEpisodesShadow;
         private System.Windows.Forms.Label progressCorner;
         private System.Windows.Forms.TextBox txtNameBack;
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtIndex;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtNameShadow;
         private System.Windows.Forms.PictureBox star1;
@@ -1030,6 +1035,7 @@
         private System.Windows.Forms.Panel panelProgress;
         private System.Windows.Forms.Label progressBarOut;
         private System.Windows.Forms.Label progressCorner2;
+        private System.Windows.Forms.Timer timerFirstRun;
     }
 }
 
