@@ -21,7 +21,7 @@ namespace Zero.Core
 
         public string Forward = "Update failed";
 
-        public string IndexNull = "";
+        public string IndexNull = "Empty index";
 
         public string WatchedNull = "Enter watched";
 

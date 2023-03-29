@@ -13,11 +13,11 @@ namespace Zero.Core
         
         public string ResetMessage = "Are you sure want to reset the progress of this show?";
 
-        public string DatabaseLostTitle = "Database Not Found";
+        public string DatabaseLostTitle = "DB Not Found";
 
-        public string DatabaseLostMessage = "'SQL Local DB' is not installed! Visit our github for more details.";
+        public string DatabaseLostMessage = "'SQL Local DB' is not installed!\r\n Visit our github for more details.";
 
-        public string DeleteSuccessTitle = "TV show Deleted";
+        public string DeleteSuccessTitle = "Deleted";
 
         public string DeleteSuccessMessage = "Information about that TV show no longer available.";
 
