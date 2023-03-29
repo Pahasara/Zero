@@ -243,6 +243,16 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnLicense {
+            get {
+                object obj = ResourceManager.GetObject("btnLicense", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnMsgNo_default {
             get {
                 object obj = ResourceManager.GetObject("btnMsgNo_default", resourceCulture);
@@ -533,9 +543,9 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap guide_00 {
+        internal static System.Drawing.Bitmap imgBackground {
             get {
-                object obj = ResourceManager.GetObject("guide_00", resourceCulture);
+                object obj = ResourceManager.GetObject("imgBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,9 +553,9 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap guide_01 {
+        internal static System.Drawing.Bitmap license {
             get {
-                object obj = ResourceManager.GetObject("guide_01", resourceCulture);
+                object obj = ResourceManager.GetObject("license", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,49 +563,9 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap guide_02 {
+        internal static System.Drawing.Bitmap splash {
             get {
-                object obj = ResourceManager.GetObject("guide_02", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap guide_03 {
-            get {
-                object obj = ResourceManager.GetObject("guide_03", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap guide_04 {
-            get {
-                object obj = ResourceManager.GetObject("guide_04", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap guide_05 {
-            get {
-                object obj = ResourceManager.GetObject("guide_05", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap imgSplash {
-            get {
-                object obj = ResourceManager.GetObject("imgSplash", resourceCulture);
+                object obj = ResourceManager.GetObject("splash", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
