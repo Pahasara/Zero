@@ -48,7 +48,7 @@
             // panelBackground
             // 
             this.panelBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelBackground.BackgroundImage = global::Zero.Properties.Resources.imgSplash;
+            this.panelBackground.BackgroundImage = global::Zero.Properties.Resources.splash;
             this.panelBackground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelBackground.Controls.Add(this.lblYear);
             this.panelBackground.Controls.Add(this.progressOutline);
