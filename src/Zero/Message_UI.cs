@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Zero.Properties;
 
 namespace Zero
 {
@@ -25,7 +26,7 @@ namespace Zero
             InitializeComponent();
 
             // Set custom fonts
-            setFontRussoOne();
+            setCustomFonts();
         }
 
         public bool isYesClicked = false;
@@ -68,28 +69,46 @@ namespace Zero
 
         private void setFontRussoOne()
         {
-            byte[] fontRussoOne = Properties.Resources.fontRussoOne;
+            byte[] fontRussoOne = Resources.fontRussoOne;
             IntPtr fontPtr = Marshal.AllocCoTaskMem(fontRussoOne.Length);
             Marshal.Copy(fontRussoOne, 0, fontPtr, fontRussoOne.Length);
             uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.fontRussoOne.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.fontRussoOne.Length, IntPtr.Zero, ref dummy);
+            fonts.AddMemoryFont(fontPtr, Resources.fontRussoOne.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Resources.fontRussoOne.Length, IntPtr.Zero, ref dummy);
             Marshal.FreeCoTaskMem(fontPtr);
+        }
 
+        private void setFontOrbitron()
+        {
+            byte[] fontOrbitron = Resources.fontOrbitron;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontOrbitron.Length);
+            Marshal.Copy(fontOrbitron, 0, fontPtr, fontOrbitron.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Resources.fontOrbitron.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Resources.fontOrbitron.Length, IntPtr.Zero, ref dummy);
+            Marshal.FreeCoTaskMem(fontPtr);
+        }
+
+        private void setCustomFonts()
+        {
+            setFontRussoOne();
             customFont = new Font(fonts.Families[0], 8.0F);
             msgText.Font = customFont;
-            customFont = new Font(fonts.Families[0], 9.75F);
+
+            setFontOrbitron();
+            customFont = new Font(fonts.Families[0], 7.0F, FontStyle.Bold);
             msgTitle.Font = customFont;
         }
 
         private void MSG_Load(object sender, EventArgs e)
         {
+            Opacity = 0.9;
             showMessage();
         }
 
         private void setButtonOk()
         {
-            btnOk.Location = new Point(100, 54);
+            btnOk.Location = new Point(100, 88);
             btnNo.Visible = false;
         }
 
@@ -106,32 +125,32 @@ namespace Zero
 
         private void btnOk_MouseMove(object sender, MouseEventArgs e)
         {
-            btnOk.Image = Properties.Resources.btnMsgOk_hover;
+            btnOk.Image = Resources.btnMsgOk_hover;
         }
 
         private void btnOk_MouseDown(object sender, MouseEventArgs e)
         {
-            btnOk.Image = Properties.Resources.btnMsgOk_down;
+            btnOk.Image = Resources.btnMsgOk_down;
         }
 
         private void btnOk_MouseLeave(object sender, EventArgs e)
         {
-            btnOk.Image = Properties.Resources.btnMsgOk_default;
+            btnOk.Image = Resources.btnMsgOk_default;
         }
 
         private void btnNo_MouseMove(object sender, MouseEventArgs e)
         {
-            btnNo.Image = Properties.Resources.btnMsgNo_hover;
+            btnNo.Image = Resources.btnMsgNo_hover;
         }
 
         private void btnNo_MouseDown(object sender, MouseEventArgs e)
         {
-            btnNo.Image = Properties.Resources.btnMsgNo_down;
+            btnNo.Image = Resources.btnMsgNo_down;
         }
 
         private void btnNo_MouseLeave(object sender, EventArgs e)
         {
-            btnNo.Image = Properties.Resources.btnMsgNo_default;
+            btnNo.Image = Resources.btnMsgNo_default;
         }
 
         // Import DwmApi to set title bar DARK

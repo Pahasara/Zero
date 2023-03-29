@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Data.SqlClient;
 using Zero.Core;
+using Zero.Properties;
 
 namespace Zero
 {
@@ -32,8 +33,7 @@ namespace Zero
             InitializeComponent();
 
             // Set custom fonts
-            setFontRussoOne();
-            setFontOrbitron();
+            setCustomFonts(); 
         }
 
         // Public Variables
@@ -51,6 +51,7 @@ namespace Zero
         private void Main_UI_Load(object sender, EventArgs e)
         {
             // Initialize ui
+            labelBuild.Text = data.getVersion();
             setProgressBar();
             setProgressCorner();
             setToolTips();
@@ -67,33 +68,32 @@ namespace Zero
         }
 
 
-        private void setFontOrbitron()
-        {
-            byte[] fontOrbitron = Properties.Resources.fontOrbitron;
-            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontOrbitron.Length);
-            Marshal.Copy(fontOrbitron, 0, fontPtr, fontOrbitron.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.fontOrbitron.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.fontOrbitron.Length, IntPtr.Zero, ref dummy);
-            Marshal.FreeCoTaskMem(fontPtr);
-
-            customFont = new Font(fonts.Families[0], 9.75F, FontStyle.Bold);
-            lbIndex.Font = customFont;
-            lbShow.Font = customFont;
-            lbEpisodes.Font = customFont;
-            lbWatched.Font = customFont;
-        }
-
         private void setFontRussoOne()
         {
-            byte[] fontRussoOne = Properties.Resources.fontRussoOne;
+            byte[] fontRussoOne = Resources.fontRussoOne;
             IntPtr fontPtr = Marshal.AllocCoTaskMem(fontRussoOne.Length);
             Marshal.Copy(fontRussoOne, 0, fontPtr, fontRussoOne.Length);
             uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.fontRussoOne.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.fontRussoOne.Length, IntPtr.Zero, ref dummy);
+            fonts.AddMemoryFont(fontPtr, Resources.fontRussoOne.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Resources.fontRussoOne.Length, IntPtr.Zero, ref dummy);
             Marshal.FreeCoTaskMem(fontPtr);
+        }
 
+        private void setFontOrbitron()
+        {
+            byte[] fontOrbitron = Resources.fontOrbitron;
+            IntPtr fontPtr = Marshal.AllocCoTaskMem(fontOrbitron.Length);
+            Marshal.Copy(fontOrbitron, 0, fontPtr, fontOrbitron.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Resources.fontOrbitron.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Resources.fontOrbitron.Length, IntPtr.Zero, ref dummy);
+            Marshal.FreeCoTaskMem(fontPtr);
+        }
+        private void setCustomFonts()
+        {
+            setFontRussoOne();
+            customFont = new Font(fonts.Families[0], 6.0F, FontStyle.Italic);
+            labelBuild.Font = customFont;
             customFont = new Font(fonts.Families[0], 8.0F, FontStyle.Italic);
             labelCP.Font = customFont;
             labelST.Font = customFont;
@@ -107,6 +107,13 @@ namespace Zero
             starIndex.Font = customFont;
             starEpisodes.Font = customFont;
             starWatched.Font = customFont;
+
+            setFontOrbitron();
+            customFont = new Font(fonts.Families[1], 9.75F, FontStyle.Bold);
+            lbIndex.Font = customFont;
+            lbShow.Font = customFont;
+            lbEpisodes.Font = customFont;
+            lbWatched.Font = customFont;
         }
 
         private void createConnection()
@@ -314,15 +321,17 @@ namespace Zero
                     isFirstTime = true;
                 }
             }
-            else if (zeroTime == 14)
+            else if (zeroTime == 10)
             {
                 if (isFirstTime)
                 {
+                    License license = new License();
+                    license.ShowDialog();
                     Guide guide = new Guide();
                     guide.ShowDialog();
                 }
             }
-            else if(zeroTime == 15)
+            else if(zeroTime == 12)
             {
                 zeroTime = 0;
                 timerFirstRun.Stop();
@@ -1204,7 +1213,7 @@ namespace Zero
 
         private void timerFirstRun_Tick(object sender, EventArgs e)
         {
-            if(zeroTime < 15)
+            if(zeroTime < 12)
             {
                 zeroTime++;
                 checkFirstRun();

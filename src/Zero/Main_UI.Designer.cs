@@ -40,8 +40,6 @@
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.rowProgressOut = new System.Windows.Forms.Panel();
             this.rowScrollBar = new System.Windows.Forms.Panel();
-            this.btnNext = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.PictureBox();
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelCR = new System.Windows.Forms.Label();
             this.labelCP = new System.Windows.Forms.Label();
@@ -58,15 +56,9 @@
             this.txtWatchedBack = new System.Windows.Forms.TextBox();
             this.txtEpisodesBack = new System.Windows.Forms.TextBox();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.labelBuild = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.PictureBox();
-            this.btnUpdate = new System.Windows.Forms.PictureBox();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
-            this.btnRefresh = new System.Windows.Forms.PictureBox();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
             this.panelNavigationShadow = new System.Windows.Forms.Panel();
             this.panelControlsShadow = new System.Windows.Forms.Panel();
             this.panelData = new System.Windows.Forms.Panel();
@@ -74,13 +66,6 @@
             this.progressCorner2 = new System.Windows.Forms.Label();
             this.progressCorner = new System.Windows.Forms.Label();
             this.progressBarOut = new System.Windows.Forms.Label();
-            this.btnForward = new System.Windows.Forms.PictureBox();
-            this.btnSearch = new System.Windows.Forms.PictureBox();
-            this.star4 = new System.Windows.Forms.PictureBox();
-            this.star5 = new System.Windows.Forms.PictureBox();
-            this.star3 = new System.Windows.Forms.PictureBox();
-            this.star2 = new System.Windows.Forms.PictureBox();
-            this.star1 = new System.Windows.Forms.PictureBox();
             this.txtNameBack = new System.Windows.Forms.TextBox();
             this.txtIndex = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -91,14 +76,32 @@
             this.panelDataShadow = new System.Windows.Forms.Panel();
             this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
             this.timerFirstRun = new System.Windows.Forms.Timer(this.components);
+            this.btnNext = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnReset = new System.Windows.Forms.PictureBox();
+            this.btnUpdate = new System.Windows.Forms.PictureBox();
+            this.btnAdd = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.PictureBox();
+            this.btnForward = new System.Windows.Forms.PictureBox();
+            this.btnSearch = new System.Windows.Forms.PictureBox();
+            this.star4 = new System.Windows.Forms.PictureBox();
+            this.star5 = new System.Windows.Forms.PictureBox();
+            this.star3 = new System.Windows.Forms.PictureBox();
+            this.star2 = new System.Windows.Forms.PictureBox();
+            this.star1 = new System.Windows.Forms.PictureBox();
             this.panelNavigation.SuspendLayout();
             this.rowProgressOut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panelStatus.SuspendLayout();
             this.panelForm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelControls.SuspendLayout();
+            this.panelData.SuspendLayout();
+            this.panelProgress.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).BeginInit();
@@ -106,8 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
-            this.panelData.SuspendLayout();
-            this.panelProgress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
@@ -174,11 +175,11 @@
             // lbWatched
             // 
             this.lbWatched.AutoSize = true;
-            this.lbWatched.Font = new System.Drawing.Font("Neptune Lander", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWatched.Font = new System.Drawing.Font("Orbitron", 9.749998F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lbWatched.Location = new System.Drawing.Point(181, 98);
             this.lbWatched.Name = "lbWatched";
-            this.lbWatched.Size = new System.Drawing.Size(80, 13);
+            this.lbWatched.Size = new System.Drawing.Size(72, 16);
             this.lbWatched.TabIndex = 6;
             this.lbWatched.Text = "Watched";
             // 
@@ -241,37 +242,6 @@
             this.rowScrollBar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.rowScrollBar.Size = new System.Drawing.Size(40, 2);
             this.rowScrollBar.TabIndex = 0;
-            // 
-            // btnNext
-            // 
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Enabled = false;
-            this.btnNext.Image = global::Zero.Properties.Resources.btnNext_default;
-            this.btnNext.Location = new System.Drawing.Point(81, 10);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(24, 24);
-            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnNext.TabIndex = 73;
-            this.btnNext.TabStop = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            this.btnNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseDown);
-            this.btnNext.MouseLeave += new System.EventHandler(this.btnNext_MouseLeave);
-            this.btnNext.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseMove);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(31, 10);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(24, 24);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBack.TabIndex = 72;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            this.btnBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseDown);
-            this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
-            this.btnBack.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseMove);
             // 
             // panelStatus
             // 
@@ -474,6 +444,7 @@
             // panelForm
             // 
             this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panelForm.Controls.Add(this.labelBuild);
             this.panelForm.Controls.Add(this.panel1);
             this.panelForm.Controls.Add(this.panelData);
             this.panelForm.Controls.Add(this.panelStatus);
@@ -483,6 +454,19 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(434, 261);
             this.panelForm.TabIndex = 51;
+            // 
+            // labelBuild
+            // 
+            this.labelBuild.BackColor = System.Drawing.Color.Transparent;
+            this.labelBuild.Font = new System.Drawing.Font("Russo One", 6F);
+            this.labelBuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
+            this.labelBuild.Location = new System.Drawing.Point(356, -3);
+            this.labelBuild.Name = "labelBuild";
+            this.labelBuild.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.labelBuild.Size = new System.Drawing.Size(75, 18);
+            this.labelBuild.TabIndex = 77;
+            this.labelBuild.Text = "v2.0 Build 43";
+            this.labelBuild.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -510,113 +494,6 @@
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(248, 45);
             this.panelControls.TabIndex = 25;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.Image = global::Zero.Properties.Resources.btnDelete_default;
-            this.btnDelete.Location = new System.Drawing.Point(30, 11);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(24, 24);
-            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnDelete.TabIndex = 69;
-            this.btnDelete.TabStop = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            this.btnDelete.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnDelete_MouseDown);
-            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
-            this.btnDelete.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnDelete_MouseMove);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Image = global::Zero.Properties.Resources.btnReset_default;
-            this.btnReset.Location = new System.Drawing.Point(84, 11);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(24, 24);
-            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnReset.TabIndex = 50;
-            this.btnReset.TabStop = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            this.btnReset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnReset_MouseDown);
-            this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
-            this.btnReset.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnReset_MouseMove);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Image = global::Zero.Properties.Resources.btnUpdate_default;
-            this.btnUpdate.Location = new System.Drawing.Point(137, 11);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
-            this.btnUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnUpdate.TabIndex = 70;
-            this.btnUpdate.TabStop = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            this.btnUpdate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseDown);
-            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
-            this.btnUpdate.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseMove);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Image = global::Zero.Properties.Resources.btnAdd_default;
-            this.btnAdd.Location = new System.Drawing.Point(191, 11);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(24, 24);
-            this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnAdd.TabIndex = 72;
-            this.btnAdd.TabStop = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            this.btnAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAdd_MouseDown);
-            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
-            this.btnAdd.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAdd_MouseMove);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Image = global::Zero.Properties.Resources.btnRefresh_default;
-            this.btnRefresh.Location = new System.Drawing.Point(192, 11);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(24, 24);
-            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnRefresh.TabIndex = 74;
-            this.btnRefresh.TabStop = false;
-            this.btnRefresh.Visible = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            this.btnRefresh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseDown);
-            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
-            this.btnRefresh.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseMove);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Image = global::Zero.Properties.Resources.btnCancel_default;
-            this.btnCancel.Location = new System.Drawing.Point(192, 11);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(24, 24);
-            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnCancel.TabIndex = 73;
-            this.btnCancel.TabStop = false;
-            this.btnCancel.Visible = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            this.btnCancel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCancel_MouseDown);
-            this.btnCancel.MouseLeave += new System.EventHandler(this.btnCancel_MouseLeave);
-            this.btnCancel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCancel_MouseMove);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSave.Image = global::Zero.Properties.Resources.btnSave_default;
-            this.btnSave.Location = new System.Drawing.Point(136, 11);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(24, 24);
-            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSave.TabIndex = 71;
-            this.btnSave.TabStop = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSave_MouseDown);
-            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
-            this.btnSave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSave_MouseMove);
             // 
             // panelNavigationShadow
             // 
@@ -709,96 +586,6 @@
             this.progressBarOut.Name = "progressBarOut";
             this.progressBarOut.Size = new System.Drawing.Size(400, 4);
             this.progressBarOut.TabIndex = 59;
-            // 
-            // btnForward
-            // 
-            this.btnForward.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnForward.Image = global::Zero.Properties.Resources.btnForward_default;
-            this.btnForward.Location = new System.Drawing.Point(325, 98);
-            this.btnForward.Name = "btnForward";
-            this.btnForward.Size = new System.Drawing.Size(20, 17);
-            this.btnForward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnForward.TabIndex = 74;
-            this.btnForward.TabStop = false;
-            this.btnForward.Click += new System.EventHandler(this.btnPlus_Click);
-            this.btnForward.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPlus_MouseDown);
-            this.btnForward.MouseLeave += new System.EventHandler(this.btnPlus_MouseLeave);
-            this.btnForward.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnPlus_MouseMove);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.Image = global::Zero.Properties.Resources.btnSearch_default;
-            this.btnSearch.Location = new System.Drawing.Point(221, 9);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(24, 24);
-            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnSearch.TabIndex = 72;
-            this.btnSearch.TabStop = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            this.btnSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSearch_MouseDown);
-            this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
-            this.btnSearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSearch_MouseMove);
-            // 
-            // star4
-            // 
-            this.star4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star4.Image = global::Zero.Properties.Resources.btnStar_default;
-            this.star4.Location = new System.Drawing.Point(322, 15);
-            this.star4.Name = "star4";
-            this.star4.Size = new System.Drawing.Size(15, 15);
-            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star4.TabIndex = 67;
-            this.star4.TabStop = false;
-            this.star4.Click += new System.EventHandler(this.star4_Click);
-            // 
-            // star5
-            // 
-            this.star5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star5.Image = global::Zero.Properties.Resources.btnStar_default;
-            this.star5.Location = new System.Drawing.Point(340, 15);
-            this.star5.Name = "star5";
-            this.star5.Size = new System.Drawing.Size(15, 15);
-            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star5.TabIndex = 68;
-            this.star5.TabStop = false;
-            this.star5.Click += new System.EventHandler(this.star5_Click);
-            // 
-            // star3
-            // 
-            this.star3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star3.Image = global::Zero.Properties.Resources.btnStar_default;
-            this.star3.Location = new System.Drawing.Point(304, 15);
-            this.star3.Name = "star3";
-            this.star3.Size = new System.Drawing.Size(15, 15);
-            this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star3.TabIndex = 66;
-            this.star3.TabStop = false;
-            this.star3.Click += new System.EventHandler(this.star3_Click);
-            // 
-            // star2
-            // 
-            this.star2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star2.Image = global::Zero.Properties.Resources.btnStar_default;
-            this.star2.Location = new System.Drawing.Point(286, 15);
-            this.star2.Name = "star2";
-            this.star2.Size = new System.Drawing.Size(15, 15);
-            this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star2.TabIndex = 65;
-            this.star2.TabStop = false;
-            this.star2.Click += new System.EventHandler(this.star2_Click);
-            // 
-            // star1
-            // 
-            this.star1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.star1.Image = global::Zero.Properties.Resources.btnStar_default;
-            this.star1.Location = new System.Drawing.Point(268, 15);
-            this.star1.Name = "star1";
-            this.star1.Size = new System.Drawing.Size(15, 15);
-            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.star1.TabIndex = 64;
-            this.star1.TabStop = false;
-            this.star1.Click += new System.EventHandler(this.star1_Click);
             // 
             // txtNameBack
             // 
@@ -928,6 +715,247 @@
             // 
             this.timerFirstRun.Tick += new System.EventHandler(this.timerFirstRun_Tick);
             // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Enabled = false;
+            this.btnNext.Image = global::Zero.Properties.Resources.btnNext_default;
+            this.btnNext.Location = new System.Drawing.Point(81, 10);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(24, 24);
+            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNext.TabIndex = 73;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseDown);
+            this.btnNext.MouseLeave += new System.EventHandler(this.btnNext_MouseLeave);
+            this.btnNext.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseMove);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(31, 10);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(24, 24);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack.TabIndex = 72;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseDown);
+            this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
+            this.btnBack.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseMove);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.Image = global::Zero.Properties.Resources.btnDelete_default;
+            this.btnDelete.Location = new System.Drawing.Point(30, 11);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(24, 24);
+            this.btnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnDelete.TabIndex = 69;
+            this.btnDelete.TabStop = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnDelete_MouseDown);
+            this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
+            this.btnDelete.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnDelete_MouseMove);
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Transparent;
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReset.Image = global::Zero.Properties.Resources.btnReset_default;
+            this.btnReset.Location = new System.Drawing.Point(84, 11);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(24, 24);
+            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnReset.TabIndex = 50;
+            this.btnReset.TabStop = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnReset_MouseDown);
+            this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
+            this.btnReset.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnReset_MouseMove);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Image = global::Zero.Properties.Resources.btnUpdate_default;
+            this.btnUpdate.Location = new System.Drawing.Point(137, 11);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
+            this.btnUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnUpdate.TabIndex = 70;
+            this.btnUpdate.TabStop = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseDown);
+            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
+            this.btnUpdate.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseMove);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Image = global::Zero.Properties.Resources.btnAdd_default;
+            this.btnAdd.Location = new System.Drawing.Point(191, 11);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(24, 24);
+            this.btnAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnAdd.TabIndex = 72;
+            this.btnAdd.TabStop = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAdd_MouseDown);
+            this.btnAdd.MouseLeave += new System.EventHandler(this.btnAdd_MouseLeave);
+            this.btnAdd.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAdd_MouseMove);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.Image = global::Zero.Properties.Resources.btnRefresh_default;
+            this.btnRefresh.Location = new System.Drawing.Point(192, 11);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(24, 24);
+            this.btnRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnRefresh.TabIndex = 74;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.Visible = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.btnRefresh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseDown);
+            this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
+            this.btnRefresh.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseMove);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.Image = global::Zero.Properties.Resources.btnCancel_default;
+            this.btnCancel.Location = new System.Drawing.Point(192, 11);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(24, 24);
+            this.btnCancel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnCancel.TabIndex = 73;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.btnCancel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCancel_MouseDown);
+            this.btnCancel.MouseLeave += new System.EventHandler(this.btnCancel_MouseLeave);
+            this.btnCancel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCancel_MouseMove);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.Image = global::Zero.Properties.Resources.btnSave_default;
+            this.btnSave.Location = new System.Drawing.Point(136, 11);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(24, 24);
+            this.btnSave.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSave.TabIndex = 71;
+            this.btnSave.TabStop = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSave_MouseDown);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
+            this.btnSave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSave_MouseMove);
+            // 
+            // btnForward
+            // 
+            this.btnForward.BackColor = System.Drawing.Color.Transparent;
+            this.btnForward.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnForward.Image = global::Zero.Properties.Resources.btnForward_default;
+            this.btnForward.Location = new System.Drawing.Point(325, 98);
+            this.btnForward.Name = "btnForward";
+            this.btnForward.Size = new System.Drawing.Size(20, 17);
+            this.btnForward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnForward.TabIndex = 74;
+            this.btnForward.TabStop = false;
+            this.btnForward.Click += new System.EventHandler(this.btnPlus_Click);
+            this.btnForward.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnPlus_MouseDown);
+            this.btnForward.MouseLeave += new System.EventHandler(this.btnPlus_MouseLeave);
+            this.btnForward.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnPlus_MouseMove);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.Image = global::Zero.Properties.Resources.btnSearch_default;
+            this.btnSearch.Location = new System.Drawing.Point(221, 9);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(24, 24);
+            this.btnSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnSearch.TabIndex = 72;
+            this.btnSearch.TabStop = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSearch_MouseDown);
+            this.btnSearch.MouseLeave += new System.EventHandler(this.btnSearch_MouseLeave);
+            this.btnSearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSearch_MouseMove);
+            // 
+            // star4
+            // 
+            this.star4.BackColor = System.Drawing.Color.Transparent;
+            this.star4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star4.Image = global::Zero.Properties.Resources.btnStar_default;
+            this.star4.Location = new System.Drawing.Point(322, 15);
+            this.star4.Name = "star4";
+            this.star4.Size = new System.Drawing.Size(15, 15);
+            this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star4.TabIndex = 67;
+            this.star4.TabStop = false;
+            this.star4.Click += new System.EventHandler(this.star4_Click);
+            // 
+            // star5
+            // 
+            this.star5.BackColor = System.Drawing.Color.Transparent;
+            this.star5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star5.Image = global::Zero.Properties.Resources.btnStar_default;
+            this.star5.Location = new System.Drawing.Point(340, 15);
+            this.star5.Name = "star5";
+            this.star5.Size = new System.Drawing.Size(15, 15);
+            this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star5.TabIndex = 68;
+            this.star5.TabStop = false;
+            this.star5.Click += new System.EventHandler(this.star5_Click);
+            // 
+            // star3
+            // 
+            this.star3.BackColor = System.Drawing.Color.Transparent;
+            this.star3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star3.Image = global::Zero.Properties.Resources.btnStar_default;
+            this.star3.Location = new System.Drawing.Point(304, 15);
+            this.star3.Name = "star3";
+            this.star3.Size = new System.Drawing.Size(15, 15);
+            this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star3.TabIndex = 66;
+            this.star3.TabStop = false;
+            this.star3.Click += new System.EventHandler(this.star3_Click);
+            // 
+            // star2
+            // 
+            this.star2.BackColor = System.Drawing.Color.Transparent;
+            this.star2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star2.Image = global::Zero.Properties.Resources.btnStar_default;
+            this.star2.Location = new System.Drawing.Point(286, 15);
+            this.star2.Name = "star2";
+            this.star2.Size = new System.Drawing.Size(15, 15);
+            this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star2.TabIndex = 65;
+            this.star2.TabStop = false;
+            this.star2.Click += new System.EventHandler(this.star2_Click);
+            // 
+            // star1
+            // 
+            this.star1.BackColor = System.Drawing.Color.Transparent;
+            this.star1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.star1.Image = global::Zero.Properties.Resources.btnStar_default;
+            this.star1.Location = new System.Drawing.Point(268, 15);
+            this.star1.Name = "star1";
+            this.star1.Size = new System.Drawing.Size(15, 15);
+            this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.star1.TabIndex = 64;
+            this.star1.TabStop = false;
+            this.star1.Click += new System.EventHandler(this.star1_Click);
+            // 
             // Main_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,12 +974,15 @@
             this.Load += new System.EventHandler(this.Main_UI_Load);
             this.panelNavigation.ResumeLayout(false);
             this.rowProgressOut.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.panelStatus.ResumeLayout(false);
             this.panelForm.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelControls.ResumeLayout(false);
+            this.panelData.ResumeLayout(false);
+            this.panelData.PerformLayout();
+            this.panelProgress.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).EndInit();
@@ -959,9 +990,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
-            this.panelData.ResumeLayout(false);
-            this.panelData.PerformLayout();
-            this.panelProgress.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
@@ -1036,6 +1064,7 @@
         private System.Windows.Forms.Label progressBarOut;
         private System.Windows.Forms.Label progressCorner2;
         private System.Windows.Forms.Timer timerFirstRun;
+        private System.Windows.Forms.Label labelBuild;
     }
 }
 
