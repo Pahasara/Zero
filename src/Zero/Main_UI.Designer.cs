@@ -40,6 +40,8 @@
             this.panelNavigation = new System.Windows.Forms.Panel();
             this.rowProgressOut = new System.Windows.Forms.Panel();
             this.rowScrollBar = new System.Windows.Forms.Panel();
+            this.btnNext = new System.Windows.Forms.PictureBox();
+            this.btnBack = new System.Windows.Forms.PictureBox();
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelCR = new System.Windows.Forms.Label();
             this.labelCP = new System.Windows.Forms.Label();
@@ -50,15 +52,21 @@
             this.progressBar = new System.Windows.Forms.Label();
             this.progressTimer = new System.Windows.Forms.Timer(this.components);
             this.txtSeriesBack = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.showBack = new System.Windows.Forms.TextBox();
+            this.epBack = new System.Windows.Forms.TextBox();
+            this.wtBack = new System.Windows.Forms.TextBox();
             this.txtWatchedBack = new System.Windows.Forms.TextBox();
             this.txtEpisodesBack = new System.Windows.Forms.TextBox();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.labelBuild = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelControls = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.PictureBox();
+            this.btnReset = new System.Windows.Forms.PictureBox();
+            this.btnAdd = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.PictureBox();
+            this.btnUpdate = new System.Windows.Forms.PictureBox();
+            this.btnCancel = new System.Windows.Forms.PictureBox();
+            this.btnSave = new System.Windows.Forms.PictureBox();
             this.panelNavigationShadow = new System.Windows.Forms.Panel();
             this.panelControlsShadow = new System.Windows.Forms.Panel();
             this.panelData = new System.Windows.Forms.Panel();
@@ -66,25 +74,6 @@
             this.progressCorner2 = new System.Windows.Forms.Label();
             this.progressCorner = new System.Windows.Forms.Label();
             this.progressBarOut = new System.Windows.Forms.Label();
-            this.txtNameBack = new System.Windows.Forms.TextBox();
-            this.txtIndex = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtNameShadow = new System.Windows.Forms.TextBox();
-            this.txtWatchedShadow = new System.Windows.Forms.TextBox();
-            this.txtEpisodesShadow = new System.Windows.Forms.TextBox();
-            this.txtSeriesShadow = new System.Windows.Forms.TextBox();
-            this.panelDataShadow = new System.Windows.Forms.Panel();
-            this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
-            this.timerFirstRun = new System.Windows.Forms.Timer(this.components);
-            this.btnNext = new System.Windows.Forms.PictureBox();
-            this.btnBack = new System.Windows.Forms.PictureBox();
-            this.btnDelete = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.PictureBox();
-            this.btnUpdate = new System.Windows.Forms.PictureBox();
-            this.btnAdd = new System.Windows.Forms.PictureBox();
-            this.btnRefresh = new System.Windows.Forms.PictureBox();
-            this.btnCancel = new System.Windows.Forms.PictureBox();
-            this.btnSave = new System.Windows.Forms.PictureBox();
             this.btnForward = new System.Windows.Forms.PictureBox();
             this.btnSearch = new System.Windows.Forms.PictureBox();
             this.star4 = new System.Windows.Forms.PictureBox();
@@ -92,23 +81,33 @@
             this.star3 = new System.Windows.Forms.PictureBox();
             this.star2 = new System.Windows.Forms.PictureBox();
             this.star1 = new System.Windows.Forms.PictureBox();
+            this.txtNameBack = new System.Windows.Forms.TextBox();
+            this.txtIndex = new System.Windows.Forms.TextBox();
+            this.indexBack = new System.Windows.Forms.TextBox();
+            this.txtNameShadow = new System.Windows.Forms.TextBox();
+            this.txtWatchedShadow = new System.Windows.Forms.TextBox();
+            this.txtEpisodesShadow = new System.Windows.Forms.TextBox();
+            this.txtSeriesShadow = new System.Windows.Forms.TextBox();
+            this.panelDataShadow = new System.Windows.Forms.Panel();
+            this.tool_tip = new System.Windows.Forms.ToolTip(this.components);
+            this.timerFirstRun = new System.Windows.Forms.Timer(this.components);
             this.panelNavigation.SuspendLayout();
             this.rowProgressOut.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             this.panelStatus.SuspendLayout();
             this.panelForm.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelControls.SuspendLayout();
-            this.panelData.SuspendLayout();
-            this.panelProgress.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
+            this.panelData.SuspendLayout();
+            this.panelProgress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnForward)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).BeginInit();
@@ -134,7 +133,7 @@
             this.txtShow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtShow.Font = new System.Drawing.Font("Russo One", 9.75F);
-            this.txtShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtShow.Location = new System.Drawing.Point(100, 55);
             this.txtShow.MaxLength = 50;
             this.txtShow.Multiline = true;
@@ -143,6 +142,8 @@
             this.txtShow.TabIndex = 70;
             this.txtShow.Enter += new System.EventHandler(this.txtSeries_Enter);
             this.txtShow.Leave += new System.EventHandler(this.txtSeries_Leave);
+            this.txtShow.MouseLeave += new System.EventHandler(this.txtShow_MouseLeave);
+            this.txtShow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtShow_MouseMove);
             // 
             // lbShow
             // 
@@ -160,7 +161,7 @@
             this.txtWatched.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtWatched.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtWatched.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtWatched.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtWatched.Location = new System.Drawing.Point(270, 98);
             this.txtWatched.MaxLength = 4;
             this.txtWatched.Multiline = true;
@@ -171,6 +172,8 @@
             this.txtWatched.Enter += new System.EventHandler(this.txtWatched_Enter);
             this.txtWatched.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWatched_KeyPress);
             this.txtWatched.Leave += new System.EventHandler(this.txtWatched_Leave);
+            this.txtWatched.MouseLeave += new System.EventHandler(this.txtWatched_MouseLeave);
+            this.txtWatched.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtWatched_MouseMove);
             // 
             // lbWatched
             // 
@@ -188,7 +191,7 @@
             this.txtEpisodes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.txtEpisodes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpisodes.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtEpisodes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.txtEpisodes.Location = new System.Drawing.Point(101, 98);
             this.txtEpisodes.MaxLength = 4;
             this.txtEpisodes.Multiline = true;
@@ -200,6 +203,8 @@
             this.txtEpisodes.Enter += new System.EventHandler(this.txtEpisodes_Enter);
             this.txtEpisodes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEpisodes_KeyPress);
             this.txtEpisodes.Leave += new System.EventHandler(this.txtEpisodes_Leave);
+            this.txtEpisodes.MouseLeave += new System.EventHandler(this.txtEpisodes_MouseLeave);
+            this.txtEpisodes.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtEpisodes_MouseMove);
             // 
             // lbEpisodes
             // 
@@ -214,7 +219,7 @@
             // 
             // panelNavigation
             // 
-            this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panelNavigation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(26)))));
             this.panelNavigation.Controls.Add(this.rowProgressOut);
             this.panelNavigation.Controls.Add(this.btnNext);
             this.panelNavigation.Controls.Add(this.btnBack);
@@ -225,7 +230,7 @@
             // 
             // rowProgressOut
             // 
-            this.rowProgressOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.rowProgressOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(13)))), ((int)(((byte)(20)))));
             this.rowProgressOut.Controls.Add(this.rowScrollBar);
             this.rowProgressOut.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rowProgressOut.Location = new System.Drawing.Point(0, 42);
@@ -236,16 +241,49 @@
             // 
             // rowScrollBar
             // 
-            this.rowScrollBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.rowScrollBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
             this.rowScrollBar.Location = new System.Drawing.Point(1, 0);
             this.rowScrollBar.Name = "rowScrollBar";
             this.rowScrollBar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.rowScrollBar.Size = new System.Drawing.Size(40, 2);
             this.rowScrollBar.TabIndex = 0;
             // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.Transparent;
+            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNext.Enabled = false;
+            this.btnNext.Image = global::Zero.Properties.Resources.btnNext_default;
+            this.btnNext.Location = new System.Drawing.Point(81, 10);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(24, 24);
+            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNext.TabIndex = 73;
+            this.btnNext.TabStop = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseDown);
+            this.btnNext.MouseLeave += new System.EventHandler(this.btnNext_MouseLeave);
+            this.btnNext.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseMove);
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.Location = new System.Drawing.Point(31, 10);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(24, 24);
+            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnBack.TabIndex = 72;
+            this.btnBack.TabStop = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseDown);
+            this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
+            this.btnBack.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseMove);
+            // 
             // panelStatus
             // 
-            this.panelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
+            this.panelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(13)))));
             this.panelStatus.Controls.Add(this.labelCR);
             this.panelStatus.Controls.Add(this.labelCP);
             this.panelStatus.Controls.Add(this.labelST);
@@ -335,7 +373,7 @@
             // 
             // progressBar
             // 
-            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
+            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(37)))), ((int)(((byte)(40)))));
             this.progressBar.Location = new System.Drawing.Point(1, 0);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(20, 3);
@@ -361,51 +399,51 @@
             this.txtSeriesBack.Text = "Ben 10 (new Season)";
             this.txtSeriesBack.Visible = false;
             // 
-            // textBox2
+            // showBack
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.textBox2.Location = new System.Drawing.Point(99, 54);
-            this.textBox2.MaxLength = 50;
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(274, 19);
-            this.textBox2.TabIndex = 38;
+            this.showBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
+            this.showBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.showBack.Enabled = false;
+            this.showBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.showBack.Location = new System.Drawing.Point(99, 54);
+            this.showBack.MaxLength = 50;
+            this.showBack.Multiline = true;
+            this.showBack.Name = "showBack";
+            this.showBack.Size = new System.Drawing.Size(274, 19);
+            this.showBack.TabIndex = 38;
             // 
-            // textBox4
+            // epBack
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.textBox4.Location = new System.Drawing.Point(100, 97);
-            this.textBox4.MaxLength = 4;
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox4.Size = new System.Drawing.Size(46, 19);
-            this.textBox4.TabIndex = 40;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.epBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
+            this.epBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.epBack.Enabled = false;
+            this.epBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.epBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.epBack.Location = new System.Drawing.Point(100, 97);
+            this.epBack.MaxLength = 4;
+            this.epBack.Multiline = true;
+            this.epBack.Name = "epBack";
+            this.epBack.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.epBack.Size = new System.Drawing.Size(46, 19);
+            this.epBack.TabIndex = 40;
+            this.epBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // wtBack
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.textBox5.Location = new System.Drawing.Point(269, 97);
-            this.textBox5.MaxLength = 4;
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.textBox5.Size = new System.Drawing.Size(47, 19);
-            this.textBox5.TabIndex = 41;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.wtBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
+            this.wtBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.wtBack.Enabled = false;
+            this.wtBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wtBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.wtBack.Location = new System.Drawing.Point(269, 97);
+            this.wtBack.MaxLength = 4;
+            this.wtBack.Multiline = true;
+            this.wtBack.Name = "wtBack";
+            this.wtBack.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.wtBack.Size = new System.Drawing.Size(47, 19);
+            this.wtBack.TabIndex = 41;
+            this.wtBack.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtWatchedBack
             // 
@@ -443,8 +481,7 @@
             // 
             // panelForm
             // 
-            this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panelForm.Controls.Add(this.labelBuild);
+            this.panelForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(21)))));
             this.panelForm.Controls.Add(this.panel1);
             this.panelForm.Controls.Add(this.panelData);
             this.panelForm.Controls.Add(this.panelStatus);
@@ -454,19 +491,6 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(434, 261);
             this.panelForm.TabIndex = 51;
-            // 
-            // labelBuild
-            // 
-            this.labelBuild.BackColor = System.Drawing.Color.Transparent;
-            this.labelBuild.Font = new System.Drawing.Font("Russo One", 6F);
-            this.labelBuild.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
-            this.labelBuild.Location = new System.Drawing.Point(356, -3);
-            this.labelBuild.Name = "labelBuild";
-            this.labelBuild.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.labelBuild.Size = new System.Drawing.Size(75, 18);
-            this.labelBuild.TabIndex = 77;
-            this.labelBuild.Text = "v2.0 Build 43";
-            this.labelBuild.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel1
             // 
@@ -482,271 +506,18 @@
             // 
             // panelControls
             // 
-            this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.panelControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(26)))));
             this.panelControls.Controls.Add(this.btnDelete);
             this.panelControls.Controls.Add(this.btnReset);
-            this.panelControls.Controls.Add(this.btnUpdate);
             this.panelControls.Controls.Add(this.btnAdd);
             this.panelControls.Controls.Add(this.btnRefresh);
+            this.panelControls.Controls.Add(this.btnUpdate);
             this.panelControls.Controls.Add(this.btnCancel);
             this.panelControls.Controls.Add(this.btnSave);
             this.panelControls.Location = new System.Drawing.Point(16, 5);
             this.panelControls.Name = "panelControls";
             this.panelControls.Size = new System.Drawing.Size(248, 45);
             this.panelControls.TabIndex = 25;
-            // 
-            // panelNavigationShadow
-            // 
-            this.panelNavigationShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.panelNavigationShadow.Location = new System.Drawing.Point(281, 5);
-            this.panelNavigationShadow.Name = "panelNavigationShadow";
-            this.panelNavigationShadow.Size = new System.Drawing.Size(138, 47);
-            this.panelNavigationShadow.TabIndex = 24;
-            // 
-            // panelControlsShadow
-            // 
-            this.panelControlsShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.panelControlsShadow.Location = new System.Drawing.Point(15, 4);
-            this.panelControlsShadow.Name = "panelControlsShadow";
-            this.panelControlsShadow.Size = new System.Drawing.Size(250, 47);
-            this.panelControlsShadow.TabIndex = 26;
-            // 
-            // panelData
-            // 
-            this.panelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.panelData.Controls.Add(this.panelProgress);
-            this.panelData.Controls.Add(this.btnForward);
-            this.panelData.Controls.Add(this.btnSearch);
-            this.panelData.Controls.Add(this.star4);
-            this.panelData.Controls.Add(this.star5);
-            this.panelData.Controls.Add(this.star3);
-            this.panelData.Controls.Add(this.star2);
-            this.panelData.Controls.Add(this.star1);
-            this.panelData.Controls.Add(this.txtNameBack);
-            this.panelData.Controls.Add(this.txtIndex);
-            this.panelData.Controls.Add(this.textBox1);
-            this.panelData.Controls.Add(this.txtNameShadow);
-            this.panelData.Controls.Add(this.txtEpisodesBack);
-            this.panelData.Controls.Add(this.txtWatchedBack);
-            this.panelData.Controls.Add(this.txtWatched);
-            this.panelData.Controls.Add(this.txtEpisodes);
-            this.panelData.Controls.Add(this.txtSeriesBack);
-            this.panelData.Controls.Add(this.starWatched);
-            this.panelData.Controls.Add(this.starEpisodes);
-            this.panelData.Controls.Add(this.textBox4);
-            this.panelData.Controls.Add(this.textBox5);
-            this.panelData.Controls.Add(this.lbIndex);
-            this.panelData.Controls.Add(this.lbShow);
-            this.panelData.Controls.Add(this.lbWatched);
-            this.panelData.Controls.Add(this.lbEpisodes);
-            this.panelData.Controls.Add(this.txtWatchedShadow);
-            this.panelData.Controls.Add(this.txtEpisodesShadow);
-            this.panelData.Controls.Add(this.txtShow);
-            this.panelData.Controls.Add(this.textBox2);
-            this.panelData.Controls.Add(this.txtSeriesShadow);
-            this.panelData.Controls.Add(this.starIndex);
-            this.panelData.Location = new System.Drawing.Point(16, 14);
-            this.panelData.Name = "panelData";
-            this.panelData.Size = new System.Drawing.Size(402, 146);
-            this.panelData.TabIndex = 52;
-            // 
-            // panelProgress
-            // 
-            this.panelProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.panelProgress.Controls.Add(this.progressCorner2);
-            this.panelProgress.Controls.Add(this.progressBar);
-            this.panelProgress.Controls.Add(this.progressCorner);
-            this.panelProgress.Controls.Add(this.progressBarOut);
-            this.panelProgress.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelProgress.Location = new System.Drawing.Point(0, 142);
-            this.panelProgress.Name = "panelProgress";
-            this.panelProgress.Size = new System.Drawing.Size(402, 4);
-            this.panelProgress.TabIndex = 76;
-            // 
-            // progressCorner2
-            // 
-            this.progressCorner2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.progressCorner2.Location = new System.Drawing.Point(46, 0);
-            this.progressCorner2.Name = "progressCorner2";
-            this.progressCorner2.Size = new System.Drawing.Size(20, 3);
-            this.progressCorner2.TabIndex = 77;
-            // 
-            // progressCorner
-            // 
-            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
-            this.progressCorner.Location = new System.Drawing.Point(22, 0);
-            this.progressCorner.Name = "progressCorner";
-            this.progressCorner.Size = new System.Drawing.Size(20, 3);
-            this.progressCorner.TabIndex = 58;
-            // 
-            // progressBarOut
-            // 
-            this.progressBarOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.progressBarOut.Location = new System.Drawing.Point(1, 0);
-            this.progressBarOut.Name = "progressBarOut";
-            this.progressBarOut.Size = new System.Drawing.Size(400, 4);
-            this.progressBarOut.TabIndex = 59;
-            // 
-            // txtNameBack
-            // 
-            this.txtNameBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
-            this.txtNameBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNameBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtNameBack.Location = new System.Drawing.Point(100, 29);
-            this.txtNameBack.MaxLength = 20;
-            this.txtNameBack.Multiline = true;
-            this.txtNameBack.Name = "txtNameBack";
-            this.txtNameBack.Size = new System.Drawing.Size(100, 1);
-            this.txtNameBack.TabIndex = 60;
-            this.txtNameBack.Text = "BEN 10";
-            this.txtNameBack.Visible = false;
-            // 
-            // txtIndex
-            // 
-            this.txtIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.txtIndex.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtIndex.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.txtIndex.Location = new System.Drawing.Point(100, 12);
-            this.txtIndex.MaxLength = 20;
-            this.txtIndex.Multiline = true;
-            this.txtIndex.Name = "txtIndex";
-            this.txtIndex.Size = new System.Drawing.Size(100, 17);
-            this.txtIndex.TabIndex = 75;
-            this.txtIndex.Click += new System.EventHandler(this.txtIndex_Click);
-            this.txtIndex.Enter += new System.EventHandler(this.txtIndex_Enter);
-            this.txtIndex.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIndex_KeyDown);
-            this.txtIndex.Leave += new System.EventHandler(this.txtIndex_Leave);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.textBox1.Location = new System.Drawing.Point(99, 11);
-            this.textBox1.MaxLength = 20;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 19);
-            this.textBox1.TabIndex = 61;
-            // 
-            // txtNameShadow
-            // 
-            this.txtNameShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.txtNameShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNameShadow.Enabled = false;
-            this.txtNameShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtNameShadow.Location = new System.Drawing.Point(101, 14);
-            this.txtNameShadow.MaxLength = 20;
-            this.txtNameShadow.Multiline = true;
-            this.txtNameShadow.Name = "txtNameShadow";
-            this.txtNameShadow.Size = new System.Drawing.Size(102, 19);
-            this.txtNameShadow.TabIndex = 62;
-            // 
-            // txtWatchedShadow
-            // 
-            this.txtWatchedShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.txtWatchedShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtWatchedShadow.Enabled = false;
-            this.txtWatchedShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtWatchedShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtWatchedShadow.Location = new System.Drawing.Point(271, 100);
-            this.txtWatchedShadow.MaxLength = 4;
-            this.txtWatchedShadow.Multiline = true;
-            this.txtWatchedShadow.Name = "txtWatchedShadow";
-            this.txtWatchedShadow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtWatchedShadow.Size = new System.Drawing.Size(47, 19);
-            this.txtWatchedShadow.TabIndex = 54;
-            this.txtWatchedShadow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtEpisodesShadow
-            // 
-            this.txtEpisodesShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.txtEpisodesShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEpisodesShadow.Enabled = false;
-            this.txtEpisodesShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEpisodesShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtEpisodesShadow.Location = new System.Drawing.Point(102, 100);
-            this.txtEpisodesShadow.MaxLength = 4;
-            this.txtEpisodesShadow.Multiline = true;
-            this.txtEpisodesShadow.Name = "txtEpisodesShadow";
-            this.txtEpisodesShadow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtEpisodesShadow.Size = new System.Drawing.Size(46, 19);
-            this.txtEpisodesShadow.TabIndex = 55;
-            this.txtEpisodesShadow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtSeriesShadow
-            // 
-            this.txtSeriesShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
-            this.txtSeriesShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSeriesShadow.Enabled = false;
-            this.txtSeriesShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSeriesShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
-            this.txtSeriesShadow.Location = new System.Drawing.Point(101, 57);
-            this.txtSeriesShadow.MaxLength = 50;
-            this.txtSeriesShadow.Multiline = true;
-            this.txtSeriesShadow.Name = "txtSeriesShadow";
-            this.txtSeriesShadow.Size = new System.Drawing.Size(274, 19);
-            this.txtSeriesShadow.TabIndex = 52;
-            // 
-            // panelDataShadow
-            // 
-            this.panelDataShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.panelDataShadow.Location = new System.Drawing.Point(15, 13);
-            this.panelDataShadow.Name = "panelDataShadow";
-            this.panelDataShadow.Size = new System.Drawing.Size(404, 147);
-            this.panelDataShadow.TabIndex = 69;
-            // 
-            // tool_tip
-            // 
-            this.tool_tip.AutoPopDelay = 2000;
-            this.tool_tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.tool_tip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.tool_tip.InitialDelay = 500;
-            this.tool_tip.OwnerDraw = true;
-            this.tool_tip.ReshowDelay = 100;
-            this.tool_tip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.tool_tip_Draw);
-            // 
-            // timerFirstRun
-            // 
-            this.timerFirstRun.Tick += new System.EventHandler(this.timerFirstRun_Tick);
-            // 
-            // btnNext
-            // 
-            this.btnNext.BackColor = System.Drawing.Color.Transparent;
-            this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNext.Enabled = false;
-            this.btnNext.Image = global::Zero.Properties.Resources.btnNext_default;
-            this.btnNext.Location = new System.Drawing.Point(81, 10);
-            this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(24, 24);
-            this.btnNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnNext.TabIndex = 73;
-            this.btnNext.TabStop = false;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
-            this.btnNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseDown);
-            this.btnNext.MouseLeave += new System.EventHandler(this.btnNext_MouseLeave);
-            this.btnNext.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseMove);
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Transparent;
-            this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
-            this.btnBack.Location = new System.Drawing.Point(31, 10);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(24, 24);
-            this.btnBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnBack.TabIndex = 72;
-            this.btnBack.TabStop = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            this.btnBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseDown);
-            this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
-            this.btnBack.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseMove);
             // 
             // btnDelete
             // 
@@ -780,22 +551,6 @@
             this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
             this.btnReset.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnReset_MouseMove);
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Image = global::Zero.Properties.Resources.btnUpdate_default;
-            this.btnUpdate.Location = new System.Drawing.Point(137, 11);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
-            this.btnUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnUpdate.TabIndex = 70;
-            this.btnUpdate.TabStop = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            this.btnUpdate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseDown);
-            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
-            this.btnUpdate.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseMove);
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
@@ -828,6 +583,22 @@
             this.btnRefresh.MouseLeave += new System.EventHandler(this.btnRefresh_MouseLeave);
             this.btnRefresh.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnRefresh_MouseMove);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.Image = global::Zero.Properties.Resources.btnUpdate_default;
+            this.btnUpdate.Location = new System.Drawing.Point(137, 11);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(24, 24);
+            this.btnUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnUpdate.TabIndex = 70;
+            this.btnUpdate.TabStop = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseDown);
+            this.btnUpdate.MouseLeave += new System.EventHandler(this.btnUpdate_MouseLeave);
+            this.btnUpdate.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnUpdate_MouseMove);
+            // 
             // btnCancel
             // 
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -858,6 +629,98 @@
             this.btnSave.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnSave_MouseDown);
             this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             this.btnSave.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnSave_MouseMove);
+            // 
+            // panelNavigationShadow
+            // 
+            this.panelNavigationShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panelNavigationShadow.Location = new System.Drawing.Point(281, 5);
+            this.panelNavigationShadow.Name = "panelNavigationShadow";
+            this.panelNavigationShadow.Size = new System.Drawing.Size(138, 47);
+            this.panelNavigationShadow.TabIndex = 24;
+            // 
+            // panelControlsShadow
+            // 
+            this.panelControlsShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panelControlsShadow.Location = new System.Drawing.Point(15, 4);
+            this.panelControlsShadow.Name = "panelControlsShadow";
+            this.panelControlsShadow.Size = new System.Drawing.Size(250, 47);
+            this.panelControlsShadow.TabIndex = 26;
+            // 
+            // panelData
+            // 
+            this.panelData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(25)))));
+            this.panelData.Controls.Add(this.panelProgress);
+            this.panelData.Controls.Add(this.btnForward);
+            this.panelData.Controls.Add(this.btnSearch);
+            this.panelData.Controls.Add(this.star4);
+            this.panelData.Controls.Add(this.star5);
+            this.panelData.Controls.Add(this.star3);
+            this.panelData.Controls.Add(this.star2);
+            this.panelData.Controls.Add(this.star1);
+            this.panelData.Controls.Add(this.txtNameBack);
+            this.panelData.Controls.Add(this.txtIndex);
+            this.panelData.Controls.Add(this.indexBack);
+            this.panelData.Controls.Add(this.txtNameShadow);
+            this.panelData.Controls.Add(this.txtEpisodesBack);
+            this.panelData.Controls.Add(this.txtWatchedBack);
+            this.panelData.Controls.Add(this.txtWatched);
+            this.panelData.Controls.Add(this.txtEpisodes);
+            this.panelData.Controls.Add(this.txtSeriesBack);
+            this.panelData.Controls.Add(this.starWatched);
+            this.panelData.Controls.Add(this.starEpisodes);
+            this.panelData.Controls.Add(this.epBack);
+            this.panelData.Controls.Add(this.wtBack);
+            this.panelData.Controls.Add(this.lbIndex);
+            this.panelData.Controls.Add(this.lbShow);
+            this.panelData.Controls.Add(this.lbWatched);
+            this.panelData.Controls.Add(this.lbEpisodes);
+            this.panelData.Controls.Add(this.txtWatchedShadow);
+            this.panelData.Controls.Add(this.txtEpisodesShadow);
+            this.panelData.Controls.Add(this.txtShow);
+            this.panelData.Controls.Add(this.showBack);
+            this.panelData.Controls.Add(this.txtSeriesShadow);
+            this.panelData.Controls.Add(this.starIndex);
+            this.panelData.Location = new System.Drawing.Point(16, 14);
+            this.panelData.Name = "panelData";
+            this.panelData.Size = new System.Drawing.Size(402, 146);
+            this.panelData.TabIndex = 52;
+            // 
+            // panelProgress
+            // 
+            this.panelProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.panelProgress.Controls.Add(this.progressCorner2);
+            this.panelProgress.Controls.Add(this.progressBar);
+            this.panelProgress.Controls.Add(this.progressCorner);
+            this.panelProgress.Controls.Add(this.progressBarOut);
+            this.panelProgress.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelProgress.Location = new System.Drawing.Point(0, 142);
+            this.panelProgress.Name = "panelProgress";
+            this.panelProgress.Size = new System.Drawing.Size(402, 4);
+            this.panelProgress.TabIndex = 76;
+            // 
+            // progressCorner2
+            // 
+            this.progressCorner2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(23)))), ((int)(((byte)(30)))));
+            this.progressCorner2.Location = new System.Drawing.Point(46, 0);
+            this.progressCorner2.Name = "progressCorner2";
+            this.progressCorner2.Size = new System.Drawing.Size(20, 3);
+            this.progressCorner2.TabIndex = 77;
+            // 
+            // progressCorner
+            // 
+            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(50)))), ((int)(((byte)(0)))));
+            this.progressCorner.Location = new System.Drawing.Point(22, 0);
+            this.progressCorner.Name = "progressCorner";
+            this.progressCorner.Size = new System.Drawing.Size(20, 3);
+            this.progressCorner.TabIndex = 58;
+            // 
+            // progressBarOut
+            // 
+            this.progressBarOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(50)))));
+            this.progressBarOut.Location = new System.Drawing.Point(1, 0);
+            this.progressBarOut.Name = "progressBarOut";
+            this.progressBarOut.Size = new System.Drawing.Size(400, 4);
+            this.progressBarOut.TabIndex = 59;
             // 
             // btnForward
             // 
@@ -956,11 +819,141 @@
             this.star1.TabStop = false;
             this.star1.Click += new System.EventHandler(this.star1_Click);
             // 
+            // txtNameBack
+            // 
+            this.txtNameBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(27)))), ((int)(((byte)(30)))));
+            this.txtNameBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNameBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.txtNameBack.Location = new System.Drawing.Point(100, 29);
+            this.txtNameBack.MaxLength = 20;
+            this.txtNameBack.Multiline = true;
+            this.txtNameBack.Name = "txtNameBack";
+            this.txtNameBack.Size = new System.Drawing.Size(100, 1);
+            this.txtNameBack.TabIndex = 60;
+            this.txtNameBack.Text = "BEN 10";
+            this.txtNameBack.Visible = false;
+            // 
+            // txtIndex
+            // 
+            this.txtIndex.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.txtIndex.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIndex.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIndex.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.txtIndex.Location = new System.Drawing.Point(100, 12);
+            this.txtIndex.MaxLength = 20;
+            this.txtIndex.Multiline = true;
+            this.txtIndex.Name = "txtIndex";
+            this.txtIndex.Size = new System.Drawing.Size(100, 17);
+            this.txtIndex.TabIndex = 75;
+            this.txtIndex.Click += new System.EventHandler(this.txtIndex_Click);
+            this.txtIndex.Enter += new System.EventHandler(this.txtIndex_Enter);
+            this.txtIndex.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIndex_KeyDown);
+            this.txtIndex.Leave += new System.EventHandler(this.txtIndex_Leave);
+            this.txtIndex.MouseLeave += new System.EventHandler(this.txtIndex_MouseLeave);
+            this.txtIndex.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtIndex_MouseMove);
+            // 
+            // indexBack
+            // 
+            this.indexBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(28)))), ((int)(((byte)(12)))));
+            this.indexBack.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.indexBack.Enabled = false;
+            this.indexBack.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.indexBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.indexBack.Location = new System.Drawing.Point(99, 11);
+            this.indexBack.MaxLength = 20;
+            this.indexBack.Multiline = true;
+            this.indexBack.Name = "indexBack";
+            this.indexBack.Size = new System.Drawing.Size(102, 19);
+            this.indexBack.TabIndex = 61;
+            // 
+            // txtNameShadow
+            // 
+            this.txtNameShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.txtNameShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNameShadow.Enabled = false;
+            this.txtNameShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.txtNameShadow.Location = new System.Drawing.Point(101, 14);
+            this.txtNameShadow.MaxLength = 20;
+            this.txtNameShadow.Multiline = true;
+            this.txtNameShadow.Name = "txtNameShadow";
+            this.txtNameShadow.Size = new System.Drawing.Size(102, 19);
+            this.txtNameShadow.TabIndex = 62;
+            // 
+            // txtWatchedShadow
+            // 
+            this.txtWatchedShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.txtWatchedShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWatchedShadow.Enabled = false;
+            this.txtWatchedShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtWatchedShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.txtWatchedShadow.Location = new System.Drawing.Point(271, 100);
+            this.txtWatchedShadow.MaxLength = 4;
+            this.txtWatchedShadow.Multiline = true;
+            this.txtWatchedShadow.Name = "txtWatchedShadow";
+            this.txtWatchedShadow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtWatchedShadow.Size = new System.Drawing.Size(47, 19);
+            this.txtWatchedShadow.TabIndex = 54;
+            this.txtWatchedShadow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtEpisodesShadow
+            // 
+            this.txtEpisodesShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.txtEpisodesShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEpisodesShadow.Enabled = false;
+            this.txtEpisodesShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEpisodesShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.txtEpisodesShadow.Location = new System.Drawing.Point(102, 100);
+            this.txtEpisodesShadow.MaxLength = 4;
+            this.txtEpisodesShadow.Multiline = true;
+            this.txtEpisodesShadow.Name = "txtEpisodesShadow";
+            this.txtEpisodesShadow.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtEpisodesShadow.Size = new System.Drawing.Size(46, 19);
+            this.txtEpisodesShadow.TabIndex = 55;
+            this.txtEpisodesShadow.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtSeriesShadow
+            // 
+            this.txtSeriesShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(14)))));
+            this.txtSeriesShadow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSeriesShadow.Enabled = false;
+            this.txtSeriesShadow.Font = new System.Drawing.Font("Russo One", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeriesShadow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(16)))));
+            this.txtSeriesShadow.Location = new System.Drawing.Point(101, 57);
+            this.txtSeriesShadow.MaxLength = 50;
+            this.txtSeriesShadow.Multiline = true;
+            this.txtSeriesShadow.Name = "txtSeriesShadow";
+            this.txtSeriesShadow.Size = new System.Drawing.Size(274, 19);
+            this.txtSeriesShadow.TabIndex = 52;
+            // 
+            // panelDataShadow
+            // 
+            this.panelDataShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(13)))), ((int)(((byte)(17)))));
+            this.panelDataShadow.Location = new System.Drawing.Point(15, 13);
+            this.panelDataShadow.Name = "panelDataShadow";
+            this.panelDataShadow.Size = new System.Drawing.Size(404, 147);
+            this.panelDataShadow.TabIndex = 69;
+            // 
+            // tool_tip
+            // 
+            this.tool_tip.AutoPopDelay = 2000;
+            this.tool_tip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.tool_tip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.tool_tip.InitialDelay = 500;
+            this.tool_tip.OwnerDraw = true;
+            this.tool_tip.ReshowDelay = 100;
+            this.tool_tip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.tool_tip_Draw);
+            // 
+            // timerFirstRun
+            // 
+            this.timerFirstRun.Tick += new System.EventHandler(this.timerFirstRun_Tick);
+            // 
             // Main_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(434, 261);
             this.Controls.Add(this.panelForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -974,22 +967,22 @@
             this.Load += new System.EventHandler(this.Main_UI_Load);
             this.panelNavigation.ResumeLayout(false);
             this.rowProgressOut.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.panelStatus.ResumeLayout(false);
             this.panelForm.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panelControls.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             this.panelData.ResumeLayout(false);
             this.panelData.PerformLayout();
             this.panelProgress.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDelete)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnUpdate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAdd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRefresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCancel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnForward)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
@@ -1020,9 +1013,9 @@
         private System.Windows.Forms.Label progressBar;
         private System.Windows.Forms.Timer progressTimer;
         private System.Windows.Forms.TextBox txtSeriesBack;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox showBack;
+        private System.Windows.Forms.TextBox epBack;
+        private System.Windows.Forms.TextBox wtBack;
         private System.Windows.Forms.TextBox txtWatchedBack;
         private System.Windows.Forms.TextBox txtEpisodesBack;
         private System.Windows.Forms.PictureBox btnReset;
@@ -1036,7 +1029,7 @@
         private System.Windows.Forms.Label progressCorner;
         private System.Windows.Forms.TextBox txtNameBack;
         private System.Windows.Forms.TextBox txtIndex;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox indexBack;
         private System.Windows.Forms.TextBox txtNameShadow;
         private System.Windows.Forms.PictureBox star1;
         private System.Windows.Forms.PictureBox star5;
@@ -1064,7 +1057,6 @@
         private System.Windows.Forms.Label progressBarOut;
         private System.Windows.Forms.Label progressCorner2;
         private System.Windows.Forms.Timer timerFirstRun;
-        private System.Windows.Forms.Label labelBuild;
     }
 }
 

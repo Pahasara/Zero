@@ -47,13 +47,13 @@ namespace Zero
             }
             else if (mode == "dbLost")
             {
-                setButtonOk();
+                setMessage();
                 msgText.Text = message.DatabaseLostMessage;
                 msgTitle.Text = message.DatabaseLostTitle; ;
             }
             else if (mode == "afterDelete")
             {
-                setButtonOk();
+                setMessage();
                 msgText.Text = message.DeleteSuccessMessage;
                 msgTitle.Text = message.DeleteSuccessTitle;
             }
@@ -61,7 +61,7 @@ namespace Zero
             {
                 // IF Unknown error occured
                 // 'mode' holds the message text
-                setButtonOk();
+                setMessage();
                 msgText.Text = mode;
                 msgTitle.Text = message.UnknownErrorTitle;
             }
@@ -106,10 +106,12 @@ namespace Zero
             showMessage();
         }
 
-        private void setButtonOk()
+        private void setMessage()
         {
-            btnOk.Location = new Point(100, 88);
+            btnOk.Visible = false;
             btnNo.Visible = false;
+            btnClose.Visible = true;
+            msgText.Height = 80;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -163,6 +165,27 @@ namespace Zero
                 // SET TITLE BAR DARK
                 DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4);
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            isYesClicked = true;
+            Close();
+        }
+
+        private void btnClose_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnClose.Image = Resources.btnGuideClose_move;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            btnClose.Image = Resources.btnGuideClose;
+        }
+
+        private void btnClose_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnClose.Image = Resources.btnGuideClose_down;
         }
     }
 }

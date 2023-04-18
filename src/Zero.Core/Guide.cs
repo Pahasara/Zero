@@ -5,16 +5,16 @@ namespace Zero.Core
 {
     public class Guide
     {
-        public string Welcome = "Welcome to Zero TV Show Manager. Zero will helps u to organize ur tv shows as simple as possible.";
+        public string Welcome = "Welcome to Zero TV Show Manager. Zero will helps u to ORGANIZE ur TV SHOWS as simple as possible.";
 
-        public string Save = "Saves a new tv show.\r\nClick on it, after u enter new info to save them in database.";
+        public string Save = "Saves a new tv show.\r\nAfter u enter new info, click on it to SAVE them in database.";
 
-        public string Update = "This will helps u to update\r\n info of the existing tv show in Zero’s database.";
+        public string Update = "This will helps u to UPDATE the info of EXISTING tv shows in\r\nZero’s database.";
 
-        public string Reset = "This will helps u to reset\r\n the progress of the current tv show,";
+        public string Reset = "This will helps u to RESET\r\n the progress of the current tv show,";
 
-        public string Forward = "Forward the current watching\r\nprogress by 1. (Watched +1)";
+        public string Forward = "FORWARD the current\r\nwatching progress by 1.\r\n(Watched +1)";
 
-        public string Thank = "Now u r free to use Zero\r\n and its features.";
+        public string Thank = "Now u r FREE TO USE Zero\r\n and its features.";
     }
 }

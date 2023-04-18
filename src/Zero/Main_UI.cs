@@ -41,17 +41,18 @@ namespace Zero
 
         string databaseFile = "data.mdf", table = "Series", tempName = "", devUrl = "https://www.github.com/pahasara/zero";
 
-        int maxRows, currentRow, progressBarLength, progressBarMaxLength, forwardCount = 0, zeroTime = 0, rating;
+        int maxRows, currentRow, progressBarLength, progressBarMaxLength, forwardCount = 0, zeroTime = 0;
+            
+       int current = 0, rating = 0; double episodes = 1;
 
-        bool isHidePercentage = false, isFirstTime = false;
+        bool isHidePercentage = false, isNewUser = false;
 
         Color textEnterForeColor = Color.FromArgb(255, 255, 255);
-        Color textLeaveForeColor = Color.FromArgb(255, 240, 240);
+        Color textLeaveForeColor = Color.FromArgb(242, 240, 240);
 
         private void Main_UI_Load(object sender, EventArgs e)
         {
             // Initialize ui
-            labelBuild.Text = data.getVersion();
             setProgressBar();
             setProgressCorner();
             setToolTips();
@@ -92,8 +93,6 @@ namespace Zero
         private void setCustomFonts()
         {
             setFontRussoOne();
-            customFont = new Font(fonts.Families[0], 6.0F, FontStyle.Italic);
-            labelBuild.Font = customFont;
             customFont = new Font(fonts.Families[0], 8.0F, FontStyle.Italic);
             labelCP.Font = customFont;
             labelST.Font = customFont;
@@ -176,15 +175,14 @@ namespace Zero
 
         private void setRecord(DataRow newRow)
         {
-            int watched, episodes;
-            int.TryParse(txtWatched.Text, out watched);
-            int.TryParse(txtEpisodes.Text, out episodes);
+            int.TryParse(txtWatched.Text, out current);
+            double.TryParse(txtEpisodes.Text, out episodes);
 
             if (episodes == 0) { episodes = 1; }
-            if (watched > episodes) { watched = episodes; }
+            if (current > episodes) { current = (int)episodes; }
             newRow[0] = txtIndex.Text.Trim();
             newRow[1] = txtShow.Text;
-            newRow[3] = watched.ToString();
+            newRow[3] = current.ToString();
             newRow[4] = episodes.ToString();
             newRow[5] = rating.ToString();
         }
@@ -234,7 +232,7 @@ namespace Zero
                 dataAdapter.Update(dataSet, "Series");
 
                 show(btnAdd);
-                btnUpdate.Image = Properties.Resources.btnUpdate_default;
+                btnUpdate.Image = Resources.btnUpdate_default;
                 updateUI();
 
                 currentRow = maxRows;
@@ -250,7 +248,7 @@ namespace Zero
             }
         }
 
-        private void deleteRecord(bool isFirstRun = false)
+        private void deleteRecord()
         {
             try
             {
@@ -267,8 +265,7 @@ namespace Zero
                 {
                     navigateRecords();
                 }
-                if(!isFirstRun)
-                    showMessage("afterDelete");
+                showMessage("afterDelete");
             }
             catch (SqlException)
             {
@@ -308,22 +305,20 @@ namespace Zero
 
         private void checkFirstRun()
         {
-            string code = "####-12-info-zero-12";
             if (zeroTime == 0) 
             {
                 timerFirstRun.Enabled = true;
             }
             else if(zeroTime == 2)
             {
-                if (txtIndex.Text == code)
+                if (maxRows == 0)
                 {
-                    deleteRecord(true);
-                    isFirstTime = true;
+                    isNewUser = true;
                 }
             }
             else if (zeroTime == 10)
             {
-                if (isFirstTime)
+                if (isNewUser)
                 {
                     License license = new License();
                     license.ShowDialog();
@@ -342,20 +337,11 @@ namespace Zero
         {
             try
             {
-                int current = int.Parse(txtWatched.Text);
-                int episodes = int.Parse(txtEpisodes.Text);
                 current++;
                 txtWatched.Text = current.ToString();
                 updateRecord();
-                if (current < episodes)
-                {
-                    forwardCount++;
-                    showInfo(info.Forward + " " + forwardCount , "Progress");
-                }
-                else
-                {
-                    checkProgress();
-                }
+                forwardCount++;
+                showInfo(info.Forward + " " + forwardCount, "Progress");
             }
             catch (Exception)
             {
@@ -367,8 +353,9 @@ namespace Zero
         {
             try
             {
-                int current = int.Parse(txtWatched.Text);
-                double episodes = double.Parse(txtEpisodes.Text);
+                
+                int.TryParse(txtWatched.Text, out current);
+                double.TryParse(txtEpisodes.Text, out episodes);
                 double percentage = (current / episodes);
                 progressBarLength = (int) (percentage * progressBarMaxLength);
                 percentage *= 100;
@@ -426,7 +413,7 @@ namespace Zero
             txtIndex.Clear();
             txtShow.Clear();
             txtWatched.Text = "0";
-            txtEpisodes.Text = "12";
+            txtEpisodes.Clear();
             updateUI("empty");
             showProgress();
             showInfo(error.DatabaseEmpty);
@@ -494,7 +481,7 @@ namespace Zero
             setTempName();
             txtShow.Clear();
             txtWatched.Text = "0";
-            txtEpisodes.Text = "12";
+            txtEpisodes.Clear();
             hidePercentage();
             showProgress();
             updateUI("save");   // Call => setSaveState()
@@ -578,41 +565,41 @@ namespace Zero
             if (currentRow == 0)
             {
                 disable(btnBack);
-                btnBack.Image = Properties.Resources.btnBack_down;
+                btnBack.Image = Resources.btnBack_down;
                 if (maxRows > 1)
                 {
                     enable(btnNext);
-                    btnNext.Image = Properties.Resources.btnNext_default;
+                    btnNext.Image = Resources.btnNext_default;
                 }
                 else
                 {
                     disable(btnNext);
-                    btnNext.Image = Properties.Resources.btnNext_down;
+                    btnNext.Image = Resources.btnNext_down;
                 }
             }
             else if (currentRow < (maxRows - 1))
             {
                 enable(btnNext);
-                btnNext.Image = Properties.Resources.btnNext_default;
+                btnNext.Image = Resources.btnNext_default;
                 if (currentRow == (maxRows - 1))
                 {
                     disable(btnBack);
-                    btnBack.Image = Properties.Resources.btnBack_down;
+                    btnBack.Image = Resources.btnBack_down;
                 }
                 else
                 {
                     enable(btnBack);
-                    btnBack.Image = Properties.Resources.btnBack_default;
+                    btnBack.Image = Resources.btnBack_default;
                 }
             }
             else
             {
                 disable(btnNext);
-                btnNext.Image = Properties.Resources.btnNext_down;
+                btnNext.Image = Resources.btnNext_down;
                 if (currentRow > 0)
                 {
                     enable(btnBack);
-                    btnBack.Image = Properties.Resources.btnBack_default;
+                    btnBack.Image = Resources.btnBack_default;
                 }
             }
         }
@@ -620,9 +607,9 @@ namespace Zero
         private void disableButtons()
         {
             disable(btnNext);
-            btnNext.Image = Properties.Resources.btnNext_down;
+            btnNext.Image = Resources.btnNext_down;
             disable(btnBack);
-            btnBack.Image = Properties.Resources.btnBack_down;
+            btnBack.Image = Resources.btnBack_down;
 
         }
 
@@ -659,11 +646,10 @@ namespace Zero
 
         private void checkProgress()
         {
-            int watched, episodes;
-            int.TryParse(txtWatched.Text, out watched);
-            int.TryParse(txtEpisodes.Text, out episodes);
+            int.TryParse(txtWatched.Text, out current);
+            double.TryParse(txtEpisodes.Text, out episodes);
 
-            if (watched == episodes)
+            if (current == episodes)
             {
                 showInfo("100 %", "Progress");
                 hide(btnForward);
@@ -715,12 +701,12 @@ namespace Zero
             {
                 for (int i = 0; i < rating; i++)
                 {
-                    star[i].Image = Properties.Resources.btnStar_hover;
+                    star[i].Image = Resources.btnStar_hover;
                 }
 
                 for (int i = 4; i >= rating; i--)
                 {
-                    star[i].Image = Properties.Resources.btnStar_default;
+                    star[i].Image = Resources.btnStar_default;
                 }
             }
             catch (Exception)
@@ -736,6 +722,14 @@ namespace Zero
             setRating();
         }
 
+        private void showNewRowCount()
+        {
+            if (btnSave.Visible && btnCancel.Enabled)
+            {
+                showRowCount(maxRows, (maxRows + 1));
+            }
+        }
+
         private bool validInputs()
         {
             if (txtIndex.Text != "")
@@ -749,16 +743,19 @@ namespace Zero
                     else
                     {
                         showInfo(error.EpisodesNull, "Error");
+                        showNewRowCount();
                     }
                 }
                 else
                 {
                     showInfo(error.WatchedNull, "Error");
+                    showNewRowCount();
                 }
             }
             else
             {
                 showInfo(error.IndexNull, "Error");
+                showNewRowCount();
             }
             return false;
         }
@@ -863,8 +860,8 @@ namespace Zero
                         forwardCount = 0;  // Reset forwardCount
 
                         // Fix WRONG percentage calculation due to progressBar length calculation
-                        double current = double.Parse(txtWatched.Text);
-                        double episodes = double.Parse(txtEpisodes.Text);
+                        int.TryParse(txtWatched.Text, out current);
+                        double.TryParse(txtEpisodes.Text, out episodes);
                         double progress = (current / episodes);
                         showInfo(((int)(progress * 100)).ToString() + " %", "Progress");
                     }
@@ -965,7 +962,7 @@ namespace Zero
 
         private void btnPlus_MouseDown(object sender, MouseEventArgs e)
         {
-            btnForward.Image = Properties.Resources.btnForward_down;
+            btnForward.Image = Resources.btnForward_down;
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
@@ -975,27 +972,27 @@ namespace Zero
         
         private void btnPlus_MouseMove(object sender, MouseEventArgs e)
         {
-            btnForward.Image = Properties.Resources.btnForward_hover;
+            btnForward.Image = Resources.btnForward_hover;
         }
 
         private void btnPlus_MouseLeave(object sender, EventArgs e)
         {
-            btnForward.Image = Properties.Resources.btnForward_default;
+            btnForward.Image = Resources.btnForward_default;
         }
 
         private void btnReset_MouseMove(object sender, MouseEventArgs e)
         {
-            btnReset.Image = Properties.Resources.btnReset_hover;
+            btnReset.Image = Resources.btnReset_hover;
         }
 
         private void btnReset_MouseLeave(object sender, EventArgs e)
         {
-            btnReset.Image = Properties.Resources.btnReset_default;
+            btnReset.Image = Resources.btnReset_default;
         }
 
         private void btnReset_MouseDown(object sender, MouseEventArgs e)
         {
-            btnReset.Image = Properties.Resources.btnReset_down;
+            btnReset.Image = Resources.btnReset_down;
         }
 
         private void star1_Click(object sender, EventArgs e)
@@ -1029,17 +1026,17 @@ namespace Zero
 
         private void btnDelete_MouseMove(object sender, MouseEventArgs e)
         {
-            btnDelete.Image = Properties.Resources.btnDelete_hover;
+            btnDelete.Image = Resources.btnDelete_hover;
         }
 
         private void btnDelete_MouseLeave(object sender, EventArgs e)
         {
-            btnDelete.Image = Properties.Resources.btnDelete_default;
+            btnDelete.Image = Resources.btnDelete_default;
         }
 
         private void btnDelete_MouseDown(object sender, MouseEventArgs e)
         {
-            btnDelete.Image = Properties.Resources.btnDelete_down;
+            btnDelete.Image = Resources.btnDelete_down;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -1052,18 +1049,17 @@ namespace Zero
 
         private void btnUpdate_MouseMove(object sender, MouseEventArgs e)
         {
-            btnUpdate.Image = Properties.Resources.btnUpdate_hover;
+            btnUpdate.Image = Resources.btnUpdate_hover;
         }
 
         private void btnUpdate_MouseLeave(object sender, EventArgs e)
         {
-            btnUpdate.Image = Properties.Resources.btnUpdate_default;
-
+            btnUpdate.Image = Resources.btnUpdate_default;
         }
 
         private void btnUpdate_MouseDown(object sender, MouseEventArgs e)
         {
-            btnUpdate.Image = Properties.Resources.btnUpdate_down;
+            btnUpdate.Image = Resources.btnUpdate_down;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -1076,17 +1072,17 @@ namespace Zero
 
         private void btnSave_MouseMove(object sender, MouseEventArgs e)
         {
-            btnSave.Image = Properties.Resources.btnSave_hover;
+            btnSave.Image = Resources.btnSave_hover;
         }
 
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            btnSave.Image = Properties.Resources.btnSave_default;
+            btnSave.Image = Resources.btnSave_default;
         }
 
         private void btnSave_MouseDown(object sender, MouseEventArgs e)
         {
-            btnSave.Image = Properties.Resources.btnSave_down;
+            btnSave.Image = Resources.btnSave_down;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -1103,57 +1099,58 @@ namespace Zero
         {
             updateUI();
             setControlButtons();
+            showPercentage();
             navigateRecords();
         }
 
         private void btnAdd_MouseMove(object sender, MouseEventArgs e)
         {
-            btnAdd.Image = Properties.Resources.btnAdd_hover;
+            btnAdd.Image = Resources.btnAdd_hover;
         }
 
         private void btnAdd_MouseLeave(object sender, EventArgs e)
         {
-            btnAdd.Image = Properties.Resources.btnAdd_default;
+            btnAdd.Image = Resources.btnAdd_default;
         }
 
         private void btnAdd_MouseDown(object sender, MouseEventArgs e)
         {
-            btnAdd.Image = Properties.Resources.btnAdd_down;
+            btnAdd.Image = Resources.btnAdd_down;
         }
 
         private void btnRefresh_MouseMove(object sender, MouseEventArgs e)
         {
-            btnRefresh.Image = Properties.Resources.btnRefresh_hover;
+            btnRefresh.Image = Resources.btnRefresh_hover;
         }
 
         private void btnRefresh_MouseDown(object sender, MouseEventArgs e)
         {
-            btnRefresh.Image = Properties.Resources.btnRefresh_down;
+            btnRefresh.Image = Resources.btnRefresh_down;
         }
 
         private void btnRefresh_MouseLeave(object sender, EventArgs e)
         {
-            btnRefresh.Image = Properties.Resources.btnRefresh_default;
+            btnRefresh.Image = Resources.btnRefresh_default;
         }
 
         private void btnCancel_MouseMove(object sender, MouseEventArgs e)
         {
-            btnCancel.Image = Properties.Resources.btnCancel_hover;
+            btnCancel.Image = Resources.btnCancel_hover;
         }
 
         private void btnCancel_MouseDown(object sender, MouseEventArgs e)
         {
-            btnCancel.Image = Properties.Resources.btnCancel_down;
+            btnCancel.Image = Resources.btnCancel_down;
         }
 
         private void btnCancel_MouseLeave(object sender, EventArgs e)
         {
-            btnCancel.Image = Properties.Resources.btnCancel_default;
+            btnCancel.Image = Resources.btnCancel_default;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            btnNext.Image = Properties.Resources.btnNext_down;
+            btnNext.Image = Resources.btnNext_down;
         }
 
         private void btnNext_MouseDown(object sender, MouseEventArgs e)
@@ -1163,17 +1160,17 @@ namespace Zero
 
         private void btnNext_MouseMove(object sender, MouseEventArgs e)
         {
-            btnNext.Image = Properties.Resources.btnNext_hover;
+            btnNext.Image = Resources.btnNext_hover;
         }
 
         private void btnNext_MouseLeave(object sender, EventArgs e)
         {
-            if(btnNext.Enabled) btnNext.Image = Properties.Resources.btnNext_default;
+            if(btnNext.Enabled) btnNext.Image = Resources.btnNext_default;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            btnBack.Image = Properties.Resources.btnBack_down;
+            btnBack.Image = Resources.btnBack_down;
         }
 
         private void btnBack_MouseDown(object sender, MouseEventArgs e)
@@ -1183,12 +1180,12 @@ namespace Zero
 
         private void btnBack_MouseMove(object sender, MouseEventArgs e)
         {
-            btnBack.Image = Properties.Resources.btnBack_hover;
+            btnBack.Image = Resources.btnBack_hover;
         }
 
         private void btnBack_MouseLeave(object sender, EventArgs e)
         {
-            if (btnBack.Enabled) btnBack.Image = Properties.Resources.btnBack_default;
+            if (btnBack.Enabled) btnBack.Image = Resources.btnBack_default;
         }
         
         private void btnSearch_Click(object sender, EventArgs e)
@@ -1198,17 +1195,57 @@ namespace Zero
 
         private void btnSearch_MouseMove(object sender, MouseEventArgs e)
         {
-            btnSearch.Image = Properties.Resources.btnSearch_hover;
+            btnSearch.Image = Resources.btnSearch_hover;
         }
 
         private void btnSearch_MouseLeave(object sender, EventArgs e)
         {
-            btnSearch.Image = Properties.Resources.btnSearch_default;
+            btnSearch.Image = Resources.btnSearch_default;
+        }
+
+        private void txtIndex_MouseMove(object sender, MouseEventArgs e)
+        {
+            indexBack.BackColor = Color.FromArgb(100, 28, 12);
+        }
+
+        private void txtIndex_MouseLeave(object sender, EventArgs e)
+        {
+            indexBack.BackColor = Color.FromArgb(74, 28, 12);
+        }
+
+        private void txtShow_MouseMove(object sender, MouseEventArgs e)
+        {
+            showBack.BackColor = Color.FromArgb(100, 28, 12);
+        }
+
+        private void txtShow_MouseLeave(object sender, EventArgs e)
+        {
+            showBack.BackColor = Color.FromArgb(74, 28, 12);
+        }
+
+        private void txtEpisodes_MouseMove(object sender, MouseEventArgs e)
+        {
+            epBack.BackColor = Color.FromArgb(100, 28, 12);
+        }
+
+        private void txtEpisodes_MouseLeave(object sender, EventArgs e)
+        {
+            epBack.BackColor = Color.FromArgb(74, 28, 12);
+        }
+
+        private void txtWatched_MouseMove(object sender, MouseEventArgs e)
+        {
+            wtBack.BackColor = Color.FromArgb(100, 28, 12);
+        }
+
+        private void txtWatched_MouseLeave(object sender, EventArgs e)
+        {
+            wtBack.BackColor = Color.FromArgb(74, 28, 12);
         }
 
         private void btnSearch_MouseDown(object sender, MouseEventArgs e)
         {
-            btnSearch.Image = Properties.Resources.btnSearch_down;
+            btnSearch.Image = Resources.btnSearch_down;
         }
 
         private void timerFirstRun_Tick(object sender, EventArgs e)

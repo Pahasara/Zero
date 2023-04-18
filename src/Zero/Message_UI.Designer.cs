@@ -33,8 +33,10 @@
             this.msgTitle = new System.Windows.Forms.Label();
             this.btnNo = new System.Windows.Forms.PictureBox();
             this.btnOk = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // msgText
@@ -91,14 +93,32 @@
             this.btnOk.MouseLeave += new System.EventHandler(this.btnOk_MouseLeave);
             this.btnOk.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnOk_MouseMove);
             // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.Image = global::Zero.Properties.Resources.btnGuideClose;
+            this.btnClose.Location = new System.Drawing.Point(206, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 20);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnClose.TabIndex = 77;
+            this.btnClose.TabStop = false;
+            this.btnClose.Visible = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseDown);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            this.btnClose.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseMove);
+            // 
             // Message_UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(25)))));
             this.BackgroundImage = global::Zero.Properties.Resources.imgBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(230, 120);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.msgTitle);
             this.Controls.Add(this.btnOk);
@@ -113,6 +133,7 @@
             this.Load += new System.EventHandler(this.MSG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -122,5 +143,6 @@
         private System.Windows.Forms.Label msgTitle;
         private System.Windows.Forms.PictureBox btnNo;
         private System.Windows.Forms.PictureBox btnOk;
+        private System.Windows.Forms.PictureBox btnClose;
     }
 }

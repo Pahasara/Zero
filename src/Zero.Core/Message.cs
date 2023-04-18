@@ -15,7 +15,7 @@ namespace Zero.Core
 
         public string DatabaseLostTitle = "DB Not Found";
 
-        public string DatabaseLostMessage = "'SQL Local DB' is not installed!\r\n Visit our github for more details.";
+        public string DatabaseLostMessage = "'SQL Local DB' not installed!\r\nor 'Database' corrupted!\r\nVisit our github for more details.";
 
         public string DeleteSuccessTitle = "Deleted";
 

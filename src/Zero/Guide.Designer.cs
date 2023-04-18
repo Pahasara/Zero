@@ -55,6 +55,9 @@
             this.btnNext.TabIndex = 74;
             this.btnNext.TabStop = false;
             this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            this.btnNext.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseDown);
+            this.btnNext.MouseLeave += new System.EventHandler(this.btnNext_MouseLeave);
+            this.btnNext.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnNext_MouseMove);
             // 
             // btnBack
             // 
@@ -68,13 +71,16 @@
             this.btnBack.TabIndex = 75;
             this.btnBack.TabStop = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseDown);
+            this.btnBack.MouseLeave += new System.EventHandler(this.btnBack_MouseLeave);
+            this.btnBack.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnBack_MouseMove);
             // 
             // msgText
             // 
             this.msgText.BackColor = System.Drawing.Color.Transparent;
             this.msgText.Font = new System.Drawing.Font("Russo One", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msgText.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.msgText.Location = new System.Drawing.Point(91, 34);
+            this.msgText.Location = new System.Drawing.Point(93, 34);
             this.msgText.Name = "msgText";
             this.msgText.Size = new System.Drawing.Size(180, 88);
             this.msgText.TabIndex = 77;
@@ -84,7 +90,7 @@
             // imgInfo
             // 
             this.imgInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgInfo.Location = new System.Drawing.Point(33, 54);
+            this.imgInfo.Location = new System.Drawing.Point(35, 54);
             this.imgInfo.Name = "imgInfo";
             this.imgInfo.Size = new System.Drawing.Size(50, 50);
             this.imgInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -115,6 +121,9 @@
             this.btnClose.TabIndex = 76;
             this.btnClose.TabStop = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseDown);
+            this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            this.btnClose.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnClose_MouseMove);
             // 
             // license
             // 
@@ -133,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(21)))));
             this.BackgroundImage = global::Zero.Properties.Resources.imgBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(310, 160);

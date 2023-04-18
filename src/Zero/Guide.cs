@@ -84,7 +84,7 @@ namespace Zero
                 {
                     imgInfo.Visible = false;
                     msgText.Location = new Point(60, 34);
-                    msgText.Text = guide.Thank + "\nReach me on twitter.com/@PahasaraDv";
+                    msgText.Text = guide.Thank + " Reach me\n github.com/Pahasara";
                     hide(btnNext);
                 }
             }
@@ -146,6 +146,51 @@ namespace Zero
         {
             License license = new License();
             license.ShowDialog();
+        }
+
+        private void btnNext_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnNext.Image = Resources.btnGuideNext_move;
+        }
+
+        private void btnNext_MouseLeave(object sender, EventArgs e)
+        {
+            btnNext.Image = Resources.btnGuideNext;
+        }
+
+        private void btnBack_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnBack.Image = Resources.btnGuideBack_move;
+        }
+
+        private void btnBack_MouseLeave(object sender, EventArgs e)
+        {
+            btnBack.Image = Resources.btnGuideBack;
+        }
+
+        private void btnClose_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnClose.Image = Resources.btnGuideClose_move;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            btnClose.Image = Resources.btnGuideClose;
+        }
+
+        private void btnNext_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnNext.Image = Resources.btnGuideNext_down;
+        }
+
+        private void btnBack_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnBack.Image = Resources.btnGuideBack_down;
+        }
+
+        private void btnClose_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnClose.Image = Resources.btnGuideClose_down;
         }
 
         private void hide(Control component)
