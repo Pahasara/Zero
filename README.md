@@ -1,5 +1,4 @@
-![Zero Full](https://user-images.githubusercontent.com/46932317/232657754-970982e7-aa61-4282-925a-af0ccf8ab5aa.png)
-
+![Zero Full](https://user-images.githubusercontent.com/46932317/232659439-62abafef-51f5-44eb-a4ab-91c803f062e9.png)
 # Zero (for Windows)
 
 Zero is a TV show manager which tries to organize tv shows as simple as possible. It is written in C# and is powered by the .NET and SQL Local DB.
