@@ -271,4 +271,25 @@
   <data name="license" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnGuideBack_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGuideBack_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGuideClose_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGuideClose_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGuideNext_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGuideNext_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnLicense_move" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnLicense_move.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGuideBack_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGuideBack_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGuideClose_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGuideClose_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGuideNext_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnGuideNext_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
