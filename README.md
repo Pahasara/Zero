@@ -1,4 +1,4 @@
-![Zero Full](https://user-images.githubusercontent.com/46932317/225497619-0204744e-d57e-4c39-a839-9c067f52f3fa.png)
+![Zero Full](https://user-images.githubusercontent.com/46932317/232657754-970982e7-aa61-4282-925a-af0ccf8ab5aa.png)
 
 # Zero (for Windows)
 
@@ -8,7 +8,7 @@ Zero is a TV show manager which tries to organize tv shows as simple as possible
 [![Releases](https://img.shields.io/badge/releases-all-informational)](https://github.com/Pahasara/Zero#downloads)
 [![Download](https://img.shields.io/badge/download-v2.0.0-brightgreen)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 
-![Zero Screenshot](https://user-images.githubusercontent.com/46932317/225495197-bc40235e-c1da-4a38-8d82-21cc177ce459.png)
+![Zero Screenshot](https://user-images.githubusercontent.com/46932317/232657810-fd10e4f4-ff79-4e3e-83c0-a1f6f15933a5.png)
 
 ## Requirements ##
 
@@ -26,7 +26,7 @@ Try to use the latest version. Using older versions don't recommended. I'm provi
 
 **These releases are windows execlusive.*
 
-* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip) (UNDER DEVELOPMENT)
+* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip) (WILL BE AVAILABLE SOON)
 
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
