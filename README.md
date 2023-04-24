@@ -1,5 +1,4 @@
-![Zero Full](https://user-images.githubusercontent.com/46932317/225497619-0204744e-d57e-4c39-a839-9c067f52f3fa.png)
-
+![Zero Full](https://user-images.githubusercontent.com/46932317/232662026-7652ac8a-c449-4a77-84e5-fc1212a9e083.png)
 # Zero (for Windows)
 
 Zero is a TV show manager which tries to organize tv shows as simple as possible. It is written in C# and is powered by the .NET and SQL Local DB.
@@ -8,7 +7,7 @@ Zero is a TV show manager which tries to organize tv shows as simple as possible
 [![Releases](https://img.shields.io/badge/releases-all-informational)](https://github.com/Pahasara/Zero#downloads)
 [![Download](https://img.shields.io/badge/download-v2.0.0-brightgreen)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 
-![Zero Screenshot](https://user-images.githubusercontent.com/46932317/225495197-bc40235e-c1da-4a38-8d82-21cc177ce459.png)
+![Zero Screenshot](https://user-images.githubusercontent.com/46932317/232661383-77577196-290f-4407-bfe9-6064755ea561.png)
 
 ## Requirements ##
 
@@ -26,7 +25,7 @@ Try to use the latest version. Using older versions don't recommended. I'm provi
 
 **These releases are windows execlusive.*
 
-* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip) (UNDER DEVELOPMENT)
+* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip) (WILL BE AVAILABLE SOON)
 
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
