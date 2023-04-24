@@ -151,6 +151,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\btnSearch_disabled.png" />
+    <None Include="Resources\btnStar_disabled.png" />
+    <None Include="Resources\btnReset_disabled.png" />
+    <None Include="Resources\btnDelete_disabled.png" />
+    <None Include="Resources\btnCancel_disabled.png" />
     <None Include="Resources\splash.png" />
     <None Include="Resources\license.png" />
     <None Include="Resources\imgBackground.png" />

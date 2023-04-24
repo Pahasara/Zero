@@ -292,4 +292,19 @@
   <data name="btnGuideNext_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnGuideNext_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnCancel_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnCancel_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnDelete_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnDelete_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnReset_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnReset_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnSearch_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnSearch_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnStar_disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnStar_disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -133,6 +133,16 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnCancel_disabled {
+            get {
+                object obj = ResourceManager.GetObject("btnCancel_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnCancel_down {
             get {
                 object obj = ResourceManager.GetObject("btnCancel_down", resourceCulture);
@@ -156,6 +166,16 @@ namespace Zero.Properties {
         internal static System.Drawing.Bitmap btnDelete_default {
             get {
                 object obj = ResourceManager.GetObject("btnDelete_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnDelete_disabled {
+            get {
+                object obj = ResourceManager.GetObject("btnDelete_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,6 +473,16 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnReset_disabled {
+            get {
+                object obj = ResourceManager.GetObject("btnReset_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnReset_down {
             get {
                 object obj = ResourceManager.GetObject("btnReset_down", resourceCulture);
@@ -513,6 +543,16 @@ namespace Zero.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnSearch_disabled {
+            get {
+                object obj = ResourceManager.GetObject("btnSearch_disabled", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnSearch_down {
             get {
                 object obj = ResourceManager.GetObject("btnSearch_down", resourceCulture);
@@ -536,6 +576,16 @@ namespace Zero.Properties {
         internal static System.Drawing.Bitmap btnStar_default {
             get {
                 object obj = ResourceManager.GetObject("btnStar_default", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnStar_disabled {
+            get {
+                object obj = ResourceManager.GetObject("btnStar_disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
