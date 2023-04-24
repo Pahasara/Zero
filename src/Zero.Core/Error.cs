@@ -5,6 +5,8 @@ namespace Zero.Core
 {
     public class Error
     {
+        // Below strings will be shown under Message Box
+        // <--Message_UI.msgText
         public string Update = "An error occured during update!";
 
         public string Rating = "An error occured during rating update!";
@@ -15,6 +17,9 @@ namespace Zero.Core
 
         public string Search = "An error occured during search!";
 
+
+        // Below strings will be shown under Status label
+        // <--Main_UI.labelST
         public string SearchNotFound = "No matching";
 
         public string DatabaseEmpty = "Database empty";
@@ -23,8 +28,8 @@ namespace Zero.Core
 
         public string IndexNull = "Empty index";
 
-        public string WatchedNull = "Enter watched";
+        public string WatchedNull = "Empty watched";
 
-        public string EpisodesNull = "Enter episodes";
+        public string EpisodesNull = "Empty episodes";
     }
 }

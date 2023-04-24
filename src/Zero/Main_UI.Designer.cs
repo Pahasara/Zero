@@ -152,9 +152,9 @@
             this.lbShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.lbShow.Location = new System.Drawing.Point(11, 55);
             this.lbShow.Name = "lbShow";
-            this.lbShow.Size = new System.Drawing.Size(74, 16);
+            this.lbShow.Size = new System.Drawing.Size(76, 16);
             this.lbShow.TabIndex = 2;
-            this.lbShow.Text = "TV show";
+            this.lbShow.Text = "TV Show";
             // 
             // txtWatched
             // 
@@ -169,6 +169,7 @@
             this.txtWatched.Size = new System.Drawing.Size(45, 17);
             this.txtWatched.TabIndex = 60;
             this.txtWatched.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtWatched.Click += new System.EventHandler(this.txtWatched_Click);
             this.txtWatched.Enter += new System.EventHandler(this.txtWatched_Enter);
             this.txtWatched.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWatched_KeyPress);
             this.txtWatched.Leave += new System.EventHandler(this.txtWatched_Leave);

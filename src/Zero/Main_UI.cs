@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 Dewnith Fernando @github.com/Pahasara.
+﻿// Copyright (c) 2023 Dewnith Fernando @github.com/Pahasara
 // Licensed under the MIT license.
 
 using System;
@@ -39,11 +39,11 @@ namespace Zero
         // Public Variables
         SqlConnection conn; SqlDataAdapter dataAdapter; DataSet dataSet; SqlCommandBuilder commandBuilder;
 
-        string databaseFile = "data.mdf", table = "Series", tempName = "", devUrl = "https://www.github.com/pahasara/zero";
+        string databaseFile = "data.mdf", table = "Series", tempIndex = "", devUrl = "https://www.github.com/pahasara/zero";
 
         int maxRows, currentRow, progressBarLength, progressBarMaxLength, forwardCount = 0, zeroTime = 0;
             
-       int current = 0, rating = 0; double episodes = 1;
+        int current = 0, rating = 0, newRating = 0; double episodes = 1;
 
         bool isHidePercentage = false, isNewUser = false;
 
@@ -149,7 +149,7 @@ namespace Zero
             {
                 DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
                 getRecord(dataRow);
-                setTempName();
+                setTempIndex();
                 setControlButtons();
                 setRating();
                 showProgress();
@@ -168,9 +168,9 @@ namespace Zero
         {
             txtIndex.Text = dataRow.ItemArray.GetValue(0).ToString();
             txtShow.Text = dataRow.ItemArray.GetValue(1).ToString();
-            txtWatched.Text = dataRow.ItemArray.GetValue(3).ToString();
-            txtEpisodes.Text = dataRow.ItemArray.GetValue(4).ToString();
-            int.TryParse(dataRow.ItemArray.GetValue(5).ToString(), out rating);
+            txtWatched.Text = dataRow.ItemArray.GetValue(2).ToString();
+            txtEpisodes.Text = dataRow.ItemArray.GetValue(3).ToString();
+            int.TryParse(dataRow.ItemArray.GetValue(4).ToString(), out rating);
         }
 
         private void setRecord(DataRow newRow)
@@ -182,9 +182,9 @@ namespace Zero
             if (current > episodes) { current = (int)episodes; }
             newRow[0] = txtIndex.Text.Trim();
             newRow[1] = txtShow.Text;
-            newRow[3] = current.ToString();
-            newRow[4] = episodes.ToString();
-            newRow[5] = rating.ToString();
+            newRow[2] = current.ToString();
+            newRow[3] = episodes.ToString();
+            newRow[4] = rating;
         }
 
         private void updateRecord()
@@ -207,17 +207,32 @@ namespace Zero
 
         private void updateRating()
         {
-            try
+            if (isInputsValid())
             {
-                DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
-                setRecord(dataRow);
-                dataAdapter.Update(dataSet, "Series");
-                setRating();
-                checkProgress();
-            }
-            catch (SqlException)
-            {
-                showMessage(error.Rating);
+                try
+                {
+                    // Check wether user wants to reset or change the rating
+                    if (newRating != rating)
+                    {
+                        rating = newRating;
+                        newRating = 6;
+                    }
+                    else
+                    {
+                        rating = 0; // RESET RATING
+                    }
+
+                    // Save and show new rating
+                    DataRow dataRow = dataSet.Tables["Series"].Rows[currentRow];
+                    setRecord(dataRow);
+                    dataAdapter.Update(dataSet, "Series");
+                    setRating();
+                    checkProgress();
+                }
+                catch (SqlException)
+                {
+                    showMessage(error.Rating);
+                }
             }
         }
 
@@ -243,8 +258,8 @@ namespace Zero
             }
             catch (SqlException)
             {
-                setTempName();
-                showMessage("'" + tempName + "' " + error.Insert);
+                setTempIndex();
+                showMessage("'" + tempIndex + "' " + error.Insert);
             }
         }
 
@@ -255,8 +270,9 @@ namespace Zero
                 dataSet.Tables["Series"].Rows[currentRow].Delete();
                 dataAdapter.Update(dataSet, "Series");
 
-                setTempName("");
+                setTempIndex("");
                 maxRows--;
+                rating = 0;
                 if (currentRow > 0)
                 { 
                     getPreviousRow(); 
@@ -277,8 +293,10 @@ namespace Zero
         {
             try
             {
+                rating = 0; // RESET rating to PREVENT CONFUSIONS
                 string searchFor = txtIndex.Text.Trim();
-                if (searchFor == "" || searchFor == tempName)
+
+                if (searchFor == "" || searchFor == tempIndex)
                     return;
 
                 DataRow[] returnedRows = dataSet.Tables["Series"].Select("Name='" + searchFor + "'");
@@ -446,7 +464,9 @@ namespace Zero
             if(state == "searchSuccess")
             {
                 setControlButtons();
+                setRating();
                 setScrollBar();
+                checkProgress();
                 showProgress();
                 showInfo(info.SearchSuccess);
             }
@@ -458,6 +478,7 @@ namespace Zero
             {
                 setSaveState();
                 enable(btnCancel);
+                btnCancel.Image = Resources.btnCancel_default;
             }
             else if(state == "invalidSearch")
             {
@@ -467,6 +488,7 @@ namespace Zero
             {
                 setSaveState();
                 disable(btnCancel);
+                btnCancel.Image = Resources.btnCancel_disabled;
             }
             else
             {
@@ -478,8 +500,9 @@ namespace Zero
         {
             resetProgressBar();
             txtIndex.Clear();
-            setTempName();
+            setTempIndex();
             txtShow.Clear();
+            rating = 0; // RESET rating to PREVENT CONFUSIONS
             txtWatched.Text = "0";
             txtEpisodes.Clear();
             hidePercentage();
@@ -495,27 +518,33 @@ namespace Zero
             hide(btnSave);
             hide(btnCancel);
             show(btnAdd);
-            show(btnSearch);
-            show(btnForward);
             show(btnUpdate);
+            show(btnForward);
             show(rowScrollBar);
-            show(btnDelete);
-            show(btnReset);
-            showRating();
+            enable(btnSearch);
+            btnSearch.Image = Resources.btnSearch_default;
+            enable(btnDelete);
+            btnDelete.Image = Resources.btnDelete_default;
+            enable(btnReset);
+            btnReset.Image = Resources.btnReset_default;
+            enableRating();
         }
         private void setSaveState()
         {
             show(btnSave);
             show(btnCancel);
             hide(btnAdd);
-            hide(btnSearch);
-            hide(btnForward);
             hide(btnUpdate);
-            hide(btnDelete);
-            hide(btnReset);
+            disable(btnDelete);
+            hide(btnForward);
             hide(rowScrollBar);
+            disable(btnSearch);
+            btnSearch.Image = Resources.btnSearch_disabled;
+            btnDelete.Image = Resources.btnDelete_disabled;
+            disable(btnReset);
+            btnReset.Image = Resources.btnReset_disabled;
+            disableRating();
             disableButtons();
-            hideRating();
         }
 
         private void setInvalidSearchState()
@@ -552,12 +581,12 @@ namespace Zero
             navigateRecords();
         }
 
-        private void setTempName(string temp = " ")
+        private void setTempIndex(string temp = " ")
         {
             if (temp == " ")
-                tempName = txtIndex.Text;
+                tempIndex = txtIndex.Text;
             else
-                tempName = temp;
+                tempIndex = temp;
         }
 
         private void setControlButtons()
@@ -670,22 +699,27 @@ namespace Zero
             showInfo(info.Reset, "Progress");
         }
 
-        private void hideRating()
+        private void disableRating()
         {
-            hide(star1);
-            hide(star2);
-            hide(star3);
-            hide(star4);
-            hide(star5);
+            disable(star1);
+            star1.Image = Resources.btnStar_disabled;
+            disable(star2);
+            star2.Image = Resources.btnStar_disabled;
+            disable(star3);
+            star3.Image = Resources.btnStar_disabled;
+            disable(star4);
+            star4.Image = Resources.btnStar_disabled;
+            disable(star5);
+            star5.Image = Resources.btnStar_disabled;
         }
 
-        private void showRating()
+        private void enableRating()
         {
-            show(star1);
-            show(star2);
-            show(star3);
-            show(star4);
-            show(star5);
+            enable(star1);
+            enable(star2);
+            enable(star3);
+            enable(star4);
+            enable(star5);
         }
 
         private void setRating()
@@ -730,7 +764,7 @@ namespace Zero
             }
         }
 
-        private bool validInputs()
+        private bool isInputsValid()
         {
             if (txtIndex.Text != "")
             {
@@ -886,7 +920,7 @@ namespace Zero
         
         private void txtIndex_Click(object sender, EventArgs e)
         {
-            if (tempName == txtIndex.Text)
+            if (tempIndex == txtIndex.Text)
                 txtIndex.Clear();
         }
 
@@ -914,11 +948,11 @@ namespace Zero
         {
             if (txtIndex.Text == "")
             {
-                txtIndex.Text = tempName;
+                txtIndex.Text = tempIndex;
             }
-            else if (tempName != txtIndex.Text)
+            else if (tempIndex != txtIndex.Text)
             {
-                setTempName();
+                setTempIndex();
             }
             hide(txtNameBack);
             txtIndex.ForeColor = textLeaveForeColor;
@@ -932,6 +966,10 @@ namespace Zero
 
         private void txtWatched_Leave(object sender, EventArgs e)
         {
+            if (txtWatched.Text == "")
+            {
+                txtWatched.Text = current.ToString();
+            }
             hide(txtWatchedBack);
             txtWatched.ForeColor = textLeaveForeColor;
         }
@@ -967,7 +1005,10 @@ namespace Zero
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            forwardProgress();
+            if (isInputsValid())
+            {
+                forwardProgress();
+            }
         }
         
         private void btnPlus_MouseMove(object sender, MouseEventArgs e)
@@ -997,25 +1038,31 @@ namespace Zero
 
         private void star1_Click(object sender, EventArgs e)
         {
-            rating = 1;
+            newRating = 1;
             updateRating();
         }
 
         private void star2_Click(object sender, EventArgs e)
         {
-            rating = 2;
+            newRating = 2;
             updateRating();
         }
 
         private void star3_Click(object sender, EventArgs e)
         {
-            rating = 3;
+            newRating = 3;
             updateRating();
         }
 
         private void star4_Click(object sender, EventArgs e)
         {
-            rating = 4;
+            newRating = 4;
+            updateRating();
+        }
+
+        private void star5_Click(object sender, EventArgs e)
+        {
+            newRating = 5;
             updateRating();
         }
 
@@ -1041,7 +1088,7 @@ namespace Zero
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (validInputs())
+            if (isInputsValid())
             {
                 updateRecord();
             }
@@ -1064,7 +1111,7 @@ namespace Zero
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (validInputs())
+            if (isInputsValid())
             {
                 insertRecord();
             }
@@ -1243,6 +1290,11 @@ namespace Zero
             wtBack.BackColor = Color.FromArgb(74, 28, 12);
         }
 
+        private void txtWatched_Click(object sender, EventArgs e)
+        {
+            txtWatched.Clear();
+        }
+
         private void btnSearch_MouseDown(object sender, MouseEventArgs e)
         {
             btnSearch.Image = Resources.btnSearch_down;
@@ -1255,12 +1307,6 @@ namespace Zero
                 zeroTime++;
                 checkFirstRun();
             }
-        }
-
-        private void star5_Click(object sender, EventArgs e)
-        {
-            rating = 5;
-            updateRating();
         }
 
         private void MUI_FormClosing(object sender, FormClosingEventArgs e)
