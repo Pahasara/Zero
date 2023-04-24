@@ -25,7 +25,7 @@ Try to use the latest version. Using older versions don't recommended. I'm provi
 
 **These releases are windows execlusive.*
 
-* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip) (WILL BE AVAILABLE SOON)
+* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0-success)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0/bin.zip) (WILL BE AVAILABLE SOON)
 
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
