@@ -1,6 +1,0 @@
-C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\core_obj\Zero.Core.csproj.AssemblyReference.cache
-C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\core_obj\Zero.Core.csproj.CoreCompileInputs.cache
-C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\core_obj\Core.dll
-C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\core_obj\Core.pdb
-C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\Core.dll
-C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\Core.pdb
