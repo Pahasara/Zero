@@ -80,7 +80,7 @@ namespace Zero
         private void setProgress()
         {
             progressBar.Width = width;
-            progressOutline.Height = (height + 2);
+            progressOutline.Height = height;
             progressBar.Height = height;
             progressCorner.Width = (width - 2);
             progressCorner.Height = height;

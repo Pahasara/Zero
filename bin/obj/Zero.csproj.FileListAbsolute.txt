@@ -1,0 +1,15 @@
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.csproj.AssemblyReference.cache
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.Guide.resources
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.License.resources
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.Message_UI.resources
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.Splash.resources
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.Main_UI.resources
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.Properties.Resources.resources
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.csproj.GenerateResource.cache
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.csproj.CoreCompileInputs.cache
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\Zero.csproj.CopyComplete
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\zero.exe.config
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\zero.exe
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\obj\zero.pdb
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\zero.exe
+C:\Users\Pahasara\OneDrive\Documents\GitHub\Zero\bin\zero.pdb

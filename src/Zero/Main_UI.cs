@@ -47,8 +47,8 @@ namespace Zero
 
         bool isHidePercentage = false, isNewUser = false;
 
-        Color textEnterForeColor = Color.FromArgb(255, 255, 255);
-        Color textLeaveForeColor = Color.FromArgb(242, 240, 240);
+        Color textEnterForeColor = Color.FromArgb(255,255,255);
+        Color textLeaveForeColor = Color.FromArgb(242, 242, 242);
 
         private void Main_UI_Load(object sender, EventArgs e)
         {
@@ -806,7 +806,7 @@ namespace Zero
         {
             string starMark = "*required";
             tool_tip.BackColor = Color.FromArgb(28, 28, 28);
-            tool_tip.ForeColor = Color.FromArgb(255, 50, 50);
+            tool_tip.ForeColor = Color.FromArgb(255, 30, 30);
 
             tool_tip.SetToolTip(btnReset, "Reset");
             tool_tip.SetToolTip(btnSearch, "Search");
@@ -1252,42 +1252,42 @@ namespace Zero
 
         private void txtIndex_MouseMove(object sender, MouseEventArgs e)
         {
-            indexBack.BackColor = Color.FromArgb(100, 28, 12);
+            indexBack.BackColor = Color.FromArgb(100,100,100);
         }
 
         private void txtIndex_MouseLeave(object sender, EventArgs e)
         {
-            indexBack.BackColor = Color.FromArgb(74, 28, 12);
+            indexBack.BackColor = Color.FromArgb(72,72,72);
         }
 
         private void txtShow_MouseMove(object sender, MouseEventArgs e)
         {
-            showBack.BackColor = Color.FromArgb(100, 28, 12);
+            showBack.BackColor = Color.FromArgb(100,100,100);
         }
 
         private void txtShow_MouseLeave(object sender, EventArgs e)
         {
-            showBack.BackColor = Color.FromArgb(74, 28, 12);
+            showBack.BackColor = Color.FromArgb(72,72,72);
         }
 
         private void txtEpisodes_MouseMove(object sender, MouseEventArgs e)
         {
-            epBack.BackColor = Color.FromArgb(100, 28, 12);
+            epBack.BackColor = Color.FromArgb(100,100,100);
         }
 
         private void txtEpisodes_MouseLeave(object sender, EventArgs e)
         {
-            epBack.BackColor = Color.FromArgb(74, 28, 12);
+            epBack.BackColor = Color.FromArgb(72,72,72);
         }
 
         private void txtWatched_MouseMove(object sender, MouseEventArgs e)
         {
-            wtBack.BackColor = Color.FromArgb(100, 28, 12);
+            wtBack.BackColor = Color.FromArgb(100,100,100);
         }
 
         private void txtWatched_MouseLeave(object sender, EventArgs e)
         {
-            wtBack.BackColor = Color.FromArgb(74, 28, 12);
+            wtBack.BackColor = Color.FromArgb(72,72,72);
         }
 
         private void txtWatched_Click(object sender, EventArgs e)

@@ -151,12 +151,24 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\btnStar_hover.png" />
+    <None Include="Resources\btnSearch_hover.png" />
+    <None Include="Resources\btnReset_hover.png" />
+    <None Include="Resources\btnRefresh_hover.png" />
+    <None Include="Resources\btnNext_hover.png" />
+    <None Include="Resources\btnMsgOk_hover.png" />
+    <None Include="Resources\btnMsgNo_hover.png" />
+    <None Include="Resources\btnForward_hover.png" />
+    <None Include="Resources\btnDelete_hover.png" />
+    <None Include="Resources\btnCancel_hover.png" />
+    <None Include="Resources\btnBack_hover.png" />
+    <None Include="Resources\btnAdd_hover.png" />
+    <None Include="Resources\splash.png" />
     <None Include="Resources\btnSearch_disabled.png" />
     <None Include="Resources\btnStar_disabled.png" />
     <None Include="Resources\btnReset_disabled.png" />
     <None Include="Resources\btnDelete_disabled.png" />
     <None Include="Resources\btnCancel_disabled.png" />
-    <None Include="Resources\splash.png" />
     <None Include="Resources\license.png" />
     <None Include="Resources\imgBackground.png" />
     <None Include="Resources\btnGuideNext_move.png" />
@@ -191,30 +203,18 @@
     <None Include="Resources\Orbitron-VariableFont.ttf" />
     <None Include="Resources\RussoOne-Regular.ttf" />
     <None Include="Resources\btnMsgNo_down.png" />
-    <None Include="Resources\btnMsgNo_hover.png" />
-    <None Include="Resources\btnMsgOk_hover.png" />
     <None Include="Resources\btnMsgOk_down.png" />
     <None Include="Resources\btnMsgOk.png" />
     <None Include="Resources\btnMsgNo.png" />
-    <None Include="Resources\btnForward_hover.png" />
     <None Include="Resources\btnForward_down.png" />
-    <None Include="Resources\btnDelete_hover.png" />
     <None Include="Resources\btnDelete_down.png" />
-    <None Include="Resources\btnReset_hover.png" />
     <None Include="Resources\btnReset_down.png" />
     <None Include="Resources\btnCancel_down.png" />
     <None Include="Resources\btnUpdate_down.png" />
-    <None Include="Resources\btnStar_hover.png" />
-    <None Include="Resources\btnSearch_hover.png" />
     <None Include="Resources\btnSearch_down.png" />
     <None Include="Resources\btnSave_hover.png" />
     <None Include="Resources\btnSave_down.png" />
-    <None Include="Resources\btnRefresh_hover.png" />
     <None Include="Resources\btnRefresh_down.png" />
-    <None Include="Resources\btnNext_hover.png" />
-    <None Include="Resources\btnCancel_hover.png" />
-    <None Include="Resources\btnBack_hover.png" />
-    <None Include="Resources\btnAdd_hover.png" />
     <None Include="Resources\btnAdd_down.png" />
   </ItemGroup>
   <ItemGroup>
