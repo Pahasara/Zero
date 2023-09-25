@@ -7,7 +7,8 @@ Zero is a TV show manager which tries to organize tv shows as simple as possible
 [![Releases](https://img.shields.io/badge/releases-all-informational)](https://github.com/Pahasara/Zero#downloads)
 [![Download](https://img.shields.io/badge/download-v2.0.0-brightgreen)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 
-![Zero screenshot](https://github.com/Pahasara/Zero/assets/46932317/fbc6fbfe-ed40-4bde-a6ea-27042ccdf668)
+![Zero screenshot](https://github.com/Pahasara/Zero/assets/46932317/f78acff7-1919-419f-a0e7-9173c0e0e125)
+
 
 
 ## Requirements ##
@@ -26,9 +27,9 @@ Try to use the latest version. Using older versions don't recommended. I'm provi
 
 **These releases are windows execlusive.*
 
-* [![Zero v2.0](https://img.shields.io/badge/zero-v2.0-success)](https://github.com/Pahasara/Zero/releases/download/v2.0-build_226/setup.exe)
-
-* [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
-* [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
-* [![Zero v1.0.2](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.2/bin.zip)
 * [![Zero v1.0.1](https://img.shields.io/badge/zero-v1.0.1-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.1/bin.zip)
+* [![Zero v1.0.2](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.2/bin.zip)
+* [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
+* [![Zero v1.0.4](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
+* [![Zero v2.0 Build 226](https://img.shields.io/badge/zero-v2.0-red)](https://github.com/Pahasara/Zero/releases/download/v2.0-build_226/setup.exe)
+* [![Zero v2.0  Build 300](https://img.shields.io/badge/zero-v2.0-success)](https://github.com/Pahasara/Zero/releases/download/v2.0-build_300/setup.exe)
