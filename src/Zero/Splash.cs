@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 Dewnith Fernando @github.com/Pahasara.
+﻿// Copyright (c) 2023 Dewnith Fernando @github.com/Pahasara
 // Licensed under the MIT license.
 
 using System;

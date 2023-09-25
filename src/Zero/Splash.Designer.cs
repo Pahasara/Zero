@@ -61,22 +61,22 @@
             // 
             // progressCorner
             // 
-            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.progressCorner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.progressCorner.Location = new System.Drawing.Point(173, 193);
             this.progressCorner.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.progressCorner.Name = "progressCorner";
             this.progressCorner.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.progressCorner.Size = new System.Drawing.Size(30, 5);
+            this.progressCorner.Size = new System.Drawing.Size(30, 3);
             this.progressCorner.TabIndex = 10;
             // 
             // progressBar
             // 
-            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.progressBar.Location = new System.Drawing.Point(28, 193);
             this.progressBar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.progressBar.Name = "progressBar";
             this.progressBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.progressBar.Size = new System.Drawing.Size(150, 5);
+            this.progressBar.Size = new System.Drawing.Size(150, 3);
             this.progressBar.TabIndex = 7;
             // 
             // lblYear
@@ -94,12 +94,12 @@
             // 
             // progressOutline
             // 
-            this.progressOutline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(72)))), ((int)(((byte)(72)))));
+            this.progressOutline.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(78)))), ((int)(((byte)(78)))));
             this.progressOutline.Location = new System.Drawing.Point(28, 193);
             this.progressOutline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.progressOutline.Name = "progressOutline";
             this.progressOutline.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.progressOutline.Size = new System.Drawing.Size(451, 4);
+            this.progressOutline.Size = new System.Drawing.Size(451, 3);
             this.progressOutline.TabIndex = 12;
             // 
             // Splash

@@ -1252,42 +1252,42 @@ namespace Zero
 
         private void txtIndex_MouseMove(object sender, MouseEventArgs e)
         {
-            indexBack.BackColor = Color.FromArgb(100,100,100);
+            indexBack.BackColor = Color.FromArgb(68,68,68);
         }
 
         private void txtIndex_MouseLeave(object sender, EventArgs e)
         {
-            indexBack.BackColor = Color.FromArgb(72,72,72);
+            indexBack.BackColor = Color.FromArgb(48,48,48);
         }
 
         private void txtShow_MouseMove(object sender, MouseEventArgs e)
         {
-            showBack.BackColor = Color.FromArgb(100,100,100);
+            showBack.BackColor = Color.FromArgb(68,68,68);
         }
 
         private void txtShow_MouseLeave(object sender, EventArgs e)
         {
-            showBack.BackColor = Color.FromArgb(72,72,72);
+            showBack.BackColor = Color.FromArgb(48,48,48);
         }
 
         private void txtEpisodes_MouseMove(object sender, MouseEventArgs e)
         {
-            epBack.BackColor = Color.FromArgb(100,100,100);
+            epBack.BackColor = Color.FromArgb(68,68,68);
         }
 
         private void txtEpisodes_MouseLeave(object sender, EventArgs e)
         {
-            epBack.BackColor = Color.FromArgb(72,72,72);
+            epBack.BackColor = Color.FromArgb(48,48,48);
         }
 
         private void txtWatched_MouseMove(object sender, MouseEventArgs e)
         {
-            wtBack.BackColor = Color.FromArgb(100,100,100);
+            wtBack.BackColor = Color.FromArgb(68,68,68);
         }
 
         private void txtWatched_MouseLeave(object sender, EventArgs e)
         {
-            wtBack.BackColor = Color.FromArgb(72,72,72);
+            wtBack.BackColor = Color.FromArgb(48,48,48);
         }
 
         private void txtWatched_Click(object sender, EventArgs e)
