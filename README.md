@@ -32,4 +32,4 @@ Try to use the latest version. Using older versions don't recommended. I'm provi
 * [![Zero v1.0.3](https://img.shields.io/badge/zero-v1.0.3-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.3/bin.zip)
 * [![Zero v1.0.4](https://img.shields.io/badge/zero-v1.0.4-red)](https://github.com/Pahasara/Zero/releases/download/Zero_v1.0.4/bin.zip)
 * [![Zero v2.0 Build 226](https://img.shields.io/badge/zero-v2.0.226-red)](https://github.com/Pahasara/Zero/releases/download/v2.0-build_226/setup.exe)
-* [![Zero v2.0  Build 300](https://img.shields.io/badge/zero-v2.0.300-success)](https://github.com/Pahasara/Zero/releases/download/v2.0-build_300/setup.exe)
+* [![Zero v2.0  Build 300](https://img.shields.io/badge/zero-v2.0.300-blue)](https://github.com/Pahasara/Zero/releases/download/v2.0-build_300/setup.exe)
