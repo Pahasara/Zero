@@ -7,7 +7,8 @@ Zero is a TV show manager which tries to organize tv shows as simple as possible
 [![Releases](https://img.shields.io/badge/releases-all-informational)](https://github.com/Pahasara/Zero#downloads)
 [![Download](https://img.shields.io/badge/download-v2.0.0-brightgreen)](https://github.com/Pahasara/Zero/releases/download/Zero_v2.0.0/bin.zip)
 
-![Zero Screenshot](https://user-images.githubusercontent.com/46932317/232661383-77577196-290f-4407-bfe9-6064755ea561.png)
+![Zero screenshot](https://github.com/Pahasara/Zero/assets/46932317/fbc6fbfe-ed40-4bde-a6ea-27042ccdf668)
+
 
 ## Requirements ##
 
